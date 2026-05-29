@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ecos da Margem — Oficinas de Métodos de Estudo</title>
 <meta name="description" content="Programa de 6 encontros de organização e métodos de estudo para ENEM/vestibulares. Para quem trabalha, estuda e ainda sonha.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
@@ -241,6 +243,26 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 .completion-banner{background:linear-gradient(135deg,var(--verde),#2d8a5e);border-radius:var(--r16);padding:32px;text-align:center;margin-top:24px}
 .completion-banner h3{color:#fff;font-size:24px;margin-bottom:8px}
 .completion-banner p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:20px}
+/* Botões de download CMV */
+.cmv-download-btns{display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.btn-dl{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:var(--r12);font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;border:none}
+.btn-dl-img{background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.4)}
+.btn-dl-img:hover{background:rgba(255,255,255,.28)}
+.btn-dl-pdf{background:#fff;color:var(--verde)}
+.btn-dl-pdf:hover{background:#e8f5ee;transform:translateY(-1px)}
+.btn-dl svg{width:15px;height:15px;flex-shrink:0}
+/* Card oculto para exportação (capturado pelo html2canvas) */
+#cmv-export-card{position:fixed;left:-9999px;top:0;background:#fff;width:580px;padding:36px;font-family:'DM Sans',sans-serif;border-radius:12px;color:#1e2d18}
+#cmv-export-card .exp-header{border-bottom:3px solid #2d6e1a;padding-bottom:16px;margin-bottom:24px}
+#cmv-export-card .exp-header h3{font-family:'Georgia',serif;color:#2d6e1a;font-size:24px;margin-bottom:4px;font-weight:700}
+#cmv-export-card .exp-header .exp-sub{font-size:13px;color:#7a9668}
+#cmv-export-card .exp-bloco{border:1px solid #ccddb8;border-radius:10px;padding:16px 20px;margin-bottom:12px;border-left:4px solid #2d6e1a;background:#fafcf8}
+#cmv-export-card .exp-bloco-title{font-size:13px;font-weight:700;color:#2d6e1a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+#cmv-export-card .exp-bloco-info{font-size:14px;color:#3d5234;line-height:2}
+#cmv-export-card .exp-total{background:#e2f0d4;border-radius:10px;padding:16px 20px;text-align:center;margin-top:16px}
+#cmv-export-card .exp-total-num{font-size:32px;font-family:'Georgia',serif;color:#2d6e1a;font-weight:700}
+#cmv-export-card .exp-total-label{font-size:12px;color:#3d5234;margin-top:2px}
+#cmv-export-card .exp-footer{font-size:11px;color:#aaa;text-align:center;margin-top:20px;padding-top:14px;border-top:1px solid #eee}
 
 @media(max-width:580px){
   .nav-pills{display:none}
@@ -446,7 +468,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
   </div>
   <nav class="nav-pills">
     <button id="pill-landing" class="nav-pill active" onclick="showPage('landing')">Início</button>
-    <button id="pill-programacao" class="nav-pill" onclick="showPage('landing');showTab('programacao');setActivePill('programacao')">Programação</button>
+    <button id="pill-programacao" class="nav-pill" onclick="irParaProgramacao()">Programação</button>
     <button id="pill-aula1" class="nav-pill" onclick="showPage('aula1')">Aula 1</button>
   </nav>
 </header>
@@ -503,7 +525,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
   </div>
 
   <!-- Tabs -->
-  <div class="tabs-section">
+  <div class="tabs-section" id="tabs-anchor">
     <div class="tabs-nav">
       <button class="tab-btn active" onclick="showTab('objetivo')">Sobre o Programa</button>
       <button class="tab-btn" onclick="showTab('programacao')">Programação</button>
@@ -1324,12 +1346,34 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
         <p id="cmv-summary">—</p>
         <p style="font-size:13px;color:rgba(255,255,255,.7);margin-top:8px;margin-bottom:20px">Lembre: o objetivo desta semana é testar, não executar perfeitamente. Se fizer 2 de 3, é uma vitória.</p>
         <button class="btn-white" onclick="showPage('aula1')">← Voltar ao Encontro 1</button>
+        <div class="cmv-download-btns">
+          <button class="btn-dl btn-dl-img" onclick="baixarCMV('img')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Baixar Imagem
+          </button>
+          <button class="btn-dl btn-dl-pdf" onclick="baixarCMV('pdf')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Baixar PDF
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-</div><!-- end .app -->
+<!-- Card oculto fora do fluxo — capturado pelo html2canvas para exportação -->
+<div id="cmv-export-card">
+  <div class="exp-header">
+    <h3>📅 Cronograma Mínimo Viável</h3>
+    <div class="exp-sub">Ecos da Margem — Oficinas de Métodos de Estudo</div>
+  </div>
+  <div id="exp-blocos"></div>
+  <div class="exp-total">
+    <div class="exp-total-num" id="exp-total-min">—</div>
+    <div class="exp-total-label">minutos de estudo por semana</div>
+  </div>
+  <div class="exp-footer">Gerado em Ecos da Margem · "Lembre: testar, não executar perfeitamente."</div>
+</div>
 
 <script>
 let slots = [];
@@ -1362,6 +1406,16 @@ function showTab(t) {
   });
   document.querySelectorAll('.tab-panel').forEach(el => el.classList.remove('active'));
   document.getElementById('tab-' + t).classList.add('active');
+}
+
+function irParaProgramacao() {
+  showPage('landing');
+  showTab('programacao');
+  setActivePill('programacao');
+  setTimeout(() => {
+    const el = document.getElementById('tabs-anchor');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
 }
 
 // ---- ACCORDION PROGRAMAÇÃO ----
@@ -1481,8 +1535,54 @@ function gerarCMV() {
   txt += ` · Total: ${total} minutos/semana`;
   
   document.getElementById('cmv-summary').textContent = txt;
+
+  // Preencher card de exportação (oculto, usado para gerar PNG/PDF)
+  document.getElementById('exp-blocos').innerHTML = blocos.map((b, i) => `
+    <div class="exp-bloco">
+      <div class="exp-bloco-title">Bloco ${i + 1}</div>
+      <div class="exp-bloco-info">
+        📅 ${b.dia} &nbsp;·&nbsp; ⏰ ${b.hora}<br>
+        ⏱️ ${b.dur} minutos &nbsp;·&nbsp; 📚 ${b.mat}
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('exp-total-min').textContent = total + ' min';
+  
   document.getElementById('cmv-result').style.display = 'block';
   document.getElementById('cmv-result').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+async function baixarCMV(formato) {
+  const card = document.getElementById('cmv-export-card');
+  // Mover card para posição renderizável (visível mas fora da tela)
+  card.style.left = '0px';
+  card.style.top = '-9999px';
+  await new Promise(r => setTimeout(r, 80)); // aguardar render
+  try {
+    const canvas = await html2canvas(card, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+    if (formato === 'img') {
+      const link = document.createElement('a');
+      link.download = 'meu-cmv.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } else {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+      const imgData = canvas.toDataURL('image/png');
+      const pageW = pdf.internal.pageSize.getWidth();
+      const margin = 10;
+      const imgW = pageW - margin * 2;
+      const imgH = (canvas.height / canvas.width) * imgW;
+      pdf.addImage(imgData, 'PNG', margin, margin, imgW, imgH);
+      pdf.save('meu-cmv.pdf');
+    }
+  } catch(err) {
+    alert('Não foi possível gerar o arquivo. Tente novamente.');
+    console.error(err);
+  }
+  // Devolver card à posição oculta
+  card.style.left = '-9999px';
+  card.style.top = '0';
 }
 
 // ---- ROTEAMENTO POR HASH (GitHub Pages) ----
