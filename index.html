@@ -593,7 +593,8 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
   <nav class="nav-pills">
     <button id="pill-landing" class="nav-pill active" onclick="showPage('landing')">Início</button>
     <button id="pill-programacao" class="nav-pill" onclick="irParaProgramacao()">Programação</button>
-    <button id="pill-aula1" class="nav-pill" onclick="showPage('aula1')">Aula 1</button>
+   <button id="pill-aula1" class="nav-pill" onclick="showPage('aula1')">Aula 1</button>
+<button id="pill-aula2" class="nav-pill" onclick="showPage('aula2')">Aula 2</button>
   </nav>
   <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -602,7 +603,8 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 <nav class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Menu principal">
   <button class="mobile-nav-btn" id="mob-pill-landing" onclick="showPage('landing');closeMobileNav()">Início</button>
   <button class="mobile-nav-btn" id="mob-pill-programacao" onclick="irParaProgramacao();closeMobileNav()">Programação</button>
-  <button class="mobile-nav-btn" id="mob-pill-aula1" onclick="showPage('aula1');closeMobileNav()">Aula 1</button>
+ <button class="mobile-nav-btn" id="mob-pill-aula1" onclick="showPage('aula1');closeMobileNav()">Aula 1</button>
+<button class="mobile-nav-btn" id="mob-pill-aula2" onclick="showPage('aula2');closeMobileNav()">Aula 2</button>
 </nav>
 
 <!-- ========== LANDING PAGE ========== -->
@@ -632,7 +634,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
           <div class="qn-num">Encontro 1</div>
           <span class="qn-label">Você e o Tempo</span>
         </div>
-        <div class="quick-nav-item locked">
+      <div class="quick-nav-item" onclick="showPage('aula2')">
           <div class="qn-num">Encontro 2</div>
           <span class="qn-label">Como o Cérebro Grava</span>
         </div>
@@ -819,7 +821,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
             <div class="enc-ref-item">Ebbinghaus (1885) — Curva do Esquecimento · Roediger & Karpicke (2006) — Test-Enhanced Learning · BROWN et al. <em>Aprender para Valer</em>. Penso, 2018</div>
           </div>
 
-          <button class="enc-cta enc-cta-locked" disabled>Em breve</button>
+         <button class="enc-cta" onclick="showPage('aula2')">Acessar o Encontro 2</button>
         </div>
       </div>
 
@@ -1299,6 +1301,239 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
   </div>
 </div>
 
+<!-- AULA 2 PAGE -->
+<div id="page-aula2" class="page">
+  <div class="aula-header">
+    <div class="aula-header-inner">
+      <button class="back-btn" onclick="showPage('landing')">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Voltar ao Menu
+      </button>
+      <div class="aula-num-badge">ENCONTRO 2 DE 6</div>
+      <h1 class="aula-main-title">Como o Cérebro Grava</h1>
+      <p class="aula-main-sub">Memória, repetição e o que a escola nunca te ensinou</p>
+      <div class="time-pills">
+        <span class="time-pill">50 minutos</span>
+        <span class="time-pill">19h40–20h30</span>
+        <span class="time-pill">Curva de Ebbinghaus</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="aula-content">
+    <div class="bloco bloco-a1">
+      <div class="bloco-header">
+        <div class="bloco-icon bloco-icon-a1">A</div>
+        <div>
+          <strong style="font-size:15px;color:var(--slate)">Bloco A – Desafio</strong>
+          <div class="bloco-meta">19h40–19h50 · 10 minutos · Teste de 10 Palavras</div>
+        </div>
+      </div>
+      <div class="bloco-body">
+        <p class="bloco-desc">O facilitador vai ler 10 palavras em voz alta. Depois de 2 minutos conversando sobre outro assunto, você vai tentar escrever quantas lembrar. <em>Essa é a experiência visceral do esquecimento — e é ela o motor do desafio.</em></p>
+        <button class="btn-primary" onclick="showPage('jogo-memoria')">Iniciar o Teste de 10 Palavras</button>
+      </div>
+    </div>
+
+    <div class="bloco bloco-b">
+      <div class="bloco-header">
+        <div class="bloco-icon bloco-icon-b">B</div>
+        <div>
+          <strong style="font-size:15px;color:var(--slate)">Bloco B – Teoria</strong>
+          <div class="bloco-meta">19h50–20h15 · 25 minutos · Fundamentos científicos</div>
+        </div>
+      </div>
+      <div class="bloco-body">
+        <p class="bloco-desc">Agora que você viveu na pele o esquecimento, vamos entender <em>por que</em> isso acontece e o que fazer sobre ele.</p>
+
+        <div class="concept-block">
+          <h4>📉 A Curva de Ebbinghaus</h4>
+          <p>Sem revisão, esquecemos até 70% do que aprendemos em 24 horas. Cada revisão no momento certo "reseta" essa curva de declínio, tornando a memória mais duradoura.</p>
+          <div class="science-ref">📚 Ebbinghaus, 1885 — Curva do Esquecimento</div>
+        </div>
+
+        <div class="concept-block">
+          <h4>🔁 Repetição Espaçada</h4>
+          <p>O segredo não é revisar logo depois de estudar, e sim <strong>antes de esquecer completamente</strong>. Isso fortalece a memória de longo prazo muito mais do que reler o mesmo conteúdo várias vezes seguidas.</p>
+        </div>
+
+        <div class="concept-block">
+          <h4>🧠 Prática de Recuperação</h4>
+          <p>Testar a si mesmo (tentar lembrar sem olhar) é <strong>2x mais eficaz</strong> do que reler o material — mesmo que pareça mais difícil no momento.</p>
+          <div class="science-ref">📚 Roediger &amp; Karpicke, 2006 — Test-Enhanced Learning</div>
+        </div>
+
+        <div class="highlight-box">
+          <h4>Por que isso importa pra você</h4>
+          <p>Reler e sublinhar (o que a escola ensina) são as técnicas <strong>menos</strong> eficazes. Flashcards com repetição espaçada e autoteste são o que a ciência mais recomenda.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco bloco-a2">
+      <div class="bloco-header">
+        <div class="bloco-icon bloco-icon-a2">A</div>
+        <div>
+          <strong style="font-size:15px;color:var(--slate)">Bloco A – Prática</strong>
+          <div class="bloco-meta">20h15–20h30 · 15 minutos · Mini-flashcards ao vivo</div>
+        </div>
+      </div>
+      <div class="bloco-body">
+        <p class="bloco-desc">Você vai sair daqui com <strong>flashcards reais</strong> de algo que estudou nos últimos 7 dias — prontos para testar com um colega.</p>
+        <button class="btn-primary" onclick="showPage('flashcards')">Criar Meus Flashcards</button>
+      </div>
+    </div>
+
+    <div class="atividade-section">
+      <div class="atividade-header">
+        <div class="atividade-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+        </div>
+        <div>
+          <div class="atividade-title">Tarefa para casa</div>
+          <div class="atividade-sub">Antes do próximo encontro</div>
+        </div>
+      </div>
+      <div class="atividade-steps">
+        <div class="atividade-step">
+          <div class="step-n">1</div>
+          <div class="step-text"><strong>Crie 5 flashcards</strong><p>Do conteúdo mais importante que você estudou nesta semana — frente com a pergunta, verso com a resposta.</p></div>
+        </div>
+        <div class="atividade-step">
+          <div class="step-n">2</div>
+          <div class="step-text"><strong>Teste na sexta-feira</strong><p>Sem olhar a resposta antes. Anote quantos você acertou de primeira.</p></div>
+        </div>
+        <div class="atividade-step">
+          <div class="step-n">3</div>
+          <div class="step-text"><strong>Opcional: teste o Anki</strong><p>Se quiser ir além do papel, o <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener noreferrer" style="color:var(--verde);font-weight:600">Anki</a> é um app gratuito de flashcards com repetição espaçada automática — ele calcula sozinho a hora certa de te testar de novo. Para aprender a usar bem, focado em vestibular, veja <a href="https://www.youtube.com/watch?v=xcB_F1JAkcw" target="_blank" rel="noopener noreferrer" style="color:var(--verde);font-weight:600">este vídeo</a>.</p></div>
+        </div>
+      </div>
+      <div class="atividade-reflexao">
+        <div class="reflexao-title">Perguntas para reflexão — traga no próximo encontro</div>
+        <div class="reflexao-list">
+          1. Quantas palavras/flashcards você lembrou de primeira?<br>
+          2. Testar a si mesmo foi mais difícil que reler? Por quê?<br>
+          3. Que conteúdo você escolheu para os flashcards e por quê?
+        </div>
+      </div>
+    </div>
+
+    <div class="next-section">
+      <div class="next-info">
+        <h4>Próximo Encontro: 3 — Estudar Ativo</h4>
+        <p>Técnicas que a ciência aprova e as que ela reprova</p>
+      </div>
+      <button class="btn-next" disabled>Em breve</button>
+    </div>
+  </div>
+</div>
+
+<!-- JOGO: TESTE DE 10 PALAVRAS -->
+<div id="page-jogo-memoria" class="page">
+  <div class="aula-header">
+    <div class="aula-header-inner">
+      <button class="back-btn" onclick="showPage('aula2')">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Voltar ao Encontro 2
+      </button>
+      <div class="aula-num-badge">BLOCO A · DESAFIO</div>
+      <h1 class="aula-main-title">Teste de 10 Palavras</h1>
+      <p class="aula-main-sub">Confronte sua memória antes de qualquer teoria</p>
+    </div>
+  </div>
+
+  <div class="jogo-container">
+    <div id="memo-fase1" class="jogo-phase active">
+      <div class="card" style="margin-bottom:20px">
+        <h3 style="font-size:18px;color:var(--slate);margin-bottom:12px">Passo 1 — Memorize</h3>
+        <p style="font-size:14px;color:var(--slate2);margin-bottom:16px">O facilitador vai ler 10 palavras em voz alta (ou clique abaixo para revelar). Você tem 30 segundos para memorizar.</p>
+        <div id="palavras-lista" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Rio</span>
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Cadeira</span>
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Sonho</span>
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Ponte</span>
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Vela</span>
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Espelho</span>
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Trabalho</span>
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Chuva</span>
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Chave</span>
+          <span class="tag" style="background:#eff6ff;color:#1565c0">Coragem</span>
+        </div>
+        <button class="btn-primary" onclick="irParaMemoFase2()">Terminei de memorizar</button>
+      </div>
+    </div>
+
+    <div id="memo-fase2" class="jogo-phase">
+      <div class="card" style="margin-bottom:20px">
+        <h3 style="font-size:18px;color:var(--slate);margin-bottom:8px">Passo 2 — Distração</h3>
+        <p style="font-size:14px;color:var(--slate2);margin-bottom:20px">Converse com o colega ao lado por 2 minutos sobre qualquer assunto (não as palavras!). Depois, clique para tentar escrever o que lembra.</p>
+        <button class="btn-primary" onclick="irParaMemoFase3()">Já se distraiu — vamos testar</button>
+      </div>
+    </div>
+
+    <div id="memo-fase3" class="jogo-phase">
+      <div class="card" style="margin-bottom:20px">
+        <h3 style="font-size:18px;color:var(--slate);margin-bottom:12px">Passo 3 — Escreva o que lembra</h3>
+        <div class="input-group">
+          <label class="input-label">Quantas palavras você lembrou?</label>
+          <input type="number" id="memo-lembradas" class="input-field" placeholder="Ex: 4" min="0" max="10" style="max-width:160px">
+        </div>
+        <button class="btn-primary" onclick="mostrarResultadoMemo()">Ver resultado</button>
+      </div>
+      <div id="memo-resultado" style="display:none">
+        <div class="dissonancia-box">
+          <strong style="font-size:14px;color:var(--slate)">Isso é o esquecimento em ação — não é falta de estudo, é neurobiologia.</strong>
+          <p style="font-size:13px;color:var(--slate2);margin-top:6px;line-height:1.6" id="memo-texto"></p>
+        </div>
+        <button class="btn-primary" onclick="showPage('aula2')">Voltar para a teoria</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FLASHCARDS AO VIVO -->
+<div id="page-flashcards" class="page">
+  <div class="aula-header">
+    <div class="aula-header-inner">
+      <button class="back-btn" onclick="showPage('aula2')">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Voltar ao Encontro 2
+      </button>
+      <div class="aula-num-badge">BLOCO A · PRÁTICA</div>
+      <h1 class="aula-main-title">Mini-flashcards ao vivo</h1>
+      <p class="aula-main-sub">3 flashcards reais para testar com um colega</p>
+    </div>
+  </div>
+
+  <div class="jogo-container">
+    <div class="card" style="margin-bottom:20px">
+      <h3 style="font-size:18px;color:var(--slate);margin-bottom:8px">Seus flashcards</h3>
+      <p style="font-size:14px;color:var(--slate2);margin-bottom:20px">Escolha um conteúdo estudado nos últimos 7 dias. Frente = pergunta, verso = resposta.</p>
+
+      <div id="flash-slots"></div>
+      <button class="add-btn" onclick="addFlashcard()">+ Adicionar flashcard</button>
+      <button class="btn-primary" onclick="gerarFlashcards()" style="margin-top:16px">Gerar Meus Flashcards</button>
+    </div>
+
+    <div id="flash-result" style="display:none">
+      <div class="completion-banner">
+        <h3>Seus flashcards estão prontos!</h3>
+        <p id="flash-summary"></p>
+        <p style="font-size:13px;color:rgba(255,255,255,.7);margin-top:8px;margin-bottom:20px">Troque com um colega agora e testem um ao outro — sem olhar a resposta antes.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:16px">
+          <button class="btn-white" onclick="baixarFlashcardsAnki()">⬇️ Baixar para o Anki (.txt)</button>
+          <button class="btn-white" onclick="copiarFlashcards()">📋 Copiar</button>
+        </div>
+        <div style="background:rgba(255,255,255,.14);border-radius:var(--r12);padding:14px 16px;text-align:left;font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.9);margin-bottom:20px">
+          <strong>Como importar no Anki:</strong> abra o Anki → <em>Arquivo → Importar</em> → selecione o arquivo <code>meus-flashcards-anki.txt</code> baixado → em "Tipo de nota" escolha <strong>Básico</strong> e em "Campos separados por" escolha <strong>Tab</strong> → Importar. Pronto: seus flashcards viram um baralho revisável no app.
+        </div>
+        <button class="btn-white" onclick="showPage('aula2')">Voltar ao Encontro 2</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- ========== JOGO DO TEMPO ========== -->
 <div id="page-jogo" class="page">
   <div class="aula-header">
@@ -1535,7 +1770,87 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
   <div class="exp-footer">Gerado em Ecos da Margem · "Lembre: testar, não executar perfeitamente."</div>
 </div>
 
+</div>
+<!-- /.app -->
+
 <script>
+function irParaMemoFase2(){
+  document.querySelectorAll('#page-jogo-memoria .jogo-phase').forEach(el=>el.classList.remove('active'));
+  document.getElementById('memo-fase2').classList.add('active');
+}
+function irParaMemoFase3(){
+  document.querySelectorAll('#page-jogo-memoria .jogo-phase').forEach(el=>el.classList.remove('active'));
+  document.getElementById('memo-fase3').classList.add('active');
+}
+function mostrarResultadoMemo(){
+  const n = parseInt(document.getElementById('memo-lembradas').value) || 0;
+  const pct = Math.round((n/10)*100);
+  document.getElementById('memo-texto').textContent =
+    `Você lembrou ${n} de 10 palavras (${pct}%). Isso confirma a Curva de Ebbinghaus: sem repetição espaçada, esquecemos rápido — e a solução é testar-se, não reler.`;
+  document.getElementById('memo-resultado').style.display = 'block';
+}
+let flashId = 0;
+function addFlashcard(){
+  const id = flashId++;
+  const c = document.getElementById('flash-slots');
+  const d = document.createElement('div');
+  d.className = 'cmv-slot';
+  d.innerHTML = `
+    <div class="cmv-slot-title">Flashcard ${id+1}</div>
+    <div class="input-group" style="margin:0 0 10px">
+      <label class="input-label">Pergunta (frente)</label>
+      <input type="text" class="input-field" id="flash-pergunta-${id}" placeholder="Ex: O que é repetição espaçada?">
+    </div>
+    <div class="input-group" style="margin:0">
+      <label class="input-label">Resposta (verso)</label>
+      <input type="text" class="input-field" id="flash-resposta-${id}" placeholder="Ex: Revisar antes de esquecer">
+    </div>`;
+  c.appendChild(d);
+}
+let flashcardsGerados = [];
+function gerarFlashcards(){
+  flashcardsGerados = [];
+  for(let i=0;i<flashId;i++){
+    const p = document.getElementById(`flash-pergunta-${i}`);
+    const r = document.getElementById(`flash-resposta-${i}`);
+    if(p && r && p.value.trim() && r.value.trim()){
+      flashcardsGerados.push({ pergunta: p.value.trim(), resposta: r.value.trim() });
+    }
+  }
+  if(flashcardsGerados.length === 0){
+    alert('Preencha pelo menos 1 flashcard completo (pergunta e resposta) antes de gerar.');
+    return;
+  }
+  document.getElementById('flash-summary').textContent = `Você criou ${flashcardsGerados.length} flashcard(s). Bom trabalho!`;
+  document.getElementById('flash-result').style.display = 'block';
+  try{document.getElementById('flash-result').scrollIntoView({behavior:'smooth',block:'start'})}catch(e){document.getElementById('flash-result').scrollIntoView(true)}
+}
+
+// Gera um .txt (pergunta[TAB]resposta) pronto para "Arquivo > Importar" no Anki
+function baixarFlashcardsAnki(){
+  if(!flashcardsGerados.length){ alert('Gere seus flashcards primeiro.'); return; }
+  const linhas = flashcardsGerados.map(f => `${f.pergunta}\t${f.resposta}`).join('\n');
+  const blob = new Blob([linhas], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'meus-flashcards-anki.txt';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+}
+
+// Copia os flashcards para a área de transferência (alternativa a baixar o arquivo)
+async function copiarFlashcards(){
+  if(!flashcardsGerados.length){ alert('Gere seus flashcards primeiro.'); return; }
+  const texto = flashcardsGerados.map(f => `${f.pergunta}\t${f.resposta}`).join('\n');
+  try{
+    await navigator.clipboard.writeText(texto);
+    alert('Flashcards copiados! Cole num bloco de notas ou direto na importação do Anki.');
+  }catch(e){
+    alert('Não foi possível copiar automaticamente. Use o botão de baixar o arquivo .txt.');
+  }
+}
+
 let slots = [];
 let slotId = 0;
 
@@ -1550,7 +1865,7 @@ function showPage(p) {
 }
 
 function setActivePill(key) {
-  ['landing','programacao','aula1'].forEach(k => {
+  ['landing','programacao','aula1','aula2'].forEach(k => {
     const el = document.getElementById('pill-' + k);
     if (el) el.classList.remove('active');
   });
@@ -1774,7 +2089,9 @@ function rotearHash() {
   const hash = window.location.hash;
   if(hash === '#programacao') { showPage('landing'); showTab('programacao'); }
   else if(hash === '#aula1') { showPage('aula1'); }
-  else if(hash === '#metodologia') { showPage('landing'); showTab('metodologia'); }
+  else if(hash === '#metodologia') { showPage('landing'); showTab('metodologia'); 
+  }
+  else if(hash === '#aula2') { showPage('aula2'); }
 }
 window.addEventListener('hashchange', rotearHash);
 rotearHash();
@@ -1867,6 +2184,9 @@ document.addEventListener('click', function(e) {
 
 // Init
 addSlot();
+addFlashcard();
+addFlashcard();
+addFlashcard();
 
 </script>
 </body>
