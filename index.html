@@ -529,6 +529,196 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
   font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;z-index:9997;
   letter-spacing:.05em;pointer-events:none;display:none}
 .a11y-active-badge.visible{display:block}
+
+/* ===== AULA 3: Táticas de Execução ===== */
+#page-aula3 .bloco-desc,
+#page-aula3 p,
+#page-aula3 .step-desc,
+#page-aula3 .exemplo-box,
+#page-aula3 li{text-align:justify;text-align-last:left}
+
+/* INTERACTIVE ELEMENTS */
+.interactive-card{background:#f8fafc;border:1px solid var(--border);border-radius:var(--r12);padding:20px;margin-bottom:16px;transition:all .2s}
+.interactive-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
+
+/* DATA VISUALIZATION */
+.chart-container{background:#fff;border:1px solid var(--border);border-radius:var(--r12);padding:20px;margin:16px 0;position:relative}
+.chart-title{font-size:15px;font-weight:600;color:var(--slate);margin-bottom:16px;text-align:center}
+.bar-chart{display:flex;flex-direction:column;gap:10px}
+.bar-row{display:flex;align-items:center;gap:12px;font-size:13px}
+.bar-label{width:120px;text-align:right;flex-shrink:0;font-weight:500;color:var(--slate2);font-size:12px}
+.bar-track{flex:1;height:28px;background:#f1f5f9;border-radius:14px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:14px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;color:#fff;font-weight:600;font-size:12px;transition:width 1.5s ease-out;position:relative}
+.bar-fill::after{content:attr(data-label);position:absolute;right:10px;top:50%;transform:translateY(-50%);font-weight:600;font-size:11px}
+.bar-mat{background:linear-gradient(90deg,#2d6e1a,#3d8c22)}
+.bar-port{background:linear-gradient(90deg,#1a6b46,#2d8a5e)}
+.bar-quim{background:linear-gradient(90deg,#d07010,#f07820)}
+.bar-bio{background:linear-gradient(90deg,#7a9668,#aed485)}
+.bar-hist{background:linear-gradient(90deg,#3d5234,#7a9668)}
+.bar-geo{background:linear-gradient(90deg,#1e2d18,#3d5234)}
+.bar-fis{background:linear-gradient(90deg,#2563eb,#3b82f6)}
+.bar-soc{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.bar-filo{background:linear-gradient(90deg,#dc2626,#ef4444)}
+
+/* POMODORO TIMER */
+.pomodoro-container{background:linear-gradient(135deg,#fee2e2,#fef3c7);border:2px solid #f59e0b;border-radius:var(--r16);padding:28px;text-align:center;margin:20px 0}
+.pomodoro-display{font-size:64px;font-family:'Fraunces',serif;font-weight:700;color:var(--terra);margin:16px 0;font-variant-numeric:tabular-nums}
+.pomodoro-status{font-size:14px;font-weight:600;color:#92400e;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.pomodoro-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.pomo-btn{background:var(--laranja);color:#fff;border:none;padding:12px 24px;border-radius:var(--r12);font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;min-height:44px}
+.pomo-btn:hover{background:#d97706;transform:translateY(-1px)}
+.pomo-btn.secondary{background:#fff;color:#92400e;border:2px solid #f59e0b}
+.pomo-btn.secondary:hover{background:#fff8e6}
+.pomodoro-cycles{display:flex;gap:8px;justify-content:center;margin-top:16px}
+.cycle-dot{width:14px;height:14px;border-radius:50%;background:#e5e7eb;border:2px solid #f59e0b;transition:all .3s}
+.cycle-dot.active{background:#f59e0b;box-shadow:0 0 8px rgba(245,158,11,.4)}
+.cycle-dot.completed{background:#10b981;border-color:#10b981}
+.pomodoro-info{font-size:13px;color:#92400e;margin-top:12px;line-height:1.6}
+.pomo-preset-selector{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.pomo-preset-btn{background:#fff;border:2px solid #f59e0b;color:#92400e;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s}
+.pomo-preset-btn:hover{background:#fff8e6}
+.pomo-preset-btn.active{background:var(--laranja);color:#fff;border-color:var(--laranja)}
+.pomo-preset-btn:disabled{opacity:.5;cursor:not-allowed}
+.pomo-custom-inputs{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:flex-end;margin-bottom:16px;background:#fff;border-radius:var(--r12);padding:14px;border:1px solid #f5b877}
+.pomo-custom-inputs label{font-size:12px;color:#92400e;display:flex;flex-direction:column;gap:4px;font-weight:600}
+.pomo-custom-inputs input{width:70px;padding:6px 8px;border:1px solid var(--border);border-radius:var(--r8);font-size:14px;font-family:'DM Sans',sans-serif}
+
+/* FLIP CARDS */
+.flip-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0}
+.flip-card{perspective:1000px;height:180px;cursor:pointer}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg)}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:var(--r12);padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.flip-card-front{background:linear-gradient(135deg,var(--verde-light),#d0eedd);border:2px solid var(--verde-soft)}
+.flip-card-back{background:linear-gradient(135deg,#dbeafe,#eff6ff);border:2px solid #93c5fd;transform:rotateY(180deg)}
+.flip-card-front h4{font-size:16px;color:var(--verde);margin-bottom:8px}
+.flip-card-front .flip-hint{font-size:12px;color:var(--slate3);margin-top:8px}
+.flip-card-back p{font-size:14px;color:#1e3a5f;line-height:1.6}
+.flip-icon{font-size:32px;margin-bottom:8px}
+
+/* QUIZ INTERACTIVE */
+.quiz-container{background:#f8fafc;border:1px solid var(--border);border-radius:var(--r12);padding:20px;margin:16px 0}
+.quiz-question{font-size:16px;font-weight:600;color:var(--slate);margin-bottom:16px}
+.quiz-options{display:flex;flex-direction:column;gap:10px}
+.quiz-option{background:#fff;border:2px solid var(--border);border-radius:var(--r8);padding:14px 16px;cursor:pointer;transition:all .2s;font-size:14px;display:flex;align-items:center;gap:10px}
+.quiz-option:hover{border-color:var(--verde);background:var(--verde-light)}
+.quiz-option.correct{border-color:#10b981;background:#d1fae5;color:#065f46}
+.quiz-option.wrong{border-color:#ef4444;background:#fee2e2;color:#991b1b}
+.quiz-option .opt-letter{width:28px;height:28px;border-radius:50%;background:var(--verde-light);color:var(--verde);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.quiz-option.correct .opt-letter{background:#10b981;color:#fff}
+.quiz-option.wrong .opt-letter{background:#ef4444;color:#fff}
+.quiz-feedback{font-size:14px;margin-top:12px;padding:12px;border-radius:var(--r8);display:none}
+.quiz-feedback.show{display:block}
+.quiz-feedback.correct{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+.quiz-feedback.wrong{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+
+/* SITUAÇÃO DO ALUNO — TABELA */
+.situacao-table-wrap{overflow-x:auto;margin:16px 0;border-radius:var(--r12);border:1px solid var(--border)}
+.situacao-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff}
+.situacao-table thead th{background:var(--verde);color:#fff;text-align:left;padding:12px 16px;font-family:'Fraunces',serif;font-weight:700;font-size:14px}
+.situacao-table thead th:first-child{border-top-left-radius:var(--r12)}
+.situacao-table thead th:last-child{border-top-right-radius:var(--r12)}
+.situacao-table tbody td{padding:12px 16px;border-top:1px solid var(--border);color:var(--slate2);line-height:1.5}
+.situacao-table tbody tr:nth-child(even){background:var(--verde-light)}
+.situacao-table tbody td:first-child{font-weight:600;color:var(--slate)}
+
+/* PROGRESS TRACKER */
+.progress-tracker{background:var(--white);border:1px solid var(--border);border-radius:var(--r12);padding:20px;margin:16px 0}
+.progress-step{display:flex;gap:16px;position:relative;padding-bottom:20px}
+.progress-step:not(:last-child)::after{content:'';position:absolute;left:16px;top:40px;bottom:0;width:2px;background:var(--border)}
+.progress-step.completed::after{background:var(--verde)}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--slate3);flex-shrink:0;position:relative;z-index:1;transition:all .3s}
+.step-num.completed{background:var(--verde);color:#fff}
+.step-num.current{background:var(--laranja);color:#fff;box-shadow:0 0 0 4px rgba(240,120,32,.2)}
+.step-content{flex:1}
+.step-title{font-size:15px;font-weight:600;color:var(--slate);margin-bottom:4px}
+.step-desc{font-size:13px;color:var(--slate2);line-height:1.6}
+.qtd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:8px}
+.qtd-card{border-radius:var(--r12);padding:12px 10px;text-align:center;border:2px solid transparent}
+.qtd-card.q1{background:var(--verde-light);border-color:var(--verde-soft)}
+.qtd-card.q2{background:var(--laranja-light);border-color:var(--laranja)}
+.qtd-card.q3{background:var(--ouro-light);border-color:var(--ouro)}
+.qtd-num{font-family:'Fraunces',serif;font-size:22px;font-weight:700;line-height:1}
+.qtd-card.q1 .qtd-num{color:var(--verde)}
+.qtd-card.q2 .qtd-num{color:var(--laranja)}
+.qtd-card.q3 .qtd-num{color:var(--ouro)}
+.qtd-label{font-size:12px;font-weight:700;color:var(--slate);margin-top:6px}
+.qtd-desc{font-size:11px;color:var(--slate3);margin-top:2px;line-height:1.4}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag-chip{display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;white-space:nowrap}
+.tag-verde{background:var(--verde-light);color:var(--verde)}
+.tag-laranja{background:var(--laranja-light);color:var(--laranja)}
+.tag-terra{background:#fde3e0;color:#c0392b}
+.tag-muted{background:#e8ece4;color:var(--slate3);text-decoration:line-through}
+.tag-arrow{color:var(--slate3);font-weight:700;font-size:14px;align-self:center}
+.exemplo-box{font-size:12px;color:var(--slate3);margin-top:2px;font-style:italic}
+.tag-group-label{font-size:11px;color:var(--slate3);font-weight:600;text-transform:uppercase;letter-spacing:.03em;margin-top:10px;display:block}
+.ai-callout{background:var(--ouro-light);border:1px solid var(--ouro);border-radius:var(--r12);padding:10px 14px;margin-top:10px;font-size:13px;color:var(--slate2);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.ai-callout .ai-emoji{font-size:16px;flex-shrink:0}
+.ai-callout strong{color:var(--ouro)}
+
+/* SCHEDULE BUILDER */
+.schedule-builder{background:#f8fafc;border:2px solid var(--verde-soft);border-radius:var(--r16);padding:24px;margin:20px 0}
+.schedule-builder h4{font-size:16px;color:var(--verde);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.schedule-slots{display:flex;flex-direction:column;gap:12px}
+.schedule-slot{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:var(--r8);padding:12px 16px;transition:all .2s}
+.schedule-slot:hover{border-color:var(--verde2);box-shadow:0 2px 8px rgba(26,107,70,.1)}
+.slot-time{font-weight:600;color:var(--verde);font-size:14px;min-width:80px}
+.slot-input{flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--r8);font-size:14px;font-family:'DM Sans',sans-serif;color:var(--slate);background:#fff}
+.slot-input:focus{outline:none;border-color:var(--verde)}
+.slot-pomos{display:flex;gap:4px;align-items:center}
+.pomo-indicator{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);cursor:pointer;transition:all .2s}
+.pomo-indicator.active{background:var(--laranja);border-color:var(--laranja)}
+.pomo-indicator:hover{border-color:var(--laranja)}
+
+/* SCHEDULE DAY (multi-matéria) */
+.schedule-day{display:flex;flex-direction:column;gap:8px}
+.schedule-day-top{display:flex;align-items:center;justify-content:space-between}
+.schedule-day-top .slot-time{font-weight:600;color:var(--verde);font-size:14px}
+.add-materia-btn{background:var(--verde-light);color:var(--verde);border:1px solid var(--verde-soft);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;white-space:nowrap}
+.add-materia-btn:hover{background:var(--verde-soft);color:#fff}
+.add-materia-btn:disabled{opacity:.5;cursor:not-allowed;background:var(--verde-light);color:var(--verde)}
+.materia-list{display:flex;flex-direction:column;gap:8px}
+.remove-materia-btn{background:none;border:none;color:var(--slate3);cursor:pointer;font-size:16px;line-height:1;padding:4px 8px;border-radius:var(--r8);transition:all .2s;flex-shrink:0}
+.remove-materia-btn:hover{background:#fee2e2;color:#dc2626}
+
+/* DAY-COUNT COMPARISON (1x2x3 matérias por dia) */
+.daycount-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0}
+.daycount-card{border-radius:var(--r12);padding:16px;border:2px solid}
+.daycount-card h5{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.daycount-card p{font-size:13px;line-height:1.6}
+.daycount-1{background:var(--verde-light);border-color:var(--verde-soft)}
+.daycount-1 h5{color:var(--verde)}
+.daycount-1 p{color:#1e4534}
+.daycount-2{background:#eff6ff;border-color:#93c5fd}
+.daycount-2 h5{color:#2563eb}
+.daycount-2 p{color:#1e3a5f}
+.daycount-3{background:var(--laranja-light);border-color:#f5b877}
+.daycount-3 h5{color:var(--laranja)}
+.daycount-3 p{color:#7c3a0e}
+
+/* SOUND TOGGLE */
+.sound-toggle{position:fixed;bottom:24px;left:24px;z-index:999;background:var(--white);border:1px solid var(--border);border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.1);transition:all .2s}
+.sound-toggle:hover{transform:scale(1.1);box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.sound-toggle svg{width:22px;height:22px;stroke:var(--slate2);fill:none;stroke-width:2}
+
+/* ANIMATIONS */
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes slideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{animation:slideIn .5s ease-out}
+.pulse{animation:pulse 2s infinite}
+
+/* RESPONSIVE */
+@media(max-width:599px){
+  .bar-label{width:80px;font-size:11px}
+  .flip-card{height:160px}
+  .pomodoro-display{font-size:48px}
+  .schedule-slot{flex-direction:column;align-items:stretch;gap:8px}
+  .slot-time{min-width:auto}
+}
+
+
 </style>
 </head>
 <body>
@@ -607,6 +797,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
     <button id="pill-programacao" class="nav-pill" onclick="irParaProgramacao()">Programação</button>
    <button id="pill-aula1" class="nav-pill" onclick="showPage('aula1')">Aula 1</button>
 <button id="pill-aula2" class="nav-pill" onclick="showPage('aula2')">Aula 2</button>
+<button id="pill-aula3" class="nav-pill" onclick="showPage('aula3')">Aula 3</button>
   </nav>
   <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -617,6 +808,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
   <button class="mobile-nav-btn" id="mob-pill-programacao" onclick="irParaProgramacao();closeMobileNav()">Programação</button>
  <button class="mobile-nav-btn" id="mob-pill-aula1" onclick="showPage('aula1');closeMobileNav()">Aula 1</button>
 <button class="mobile-nav-btn" id="mob-pill-aula2" onclick="showPage('aula2');closeMobileNav()">Aula 2</button>
+<button class="mobile-nav-btn" id="mob-pill-aula3" onclick="showPage('aula3');closeMobileNav()">Aula 3</button>
 </nav>
 
 <!-- ========== LANDING PAGE ========== -->
@@ -650,9 +842,9 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
           <div class="qn-num">Encontro 2</div>
           <span class="qn-label">Como o Cérebro Grava</span>
         </div>
-        <div class="quick-nav-item locked">
+        <div class="quick-nav-item" onclick="showPage('aula3')">
           <div class="qn-num">Encontro 3</div>
-          <span class="qn-label">Estudar Ativo</span>
+          <span class="qn-label">Táticas de Execução</span>
         </div>
         <div class="quick-nav-item locked">
           <div class="qn-num">Encontro 4</div>
@@ -840,9 +1032,9 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
       <!-- ENCONTRO 3 -->
       <div class="enc-card" id="enc-3">
         <div class="enc-header" onclick="toggleEnc(3)">
-          <div class="enc-badge" style="background:#fffde7;color:#f57f17">3</div>
+          <div class="enc-badge" style="background:#dcfce7;color:#166534">3</div>
           <div class="enc-meta">
-            <div class="enc-num" style="color:#f57f17">Encontro 3 · Em breve</div>
+            <div class="enc-num" style="color:#166534">Encontro 3 · Disponível agora</div>
             <div class="enc-title">Estudar Ativo — Técnicas que a Ciência Aprova (e as que ela Reprova)</div>
             <div class="enc-base">Dunlosky et al. (2013) · Prática Distribuída · Elaboração Interrogativa</div>
           </div>
@@ -895,7 +1087,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
             <div class="enc-ref-item">Dunlosky et al. (2013) — <em>Psychological Science in the Public Interest</em> · BROWN et al. <em>Aprender para Valer</em>. Penso, 2018 · Gollwitzer (1999) — Implementation Intentions</div>
           </div>
 
-          <button class="enc-cta enc-cta-locked" disabled>Em breve</button>
+          <button class="enc-cta" onclick="showPage('aula3')">Acessar o Encontro 3</button>
         </div>
       </div>
 
@@ -1508,8 +1700,648 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 
     <div class="next-section">
       <div class="next-info">
-        <h4>Próximo Encontro: 3 — Estudar Ativo</h4>
-        <p>Técnicas que a ciência aprova e as que ela reprova</p>
+        <h4>Próximo Encontro: 3 — Táticas de Execução</h4>
+        <p>Pomodoro, estudo invertido e organização por bloco temático</p>
+      </div>
+      <button class="btn-next" onclick="showPage('aula3')">Acessar →</button>
+    </div>
+  </div>
+</div>
+
+<div id="page-aula3" class="page">
+<!-- AULA HEADER -->
+<div class="aula-header">
+  <div class="aula-header-inner">
+    <button class="back-btn" onclick="showPage('landing')">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Voltar ao Menu
+    </button>
+    <div class="aula-num-badge">AULA 3 DE 6</div>
+    <h1 class="aula-main-title">Táticas de Execução e Gestão do Tempo</h1>
+    <p class="aula-main-sub">Do planejamento à ação: Pomodoro, estudo invertido e priorização baseada em dados reais do ENEM (2009–2024)</p>
+    <div class="time-pills">
+      <span class="time-pill">⏱️ 50 min totais</span>
+      <span class="time-pill">🎯 3 técnicas principais</span>
+      <span class="time-pill">📊 Dados reais do ENEM</span>
+      <span class="time-pill">🔊 Áudio inclusivo</span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="aula-content">
+
+  <!-- BLOCO A1: DESAFIO -->
+  <div class="bloco bloco-a1 animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-a1">A1</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Desafio: O que realmente cai no ENEM?</h3>
+        <div class="bloco-meta">10 minutos • Dados: Toda Matéria, com base em pesquisas do Sistema Poliedro e da Plataforma SAS</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+      <p class="bloco-desc">
+        Antes de estudar, você precisa saber <strong>o que</strong> estudar dentro de cada matéria. O Toda Matéria mapeou, disciplina por disciplina, 
+        quais temas mais aparecem nas provas do ENEM. A surpresa? Em quase todas elas, um único tema concentra entre 18% e 33% das questões: 
+        dominar só esse assunto já muda o resultado — e como cada pessoa tem uma matéria mais fraca diferente, vale conferir todas.
+      </p>
+
+      <div class="chart-container">
+        <div class="chart-title">📊 Peso do tema-âncora de cada matéria (% das questões da disciplina)</div>
+        <div class="bar-chart" id="enemChart">
+          <div class="bar-row">
+            <div class="bar-label">Português</div>
+            <div class="bar-track"><div class="bar-fill bar-port" style="width:0%" data-value="33.3" data-label="33,3%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Física</div>
+            <div class="bar-track"><div class="bar-fill bar-fis" style="width:0%" data-value="30.9" data-label="30,9%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Sociologia</div>
+            <div class="bar-track"><div class="bar-fill bar-soc" style="width:0%" data-value="28.6" data-label="28,6%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Química</div>
+            <div class="bar-track"><div class="bar-fill bar-quim" style="width:0%" data-value="27.0" data-label="27,0%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Matemática</div>
+            <div class="bar-track"><div class="bar-fill bar-mat" style="width:0%" data-value="22.5" data-label="22,5%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Biologia</div>
+            <div class="bar-track"><div class="bar-fill bar-bio" style="width:0%" data-value="19.5" data-label="19,5%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Filosofia</div>
+            <div class="bar-track"><div class="bar-fill bar-filo" style="width:0%" data-value="18.8" data-label="18,8%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Geografia</div>
+            <div class="bar-track"><div class="bar-fill bar-geo" style="width:0%" data-value="18.1" data-label="18,1%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">História</div>
+            <div class="bar-track"><div class="bar-fill bar-hist" style="width:0%" data-value="17.7" data-label="17,7%"></div></div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--slate3);text-align:center;margin-top:12px">
+          💡 <strong>Insight:</strong> em <strong>Português</strong> (Interpretação de textos) e <strong>Física</strong> (Mecânica), um único tema já responde por 
+          quase 1/3 das questões da matéria. São os "temas-âncora" com melhor custo-benefício para quem tem pouco tempo — mas repare no gráfico completo: 
+          toda disciplina tem o seu.
+        </p>
+      </div>
+
+      <div class="interactive-card">
+        <h4 style="font-size:15px;color:var(--slate);margin-bottom:12px">🎯 Teste rápido: Qual sua área mais fraca?</h4>
+        <p style="font-size:14px;color:var(--slate2);margin-bottom:16px">Cada pessoa tem uma matéria mais fraca diferente — por isso trouxemos as 9 disciplinas do ENEM. Clique na sua e veja os 3 temas que mais aparecem nela:</p>
+        <div class="flip-card-grid" id="areaCards">
+          <div class="flip-card" onclick="flipCard(this, 'mat')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">📐</div>
+                <h4>Matemática</h4>
+                <span class="flip-hint">Clique para revelar os top 3</span>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Top 3 temas:</strong><br>1. Geometria (22,5%)<br>2. Equação do 1º e 2º grau (17%)<br>3. Escalas, razão e proporção (14,2%)</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="flipCard(this, 'port')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">📖</div>
+                <h4>Português</h4>
+                <span class="flip-hint">Clique para revelar os top 3</span>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Top 3 temas:</strong><br>1. Interpretação de textos (33,3%)<br>2. Tendências contemporâneas (28%)<br>3. Estrutura e formação das palavras (21%)</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="flipCard(this, 'quim')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">🧪</div>
+                <h4>Química</h4>
+                <span class="flip-hint">Clique para revelar os top 3</span>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Top 3 temas:</strong><br>1. Físico-Química (27%)<br>2. Química Geral (26,8%)<br>3. Química Orgânica (19,2%)</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="flipCard(this, 'bio')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">🧬</div>
+                <h4>Biologia</h4>
+                <span class="flip-hint">Clique para revelar os top 3</span>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Top 3 temas:</strong><br>1. Humanidade e ambiente (19,5%)<br>2. Citologia (11,5%)<br>3. Histologia e fisiologia (11,5%)</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="flipCard(this, 'hist')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">🏛️</div>
+                <h4>História</h4>
+                <span class="flip-hint">Clique para revelar os top 3</span>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Top 3 temas:</strong><br>1. Idade Contemporânea (17,7%)<br>2. 2ª Guerra Mundial e consequências (13,6%)<br>3. Brasil Colônia (12,7%)</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="flipCard(this, 'geo')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">🌎</div>
+                <h4>Geografia</h4>
+                <span class="flip-hint">Clique para revelar os top 3</span>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Top 3 temas:</strong><br>1. Geografia Agrária (18,1%)<br>2. Questões Ambientais (15,5%)<br>3. Geografia Física (10,9%)</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="flipCard(this, 'fis')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">⚛️</div>
+                <h4>Física</h4>
+                <span class="flip-hint">Clique para revelar os top 3</span>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Top 3 temas:</strong><br>1. Mecânica (30,9%)<br>2. Eletricidade e Energia (25,8%)<br>3. Ondulatória (18%)</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="flipCard(this, 'soc')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">👥</div>
+                <h4>Sociologia</h4>
+                <span class="flip-hint">Clique para revelar os top 3</span>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Top 3 temas:</strong><br>1. Sociologia contemporânea (28,6%)<br>2. Mundo do trabalho (21,9%)<br>3. Cultura e indústria cultural (12,9%)</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="flipCard(this, 'filo')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">🦉</div>
+                <h4>Filosofia</h4>
+                <span class="flip-hint">Clique para revelar os top 3</span>
+              </div>
+              <div class="flip-card-back">
+                <p><strong>Top 3 temas:</strong><br>1. Aristóteles e escola helenística (18,8%)<br>2. Racionalismo moderno (18,8%)<br>3. Ética e Justiça (18,7%)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--slate3);margin-top:12px">Fonte: Toda Matéria — dados do Sistema Poliedro e da Plataforma SAS.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO B: TEORIA -->
+  <div class="bloco bloco-b animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-b">B</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Teoria: Três táticas de execução</h3>
+        <div class="bloco-meta">25 minutos • Baseado em evidências científicas</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+
+      <!-- TÉCNICA 1: POMODORO -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🍅</span> Técnica 1: Pomodoro — O poder do foco fragmentado
+        </h4>
+        <p class="bloco-desc">
+          O cérebro humano tem um limite de atenção sustentada: cerca de <strong>20-30 minutos</strong>. 
+          Após isso, a produtividade cai drasticamente. A técnica Pomodoro explora esse limite biológico 
+          ao dividir o estudo em ciclos intensos, seguidos de pausas estratégicas — mas o tempo ideal de cada ciclo muda 
+          conforme o que você está fazendo: <strong>aprendendo algo novo, resolvendo exercícios ou revisando</strong>.
+        </p>
+
+        <div class="daycount-grid">
+          <div class="daycount-card daycount-1">
+            <h5>🍅 Clássico — 25/5/15-20</h5>
+            <p>25 min foco, 5 min pausa curta, 15-20 min pausa longa a cada 4 blocos. Ideal para quem se distrai fácil, iniciantes, e para <strong>revisões rápidas</strong> (rodar vários temas do Anki sem cansar).</p>
+          </div>
+          <div class="daycount-card daycount-2">
+            <h5>⏱️ Estendido — 50/10/20-30</h5>
+            <p>50 min foco, 10 min pausa curta, 20-30 min pausa longa a cada 2-3 blocos. Ideal para conteúdo denso e para <strong>fazer exercícios/questões</strong> (fase de estudo invertido), quando você precisa de mais tempo pra entrar no problema.</p>
+          </div>
+          <div class="daycount-card daycount-3">
+            <h5>🧩 3 Blocos — variável</h5>
+            <p>Blocos de 15-20 / 20-30 / 10-15 min, com 5-10 min entre eles e 20-30 min de pausa longa ao final da sequência. Pensado a partir de como o cérebro aprende: ideal para <strong>aprender conteúdo totalmente novo</strong>.</p>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--slate3);margin:-4px 0 16px">Fonte: modelos de Pomodoro para estudo (ufpel.edu, estudeplan, napratica.org). Escolha um modelo abaixo ou monte o seu em "Personalizado".</p>
+
+        <div class="pomodoro-container">
+          <div class="pomo-preset-selector" id="pomoPresetSelector">
+            <button type="button" class="pomo-preset-btn active" data-preset="classico" onclick="setPomoPreset('classico')">Clássico</button>
+            <button type="button" class="pomo-preset-btn" data-preset="estendido" onclick="setPomoPreset('estendido')">Estendido</button>
+            <button type="button" class="pomo-preset-btn" data-preset="blocos3" onclick="setPomoPreset('blocos3')">3 Blocos</button>
+            <button type="button" class="pomo-preset-btn" data-preset="custom" onclick="setPomoPreset('custom')">Personalizado</button>
+          </div>
+          <div class="pomo-custom-inputs" id="pomoCustomInputs" style="display:none">
+            <label>Foco (min)<input type="number" id="customFoco" min="5" max="90" value="25"></label>
+            <label>Pausa curta (min)<input type="number" id="customPausa" min="1" max="30" value="5"></label>
+            <label>Pausa longa (min)<input type="number" id="customLonga" min="5" max="60" value="15"></label>
+            <button type="button" class="pomo-btn secondary" onclick="applyCustomPomo()">Aplicar</button>
+          </div>
+          <div class="pomodoro-status" id="pomoStatus">Pronto para começar? (Modelo: Clássico)</div>
+          <div class="pomodoro-display" id="pomoTimer">25:00</div>
+          <div class="pomodoro-controls">
+            <button class="pomo-btn" id="pomoStart" onclick="startPomodoro()">▶️ Iniciar ciclo</button>
+            <button class="pomo-btn secondary" id="pomoPause" onclick="pausePomodoro()" disabled>⏸️ Pausar</button>
+            <button class="pomo-btn secondary" onclick="resetPomodoro()">🔄 Reiniciar</button>
+          </div>
+          <div class="pomodoro-cycles" id="pomoCycles">
+            <div class="cycle-dot" data-cycle="1"></div>
+            <div class="cycle-dot" data-cycle="2"></div>
+            <div class="cycle-dot" data-cycle="3"></div>
+            <div class="cycle-dot" data-cycle="4"></div>
+          </div>
+          <div class="pomodoro-info" id="pomoInfo">
+            <strong>Como funciona:</strong> 25 min foco → 5 min pausa. Após 4 ciclos, faça uma pausa longa (15 min). 
+            Ideal para quem trabalha ou tem rotina fragmentada — não precisa de blocos enormes de tempo livre!
+          </div>
+        </div>
+
+        <div style="background:#eff6ff;border-left:4px solid #3b82f6;padding:14px 18px;border-radius:0 var(--r8) var(--r8) 0;margin-top:16px">
+          <p style="font-size:14px;color:#1e3a5f;line-height:1.7">
+            <strong>💡 Dica prática:</strong> Se você só tem 1 hora por dia, faça <strong>2 pomodoros</strong> (50 min efetivos). 
+            Em uma semana, são 350 minutos de estudo focado — equivalente a quase 6 horas de estudo "normal" cheio de distrações.
+          </p>
+        </div>
+      </div>
+
+      <!-- TÉCNICA 2: ESTUDO INVERTIDO -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🔄</span> Técnica 2: Estudo Invertido — Testar antes de estudar
+        </h4>
+        <p class="bloco-desc">
+          Pesquisa da <strong>USP</strong>: quem testa antes de estudar a teoria chega a <strong style="color:var(--verde)">49,49%</strong> de aproveitamento — contra <strong style="color:var(--laranja)">36,17%</strong> no método tradicional. 13 pontos de diferença no ENEM. 🎯
+        </p>
+
+        <div class="progress-tracker">
+          <h4 style="font-size:15px;color:var(--slate);margin-bottom:16px">📋 O ciclo do estudo invertido:</h4>
+
+          <div class="progress-step completed">
+            <div class="step-num completed">1</div>
+            <div class="step-content">
+              <div class="step-title">Mapear temas de maior peso</div>
+              <div class="step-desc">📊 Tabela do ENEM (Bloco A1) → liste os <strong>3 temas mais cobrados</strong> da sua área fraca</div>
+            </div>
+          </div>
+
+          <div class="progress-step completed">
+            <div class="step-num completed">2</div>
+            <div class="step-content">
+              <div class="step-title">Testar sem estudar antes</div>
+              <div class="step-desc">Sem abrir teoria. Escolha a dose certa:</div>
+              <div class="qtd-grid">
+                <div class="qtd-card q1">
+                  <div class="qtd-num">3-5</div>
+                  <div class="qtd-label">Sondagem</div>
+                  <div class="qtd-desc">tema que quase não viu</div>
+                </div>
+                <div class="qtd-card q2">
+                  <div class="qtd-num">6-10</div>
+                  <div class="qtd-label">Avaliação</div>
+                  <div class="qtd-desc">medir domínio de 1 tema</div>
+                </div>
+                <div class="qtd-card q3">
+                  <div class="qtd-num">10-15</div>
+                  <div class="qtd-label">Diagnóstico</div>
+                  <div class="qtd-desc">disciplina inteira</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="progress-step current">
+            <div class="step-num current">3</div>
+            <div class="step-content">
+              <div class="step-title">Classificar por domínio e por erro</div>
+              <span class="tag-group-label">Nível</span>
+              <div class="tag-row">
+                <span class="tag-chip tag-verde">✅ Domina</span>
+                <span class="tag-chip tag-laranja">🔶 Precisa revisar</span>
+                <span class="tag-chip tag-terra">🆘 Começar do zero</span>
+              </div>
+              <span class="tag-group-label">Por que errei?</span>
+              <div class="tag-row">
+                <span class="tag-chip tag-terra">Não sabia</span>
+                <span class="tag-chip tag-terra">Confundi</span>
+                <span class="tag-chip tag-laranja">Li rápido demais</span>
+                <span class="tag-chip tag-laranja">Falta de atenção</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="progress-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <div class="step-title">Estudar SÓ os pontos fracos</div>
+              <div class="step-desc">Ordem de prioridade no tempo de estudo:</div>
+              <div class="tag-row" style="align-items:center">
+                <span class="tag-chip tag-terra">1º 🆘 Começar do zero</span>
+                <span class="tag-arrow">→</span>
+                <span class="tag-chip tag-laranja">2º 🔶 Precisa revisar</span>
+                <span class="tag-arrow">→</span>
+                <span class="tag-chip tag-muted">✅ Domina (pula)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="progress-step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <div class="step-title">Reaplicar e repetir</div>
+              <div class="step-desc">🔁 1-2 questões parecidas com as que errou → ainda travou? Manda pro <strong>Anki</strong> (Aula 2)</div>
+              <div class="ai-callout">
+                <span class="ai-emoji">🤖</span>
+                <span><strong>IA como apoio:</strong> organiza seus erros por tipo e aponta o subtema exato pra revisar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TÉCNICA 3: BLOCO TEMÁTICO -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🧩</span> Técnica 3: Bloco Temático — Um tema por vez
+        </h4>
+        <p class="bloco-desc">
+          Alternar entre assuntos diferentes sem necessidade gera um "custo de troca cognitiva" — seu cérebro precisa 
+          "recalibrar" a cada mudança, desperdiçando energia. A solução: <strong>blocos dedicados a um único tema</strong>, 
+          priorizado pelos dados do ENEM.
+        </p>
+
+        <div class="situacao-table-wrap">
+          <table class="situacao-table">
+            <thead>
+              <tr>
+                <th>Situação do aluno</th>
+                <th>O que fazer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nunca estudou o tema</td>
+                <td>Fazer 3–5 questões para sondar familiaridade</td>
+              </tr>
+              <tr>
+                <td>Já teve contato, mas não sabe o nível</td>
+                <td>Fazer 6–10 questões para medir domínio</td>
+              </tr>
+              <tr>
+                <td>Quer montar plano de estudos da disciplina inteira</td>
+                <td>Fazer blocos de questões por tema</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="quiz-container">
+          <div class="quiz-question">❓ Qual organização é mais eficiente para quem tem pouco tempo?</div>
+          <div class="quiz-options" id="quizBloco">
+            <div class="quiz-option" onclick="checkAnswer(this, false)">
+              <span class="opt-letter">A</span>
+              <span>Estudar 30 min de Matemática, 30 min de História, 30 min de Biologia no mesmo dia</span>
+            </div>
+            <div class="quiz-option" onclick="checkAnswer(this, true)">
+              <span class="opt-letter">B</span>
+              <span>Segunda: 2 blocos de Proporcionalidade (Matemática). Terça: 2 blocos de Brasil Colonial (História)</span>
+            </div>
+            <div class="quiz-option" onclick="checkAnswer(this, false)">
+              <span class="opt-letter">C</span>
+              <span>Revisar um pouco de cada matéria todos os dias, igual na escola</span>
+            </div>
+          </div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+        </div>
+
+        <div style="margin-top:20px">
+          <h4 style="font-size:16px;color:var(--slate);margin-bottom:8px;display:flex;align-items:center;gap:8px">
+            <span style="font-size:22px">🤔</span> Mas e se eu estudar 2 ou 3 matérias no mesmo dia?
+          </h4>
+          <p class="bloco-desc">
+            A resposta do quiz acima não significa que estudar mais de uma matéria por dia seja sempre errado. Há duas forças em jogo: o 
+            <strong>custo de troca cognitiva</strong> (que o bloco temático evita) e o <strong>efeito de intercalação</strong> ("interleaving"), 
+            que também tem respaldo científico — a alternância entre temas parecidos ajuda o cérebro a diferenciá-los, o que reforça a memória de longo prazo. 
+            Qual pesa mais depende da fase em que você está.
+          </p>
+          <div class="daycount-grid">
+            <div class="daycount-card daycount-1">
+              <h5>🟢 1 matéria/dia</h5>
+              <p>Melhor para <strong>aprender conteúdo novo ou complexo</strong>: foco profundo, sem custo de troca. Com pouco tempo disponível, 2-3 pomodoros no mesmo tema rendem mais do que 1 pomodoro em 3 temas diferentes.</p>
+            </div>
+            <div class="daycount-card daycount-2">
+              <h5>🔵 2 matérias/dia</h5>
+              <p>Bom equilíbrio quando você já passou da fase inicial de aprendizado: evita ficar dias sem revisar outras matérias, sem fragmentar demais a atenção.</p>
+            </div>
+            <div class="daycount-card daycount-3">
+              <h5>🟠 3 matérias/dia</h5>
+              <p>Funciona melhor na <strong>fase de revisão</strong>, com conteúdo já estudado ao menos uma vez. Alternar temas parecidos (Física e Matemática, por exemplo) fortalece a discriminação entre conceitos. No aprendizado inicial, porém, costuma cansar mais e render menos.</p>
+            </div>
+          </div>
+          <p class="bloco-desc" style="margin-top:4px">
+            <strong>Na prática:</strong> comece a semana com blocos de 1 tema por dia enquanto o conteúdo ainda é novo. Nas últimas semanas antes da prova, 
+            migre aos poucos para 2-3 matérias por dia, alternando temas que você já revisou pelo menos uma vez. É por isso que o construtor de cronograma 
+            (Bloco A2) permite adicionar mais de uma matéria por dia.
+          </p>
+        </div>
+      </div>
+
+      <!-- LEMBRETE ANKI -->
+      <div style="background:linear-gradient(135deg,#e8f5ee,#d0eedd);border-radius:var(--r12);padding:18px 20px;margin-top:16px;border-left:4px solid var(--verde)">
+        <p style="font-size:14px;color:#1e4534;line-height:1.7">
+          <strong>🧠 Lembrete da Aula 2:</strong> O Anki e o caderno de erros digital continuam sendo suas ferramentas de revisão de longo prazo. 
+          O que muda agora é <em>o que</em> alimentar neles: os temas que você identificou como <strong>difíceis</strong> no estudo invertido.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO A2: PRÁTICA -->
+  <div class="bloco bloco-a2 animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-a2">A2</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Prática: Monte sua semana de estudos</h3>
+        <div class="bloco-meta">15 minutos • Aplicando as 3 técnicas</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+      <p class="bloco-desc">
+        Agora é sua vez. Use o construtor abaixo para montar uma semana real de estudos, aplicando Pomodoro + Bloco Temático + Estudo Invertido. 
+        Cada "bolinha" representa um pomodoro (25 min de foco). Lembra da seção anterior? Se algum dia pedir 2 ou 3 matérias, use o botão 
+        <strong>"+ matéria"</strong> — o construtor permite até 3 por dia.
+      </p>
+
+      <div class="schedule-builder">
+        <h4>🗓️ Construtor de Cronograma Semanal</h4>
+        <div class="schedule-slots">
+          <div class="schedule-day">
+            <div class="schedule-day-top">
+              <div class="slot-time">Segunda</div>
+              <button type="button" class="add-materia-btn" data-day="seg" onclick="addMateria('seg')">+ matéria</button>
+            </div>
+            <div class="materia-list" id="segList">
+              <div class="schedule-slot">
+                <input type="text" class="slot-input" placeholder="Ex: Proporcionalidade (Matemática)">
+                <div class="slot-pomos">
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <span style="font-size:12px;color:var(--slate3)">pomodoros</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-day">
+            <div class="schedule-day-top">
+              <div class="slot-time">Terça</div>
+              <button type="button" class="add-materia-btn" data-day="ter" onclick="addMateria('ter')">+ matéria</button>
+            </div>
+            <div class="materia-list" id="terList">
+              <div class="schedule-slot">
+                <input type="text" class="slot-input" placeholder="Ex: Brasil Colônia (História)">
+                <div class="slot-pomos">
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <span style="font-size:12px;color:var(--slate3)">pomodoros</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-day">
+            <div class="schedule-day-top">
+              <div class="slot-time">Quarta</div>
+              <button type="button" class="add-materia-btn" data-day="qua" onclick="addMateria('qua')">+ matéria</button>
+            </div>
+            <div class="materia-list" id="quaList">
+              <div class="schedule-slot">
+                <input type="text" class="slot-input" placeholder="Ex: Interpretação de textos (Português)">
+                <div class="slot-pomos">
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <span style="font-size:12px;color:var(--slate3)">pomodoros</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-day">
+            <div class="schedule-day-top">
+              <div class="slot-time">Quinta</div>
+              <button type="button" class="add-materia-btn" data-day="qui" onclick="addMateria('qui')">+ matéria</button>
+            </div>
+            <div class="materia-list" id="quiList">
+              <div class="schedule-slot">
+                <input type="text" class="slot-input" placeholder="Ex: Revisão + Anki">
+                <div class="slot-pomos">
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <span style="font-size:12px;color:var(--slate3)">pomodoros</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-day">
+            <div class="schedule-day-top">
+              <div class="slot-time">Sexta</div>
+              <button type="button" class="add-materia-btn" data-day="sex" onclick="addMateria('sex')">+ matéria</button>
+            </div>
+            <div class="materia-list" id="sexList">
+              <div class="schedule-slot">
+                <input type="text" class="slot-input" placeholder="Ex: Teste simulado (Estudo Invertido)">
+                <div class="slot-pomos">
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <span style="font-size:12px;color:var(--slate3)">pomodoros</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-day">
+            <div class="schedule-day-top">
+              <div class="slot-time">Sábado</div>
+              <button type="button" class="add-materia-btn" data-day="sab" onclick="addMateria('sab')">+ matéria</button>
+            </div>
+            <div class="materia-list" id="sabList">
+              <div class="schedule-slot">
+                <input type="text" class="slot-input" placeholder="Ex: Revisão leve + descanso">
+                <div class="slot-pomos">
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <div class="pomo-indicator" onclick="togglePomo(this)"></div>
+                  <span style="font-size:12px;color:var(--slate3)">pomodoros</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding:14px;background:#fff;border-radius:var(--r8);border:1px solid var(--border)">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+            <span style="font-size:14px;font-weight:600;color:var(--slate)">📊 Total da semana:</span>
+            <span style="font-size:20px;font-weight:700;color:var(--verde)" id="totalPomos">0 pomodoros = 0 min focados</span>
+          </div>
+          <p style="font-size:12px;color:var(--slate3);margin-top:6px">Incluindo pausas de 5 min: aprox. <strong id="totalTime">0h 0min</strong> de compromisso total</p>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#fff8e6,#fef3c7);border:2px solid #f59e0b;border-radius:var(--r16);padding:24px;margin-top:24px">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px">📝 Tarefa de Casa — Estudo Invertido</h4>
+        <ol style="font-size:14px;color:var(--slate2);line-height:1.8;padding-left:20px">
+          <li>Escolha <strong>1 tema prioritário</strong> da sua área mais fraca (use os dados do ENEM)
+            <div class="exemplo-box">Ex: Matemática é sua área mais fraca e "Funções" é o tema que mais cai → comece por ele</div>
+          </li>
+          <li style="margin-top:10px">Teste <strong>sem estudar antes</strong>, na dose certa: nunca viu o tema → 3-5 questões. Já teve algum contato → 6-10
+            <div class="exemplo-box">Ex: nunca estudou Genética → resolva 3-5 questões de Genética sem abrir o livro antes</div>
+          </li>
+          <li style="margin-top:10px">Classifique cada questão por <strong>nível</strong> (<span class="tag-chip tag-verde" style="padding:2px 8px;font-size:11px">✅ Domina</span> / <span class="tag-chip tag-laranja" style="padding:2px 8px;font-size:11px">🔶 Revisar</span> / <span class="tag-chip tag-terra" style="padding:2px 8px;font-size:11px">🆘 Zero</span>) e, se errou, pelo <strong>motivo</strong>
+            <div class="exemplo-box">Ex: acertou "no chute" e não sabe explicar → classifica como 🔶 Precisa revisar, motivo "confundi conceitos"</div>
+          </li>
+          <li style="margin-top:10px">Monte seu cronograma da semana usando o construtor acima, priorizando 🆘 e 🔶
+            <div class="exemplo-box">Ex: "Funções" ficou 🆘 → reserve 2 pomodoros a mais nela essa semana</div>
+          </li>
+          <li style="margin-top:10px">Anote os erros no <strong>Anki</strong> ou caderno digital (Aula 2), sempre com o motivo do erro
+            <div class="exemplo-box">Ex: cartão do Anki com a pergunta que errou + "motivo: li rápido demais"</div>
+          </li>
+          <li style="margin-top:10px">Na <strong>Aula 4</strong>, traga: quantos pomodoros você cumpriu de fato vs. o planejado
+            <div class="exemplo-box">Ex: planejou 8 pomodoros na semana, cumpriu 6 → traga esse número, sem julgamento</div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+    <div class="next-section">
+      <div class="next-info">
+        <h4>Próximo Encontro: 4 — Foco e Cansaço</h4>
+        <p>Em breve</p>
       </div>
       <button class="btn-next" disabled>Em breve</button>
     </div>
@@ -1861,6 +2693,14 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
   <div class="exp-footer">Gerado em Ecos da Margem · "Lembre: testar, não executar perfeitamente."</div>
 </div>
 
+<!-- SOUND TOGGLE -->
+<div class="sound-toggle" id="soundToggle" onclick="toggleSound()" title="Ativar/desativar sons">
+  <svg viewBox="0 0 24 24" id="soundIcon">
+    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+  </svg>
+</div>
+
 </div>
 <!-- /.app -->
 
@@ -2031,7 +2871,7 @@ function showPage(p) {
 }
 
 function setActivePill(key) {
-  ['landing','programacao','aula1','aula2'].forEach(k => {
+  ['landing','programacao','aula1','aula2','aula3'].forEach(k => {
     const el = document.getElementById('pill-' + k);
     if (el) el.classList.remove('active');
   });
@@ -2258,6 +3098,7 @@ function rotearHash() {
   else if(hash === '#metodologia') { showPage('landing'); showTab('metodologia'); 
   }
   else if(hash === '#aula2') { showPage('aula2'); }
+  else if(hash === '#aula3') { showPage('aula3'); }
 }
 window.addEventListener('hashchange', rotearHash);
 rotearHash();
@@ -2345,6 +3186,406 @@ document.addEventListener('click', function(e) {
     nav.classList.remove('open');
     btn.classList.remove('open');
     btn.setAttribute('aria-expanded', 'false');
+  }
+});
+
+
+// ========== AULA 3: Táticas de Execução e Gestão do Tempo ==========
+// ===================== CHART ANIMATION =====================
+function animateChart() {
+  const bars = document.querySelectorAll('.bar-fill');
+  const maxValue = 33.3;
+  bars.forEach((bar, index) => {
+    const value = parseFloat(bar.dataset.value);
+    const percentage = (value / maxValue) * 100;
+    setTimeout(() => {
+      bar.style.width = percentage + '%';
+    }, index * 150);
+  });
+}
+
+// ===================== FLIP CARDS =====================
+function flipCard(card, area) {
+  card.classList.toggle('flipped');
+  playSound('flip');
+}
+
+// ===================== POMODORO TIMER =====================
+let pomoPreset = 'classico';
+let pomoSchedule = [];
+let pomoIndex = 0;
+let pomoTime = 0;
+let pomoInterval = null;
+let pomoRunning = false;
+
+function buildSchedule(preset) {
+  const F = (min, label) => ({ type: 'foco', sec: Math.round(min * 60), label: label || 'Foco' });
+  const B = (min) => ({ type: 'pausa', sec: Math.round(min * 60), label: 'Pausa curta' });
+  const L = (min) => ({ type: 'longa', sec: Math.round(min * 60), label: 'Pausa longa' });
+
+  if (preset === 'estendido') {
+    return [F(50), B(10), F(50), B(10), F(50), L(25)];
+  }
+  if (preset === 'blocos3') {
+    return [F(18, 'Bloco 1'), B(7), F(25, 'Bloco 2'), B(7), F(12, 'Bloco 3'), L(25)];
+  }
+  if (preset === 'custom') {
+    const foco = Math.min(90, Math.max(5, parseInt(document.getElementById('customFoco').value) || 25));
+    const pausa = Math.min(30, Math.max(1, parseInt(document.getElementById('customPausa').value) || 5));
+    const longa = Math.min(60, Math.max(5, parseInt(document.getElementById('customLonga').value) || 15));
+    return [F(foco), B(pausa), F(foco), B(pausa), F(foco), B(pausa), F(foco), L(longa)];
+  }
+  // classico (padrão)
+  return [F(25), B(5), F(25), B(5), F(25), B(5), F(25), L(15)];
+}
+
+function focoCountInSchedule(schedule) {
+  return schedule.filter(s => s.type === 'foco').length;
+}
+
+function dotIndexForSegment(idx) {
+  let n = 0;
+  for (let i = 0; i <= idx; i++) {
+    if (pomoSchedule[i].type === 'foco') n++;
+  }
+  return n;
+}
+
+function rebuildCycleDots() {
+  const total = focoCountInSchedule(pomoSchedule);
+  let html = '';
+  for (let i = 1; i <= total; i++) {
+    html += '<div class="cycle-dot" data-cycle="' + i + '"></div>';
+  }
+  document.getElementById('pomoCycles').innerHTML = html;
+}
+
+function presetLabel(preset) {
+  return { classico: 'Clássico', estendido: 'Estendido', blocos3: '3 Blocos', custom: 'Personalizado' }[preset] || preset;
+}
+
+function statusTextFor(seg) {
+  if (seg.type === 'foco') return '🔥 ' + seg.label + ' — foco total!';
+  if (seg.type === 'longa') return '🎉 Sequência completa! Pausa longa';
+  return '☕ Pausa curta';
+}
+
+function updatePomoInfo() {
+  const s = pomoSchedule;
+  const focoMin = Math.round(s.find(x => x.type === 'foco').sec / 60);
+  const curtaSeg = s.find(x => x.type === 'pausa');
+  const curtaMin = curtaSeg ? Math.round(curtaSeg.sec / 60) : 0;
+  const longaSeg = s.find(x => x.type === 'longa');
+  const longaMin = longaSeg ? Math.round(longaSeg.sec / 60) : 0;
+  const info = document.getElementById('pomoInfo');
+  if (pomoPreset === 'blocos3') {
+    info.innerHTML = '<strong>Como funciona:</strong> 3 blocos de foco com durações diferentes (18 → 25 → 12 min), pausas curtas de ' + curtaMin + ' min entre eles, e uma pausa longa de ' + longaMin + ' min ao final da sequência. Ideal para conteúdo totalmente novo.';
+  } else {
+    const totalFocos = focoCountInSchedule(s);
+    info.innerHTML = '<strong>Como funciona:</strong> ' + focoMin + ' min foco → ' + curtaMin + ' min pausa. Após ' + totalFocos + ' ciclos, faça uma pausa longa (' + longaMin + ' min).';
+  }
+}
+
+function setPomoPreset(preset) {
+  if (pomoRunning) return;
+  pomoPreset = preset;
+  document.querySelectorAll('.pomo-preset-btn').forEach(b => b.classList.toggle('active', b.dataset.preset === preset));
+  document.getElementById('pomoCustomInputs').style.display = preset === 'custom' ? 'flex' : 'none';
+  pomoSchedule = buildSchedule(preset);
+  pomoIndex = 0;
+  pomoTime = pomoSchedule[0].sec;
+  rebuildCycleDots();
+  updatePomoDisplay();
+  updatePomoInfo();
+  document.getElementById('pomoStatus').textContent = 'Pronto para começar? (Modelo: ' + presetLabel(preset) + ')';
+}
+
+function applyCustomPomo() {
+  if (pomoRunning) return;
+  setPomoPreset('custom');
+  playSound('click');
+}
+
+function updatePomoDisplay() {
+  const minutes = Math.floor(pomoTime / 60);
+  const seconds = pomoTime % 60;
+  document.getElementById('pomoTimer').textContent = 
+    String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+}
+
+function startPomodoro() {
+  if (pomoRunning) return;
+  pomoRunning = true;
+  document.getElementById('pomoStart').disabled = true;
+  document.getElementById('pomoPause').disabled = false;
+  document.querySelectorAll('.pomo-preset-btn').forEach(b => b.disabled = true);
+
+  const seg = pomoSchedule[pomoIndex];
+  document.getElementById('pomoStatus').textContent = statusTextFor(seg);
+  if (seg.type === 'foco') {
+    const dot = document.querySelector('.cycle-dot[data-cycle="' + dotIndexForSegment(pomoIndex) + '"]');
+    if (dot) dot.classList.add('active');
+  }
+
+  pomoInterval = setInterval(() => {
+    pomoTime--;
+    updatePomoDisplay();
+
+    if (pomoTime <= 0) {
+      clearInterval(pomoInterval);
+      pomoRunning = false;
+      playSound('complete');
+
+      const finishedSeg = pomoSchedule[pomoIndex];
+      if (finishedSeg.type === 'foco') {
+        const dot = document.querySelector('.cycle-dot[data-cycle="' + dotIndexForSegment(pomoIndex) + '"]');
+        if (dot) dot.classList.add('completed');
+      }
+
+      pomoIndex = (pomoIndex + 1) % pomoSchedule.length;
+      if (pomoIndex === 0) {
+        document.querySelectorAll('.cycle-dot').forEach(d => d.classList.remove('active', 'completed'));
+      }
+
+      const nextSeg = pomoSchedule[pomoIndex];
+      pomoTime = nextSeg.sec;
+      if (nextSeg.type === 'foco') {
+        const dot = document.querySelector('.cycle-dot[data-cycle="' + dotIndexForSegment(pomoIndex) + '"]');
+        if (dot) dot.classList.add('active');
+      }
+
+      document.getElementById('pomoStatus').textContent = statusTextFor(nextSeg);
+      updatePomoDisplay();
+      document.getElementById('pomoStart').disabled = false;
+      document.getElementById('pomoPause').disabled = true;
+      document.querySelectorAll('.pomo-preset-btn').forEach(b => b.disabled = false);
+    }
+  }, 1000);
+}
+
+function pausePomodoro() {
+  if (!pomoRunning) return;
+  clearInterval(pomoInterval);
+  pomoRunning = false;
+  document.getElementById('pomoStart').disabled = false;
+  document.getElementById('pomoPause').disabled = true;
+  document.querySelectorAll('.pomo-preset-btn').forEach(b => b.disabled = false);
+  document.getElementById('pomoStatus').textContent = '⏸️ Pausado — clique em Iniciar para continuar';
+}
+
+function resetPomodoro() {
+  clearInterval(pomoInterval);
+  pomoRunning = false;
+  pomoIndex = 0;
+  pomoTime = pomoSchedule[0].sec;
+  updatePomoDisplay();
+  document.getElementById('pomoStart').disabled = false;
+  document.getElementById('pomoPause').disabled = true;
+  document.querySelectorAll('.pomo-preset-btn').forEach(b => b.disabled = false);
+  document.getElementById('pomoStatus').textContent = 'Pronto para começar? (Modelo: ' + presetLabel(pomoPreset) + ')';
+  document.querySelectorAll('.cycle-dot').forEach(d => {
+    d.classList.remove('active', 'completed');
+  });
+}
+
+// ===================== QUIZ =====================
+function checkAnswer(option, isCorrect) {
+  const container = option.parentElement;
+  const feedback = container.nextElementSibling;
+
+  container.querySelectorAll('.quiz-option').forEach(opt => {
+    opt.style.pointerEvents = 'none';
+    if (opt === option) {
+      opt.classList.add(isCorrect ? 'correct' : 'wrong');
+    } else if (!isCorrect && opt.onclick.toString().includes('true')) {
+      opt.classList.add('correct');
+    }
+  });
+
+  feedback.classList.add('show');
+  feedback.classList.add(isCorrect ? 'correct' : 'wrong');
+
+  if (isCorrect) {
+    feedback.innerHTML = '✅ <strong>Correto!</strong> Blocos temáticos evitam o custo cognitivo de troca entre assuntos. Focar em um tema por dia (ou por bloco de pomodoros) é mais eficiente que fragmentar a atenção.';
+    playSound('correct');
+  } else {
+    feedback.innerHTML = '❌ <strong>Quase!</strong> Alternar entre matérias no mesmo dia gera "custo de troca cognitiva". A resposta correta é a <strong>B</strong>: dedicar blocos inteiros a um único tema, priorizado pelos dados do ENEM.';
+    playSound('wrong');
+  }
+}
+
+// ===================== SCHEDULE BUILDER =====================
+const MAX_MATERIAS_POR_DIA = 3;
+
+function addMateria(day) {
+  const list = document.getElementById(day + 'List');
+  const count = list.querySelectorAll('.schedule-slot').length;
+  if (count >= MAX_MATERIAS_POR_DIA) return;
+
+  const slot = document.createElement('div');
+  slot.className = 'schedule-slot';
+  slot.innerHTML =
+    '<input type="text" class="slot-input" placeholder="Ex: outra matéria/tema">' +
+    '<div class="slot-pomos">' +
+      '<div class="pomo-indicator" onclick="togglePomo(this)"></div>' +
+      '<div class="pomo-indicator" onclick="togglePomo(this)"></div>' +
+      '<div class="pomo-indicator" onclick="togglePomo(this)"></div>' +
+      '<span style="font-size:12px;color:var(--slate3)">pomodoros</span>' +
+    '</div>' +
+    '<button type="button" class="remove-materia-btn" onclick="removeMateria(this)" title="Remover matéria">✕</button>';
+
+  list.appendChild(slot);
+  updateAddButtonState(day);
+  playSound('click');
+}
+
+function removeMateria(button) {
+  const slot = button.closest('.schedule-slot');
+  const list = slot.parentElement;
+  const day = list.id.replace('List', '');
+  slot.remove();
+  updateTotal();
+  updateAddButtonState(day);
+  playSound('click');
+}
+
+function updateAddButtonState(day) {
+  const list = document.getElementById(day + 'List');
+  const btn = document.querySelector('.add-materia-btn[data-day="' + day + '"]');
+  if (!list || !btn) return;
+  const count = list.querySelectorAll('.schedule-slot').length;
+  if (count >= MAX_MATERIAS_POR_DIA) {
+    btn.disabled = true;
+    btn.textContent = 'Máx. 3/dia';
+  } else {
+    btn.disabled = false;
+    btn.textContent = '+ matéria';
+  }
+}
+
+function togglePomo(indicator) {
+  indicator.classList.toggle('active');
+  updateTotal();
+  playSound('click');
+}
+
+function updateTotal() {
+  const activePomos = document.querySelectorAll('.pomo-indicator.active').length;
+  const minutes = activePomos * 25;
+  const totalMinutes = activePomos * 30; // 25 foco + 5 pausa
+
+  document.getElementById('totalPomos').textContent = 
+    activePomos + ' pomodoro' + (activePomos !== 1 ? 's' : '') + ' = ' + minutes + ' min focados';
+
+  const hours = Math.floor(totalMinutes / 60);
+  const mins = totalMinutes % 60;
+  document.getElementById('totalTime').textContent = 
+    hours + 'h ' + mins + 'min';
+}
+
+// ===================== SOUND =====================
+let soundEnabled = false;
+
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  const icon = document.getElementById('soundIcon');
+  if (soundEnabled) {
+    icon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+    playSound('click');
+  } else {
+    icon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+  }
+}
+
+function playSound(type) {
+  if (!soundEnabled) return;
+
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  switch(type) {
+    case 'click':
+      osc.frequency.value = 800;
+      gain.gain.value = 0.1;
+      osc.start();
+      osc.stop(ctx.currentTime + 0.05);
+      break;
+    case 'flip':
+      osc.frequency.value = 600;
+      gain.gain.value = 0.1;
+      osc.start();
+      osc.frequency.exponentialRampToValueAtTime(900, ctx.currentTime + 0.15);
+      osc.stop(ctx.currentTime + 0.15);
+      break;
+    case 'correct':
+      osc.frequency.value = 523;
+      gain.gain.value = 0.15;
+      osc.start();
+      setTimeout(() => {
+        osc.frequency.value = 659;
+      }, 100);
+      setTimeout(() => {
+        osc.frequency.value = 784;
+      }, 200);
+      osc.stop(ctx.currentTime + 0.4);
+      break;
+    case 'wrong':
+      osc.frequency.value = 300;
+      gain.gain.value = 0.1;
+      osc.start();
+      osc.frequency.exponentialRampToValueAtTime(150, ctx.currentTime + 0.3);
+      osc.stop(ctx.currentTime + 0.3);
+      break;
+    case 'complete':
+      osc.frequency.value = 440;
+      gain.gain.value = 0.15;
+      osc.start();
+      setTimeout(() => { osc.frequency.value = 554; }, 150);
+      setTimeout(() => { osc.frequency.value = 659; }, 300);
+      setTimeout(() => { osc.frequency.value = 880; }, 450);
+      osc.stop(ctx.currentTime + 0.7);
+      break;
+  }
+}
+
+
+// ===================== AULA 3: INIT =====================
+document.addEventListener('DOMContentLoaded', function() {
+  const observer3 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateChart();
+        observer3.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const chart3 = document.getElementById('enemChart');
+  if (chart3) observer3.observe(chart3);
+
+  const animObserver3 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  });
+
+  document.querySelectorAll('#page-aula3 .animate-in').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    animObserver3.observe(el);
+  });
+
+  // Inicializar cronograma/pomodoro da aula 3
+  if (document.getElementById('pomoTimer')) {
+    setPomoPreset('classico');
   }
 });
 
