@@ -537,6 +537,13 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 #page-aula3 .exemplo-box,
 #page-aula3 li{text-align:justify;text-align-last:left}
 
+/* ===== AULA 4: Foco, Atenção e o Cérebro Sobrecarregado ===== */
+#page-aula4 .bloco-desc,
+#page-aula4 p,
+#page-aula4 .step-desc,
+#page-aula4 .exemplo-box,
+#page-aula4 li{text-align:justify;text-align-last:left}
+
 /* INTERACTIVE ELEMENTS */
 .interactive-card{background:#f8fafc;border:1px solid var(--border);border-radius:var(--r12);padding:20px;margin-bottom:16px;transition:all .2s}
 .interactive-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
@@ -697,6 +704,42 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 .daycount-3 h5{color:var(--laranja)}
 .daycount-3 p{color:#7c3a0e}
 
+/* TESTE DA DISTRAÇÃO */
+.distracao-wrap{position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--r12);padding:24px;margin:16px 0;overflow:hidden}
+.distracao-texto{font-size:15px;color:var(--slate2);line-height:1.8;text-align:justify;text-align-last:left}
+.distracao-notif{position:absolute;top:14px;right:-260px;width:230px;background:#fff;border:1px solid var(--border);border-radius:var(--r12);padding:12px 14px;box-shadow:0 6px 20px rgba(0,0,0,.15);display:flex;gap:10px;align-items:flex-start;animation:notifSlide 6s ease-in-out infinite;z-index:2}
+.distracao-notif-icon{width:32px;height:32px;border-radius:var(--r8);background:#25D366;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.distracao-notif-body{font-size:12px;line-height:1.4}
+.distracao-notif-title{font-weight:700;color:var(--slate);margin-bottom:2px}
+.distracao-notif-msg{color:var(--slate3)}
+@keyframes notifSlide{0%,12%{right:-260px;opacity:0}22%,68%{right:14px;opacity:1}78%,100%{right:-260px;opacity:0}}
+@media(max-width:699px){.distracao-notif{width:200px;font-size:11px}}
+.distracao-legenda{font-size:12px;color:var(--slate3);margin-top:10px;font-style:italic}
+
+/* RESPIRAÇÃO 6-2-6 (adaptado do Guia do Aplicador) */
+.breath-widget{background:linear-gradient(135deg,#ede9fe,#f5f3ff);border:2px solid #8b5cf6;border-radius:var(--r16);padding:28px;text-align:center;margin:20px 0}
+.breath-circle{width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#a78bfa);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;padding:12px;transition:transform 6s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 20px rgba(139,92,246,.35)}
+.breath-circle.inhale,.breath-circle.hold{transform:scale(1.35)}
+.breath-circle.exhale{transform:scale(1)}
+.breath-status{font-size:14px;font-weight:600;color:#5b21b6;margin-bottom:4px}
+.breath-cycles{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.breath-dot{width:14px;height:14px;border-radius:50%;background:#e5e7eb;border:2px solid #8b5cf6;transition:all .3s}
+.breath-dot.active{background:#8b5cf6;box-shadow:0 0 8px rgba(139,92,246,.4)}
+.breath-dot.completed{background:#10b981;border-color:#10b981}
+.breath-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.breath-btn{background:#8b5cf6;color:#fff;border:none;padding:12px 24px;border-radius:var(--r12);font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;min-height:44px}
+.breath-btn:hover{background:#7c3aed;transform:translateY(-1px)}
+.breath-btn.secondary{background:#fff;color:#5b21b6;border:2px solid #8b5cf6}
+.breath-btn.secondary:hover{background:#f5f3ff}
+
+/* PROTOCOLO DE FOCO */
+.protocolo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.protocolo-field label{font-size:13px;font-weight:600;color:var(--slate);margin-bottom:6px;display:block}
+.toggle-chip{background:#fff;border:2px solid var(--border);color:var(--slate2);border-radius:20px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.toggle-chip:hover{border-color:var(--verde2)}
+.toggle-chip.active{background:var(--verde);border-color:var(--verde);color:#fff}
+@media(max-width:599px){.protocolo-grid{grid-template-columns:1fr}}
+
 /* SOUND TOGGLE */
 .sound-toggle{position:fixed;bottom:24px;left:24px;z-index:999;background:var(--white);border:1px solid var(--border);border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.1);transition:all .2s}
 .sound-toggle:hover{transform:scale(1.1);box-shadow:0 4px 16px rgba(0,0,0,.15)}
@@ -798,6 +841,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
    <button id="pill-aula1" class="nav-pill" onclick="showPage('aula1')">Aula 1</button>
 <button id="pill-aula2" class="nav-pill" onclick="showPage('aula2')">Aula 2</button>
 <button id="pill-aula3" class="nav-pill" onclick="showPage('aula3')">Aula 3</button>
+<button id="pill-aula4" class="nav-pill" onclick="showPage('aula4')">Aula 4</button>
   </nav>
   <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -809,6 +853,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
  <button class="mobile-nav-btn" id="mob-pill-aula1" onclick="showPage('aula1');closeMobileNav()">Aula 1</button>
 <button class="mobile-nav-btn" id="mob-pill-aula2" onclick="showPage('aula2');closeMobileNav()">Aula 2</button>
 <button class="mobile-nav-btn" id="mob-pill-aula3" onclick="showPage('aula3');closeMobileNav()">Aula 3</button>
+ <button class="mobile-nav-btn" id="mob-pill-aula4" onclick="showPage('aula4');closeMobileNav()">Aula 4</button>
 </nav>
 
 <!-- ========== LANDING PAGE ========== -->
@@ -846,7 +891,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
           <div class="qn-num">Encontro 3</div>
           <span class="qn-label">Táticas de Execução</span>
         </div>
-        <div class="quick-nav-item locked">
+        <div class="quick-nav-item" onclick="showPage('aula4')">
           <div class="qn-num">Encontro 4</div>
           <span class="qn-label">Foco e Cansaço</span>
         </div>
@@ -1096,7 +1141,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
         <div class="enc-header" onclick="toggleEnc(4)">
           <div class="enc-badge" style="background:#e8f5e9;color:#2e7d32">4</div>
           <div class="enc-meta">
-            <div class="enc-num" style="color:#2e7d32">Encontro 4 · Em breve</div>
+            <div class="enc-num" style="color:#2e7d32">Encontro 4 · Disponível agora</div>
             <div class="enc-title">Foco, Atenção e o Cérebro Sobrecarregado — Como Estudar Quando Está Cansado</div>
             <div class="enc-base">Carga Cognitiva · Multitasking · Sono e Consolidação da Memória</div>
           </div>
@@ -1149,7 +1194,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
             <div class="enc-ref-item">WALKER, M. <em>Por Que Dormimos</em>. Intrínseca, 2018 · Sweller (1988) — Carga Cognitiva · Ward et al. (2017) — Brain Drain · Rubinstein et al. (2001) — Switching Cost</div>
           </div>
 
-          <button class="enc-cta enc-cta-locked" disabled>Em breve</button>
+          <button class="enc-cta" onclick="showPage('aula4')">Acessar o Encontro 4</button>
         </div>
       </div>
 
@@ -2341,6 +2386,318 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
     <div class="next-section">
       <div class="next-info">
         <h4>Próximo Encontro: 4 — Foco e Cansaço</h4>
+        <p>Como estudar bem quando a cabeça já não ajuda mais</p>
+      </div>
+      <button class="btn-next" onclick="showPage('aula4')">Ir para o Encontro 4 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- AULA 4 PAGE -->
+<div id="page-aula4" class="page">
+<!-- AULA HEADER -->
+<div class="aula-header">
+  <div class="aula-header-inner">
+    <button class="back-btn" onclick="showPage('landing')">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Voltar ao Menu
+    </button>
+    <div class="aula-num-badge">AULA 4 DE 6</div>
+    <h1 class="aula-main-title">Foco, Atenção e o Cérebro Sobrecarregado</h1>
+    <p class="aula-main-sub">Como estudar quando está cansado: o mito do multitasking, os limites da carga cognitiva e o papel do sono na memória</p>
+    <div class="time-pills">
+      <span class="time-pill">⏱️ 50 min totais</span>
+      <span class="time-pill">🧠 Carga Cognitiva</span>
+      <span class="time-pill">😴 Sono + Memória</span>
+      <span class="time-pill">🌬️ Prática de foco</span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="aula-content">
+
+  <!-- BLOCO A1: DESAFIO -->
+  <div class="bloco bloco-a1 animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-a1">A1</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Desafio: O Teste da Distração</h3>
+        <div class="bloco-meta">10 minutos • Leitura com estímulo concorrente</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+      <p class="bloco-desc">
+        Leia o parágrafo abaixo com atenção — ele é do tipo que cai em Ciências Humanas no ENEM. Depois, responda as 3 perguntas sem
+        voltar ao texto. Só que tem um detalhe: enquanto você lê, uma notificação vai aparecer do lado, do jeito que apareceria no
+        celular de verdade. Não precisa clicar nela — só deixe ela acontecer.
+      </p>
+
+      <div class="distracao-wrap">
+        <div class="distracao-notif">
+          <div class="distracao-notif-icon">💬</div>
+          <div class="distracao-notif-body">
+            <div class="distracao-notif-title">Grupo da Turma</div>
+            <div class="distracao-notif-msg">alguém enviou uma mensagem agora há pouco...</div>
+          </div>
+        </div>
+        <p class="distracao-texto">
+          A urbanização acelerada no Brasil ao longo do século XX deu origem ao fenômeno que estudiosos chamam de "cidade partida":
+          de um lado, bairros com infraestrutura completa e valorização imobiliária constante; de outro, periferias que cresceram
+          sem planejamento, dependentes de longos deslocamentos até o trabalho e com acesso precário a serviços públicos. Segundo o
+          IBGE, mais de 84% da população brasileira vive hoje em áreas urbanas — mas essa urbanização não veio acompanhada de
+          investimento proporcional em mobilidade, saneamento e moradia. O resultado é uma segregação socioespacial que reproduz,
+          no espaço da cidade, as mesmas desigualdades presentes na estrutura social do país.
+        </p>
+        <p class="distracao-legenda">👆 Percebeu a notificação passando? Mesmo sem clicar nela, uma parte da sua atenção já foi embora com ela.</p>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-question">❓ 1. Segundo o texto, qual porcentagem da população brasileira vive em áreas urbanas?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! O texto cita <strong>mais de 84%</strong>, não 60%.')">
+            <span class="opt-letter">A</span><span>Mais de 60%</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, true, '✅ <strong>Correto!</strong> O texto cita o dado do IBGE: mais de 84% da população vive em áreas urbanas.', '')">
+            <span class="opt-letter">B</span><span>Mais de 84%</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! O texto cita <strong>mais de 84%</strong>, não 95%.')">
+            <span class="opt-letter">C</span><span>Mais de 95%</span>
+          </div>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-question">❓ 2. O texto atribui a "cidade partida" principalmente a quê?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="checkQuizFoco(this, true, '✅ <strong>Correto!</strong> O texto é direto: a urbanização não veio acompanhada de investimento proporcional em mobilidade, saneamento e moradia.', '')">
+            <span class="opt-letter">A</span><span>Falta de investimento proporcional em mobilidade, saneamento e moradia</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! O texto não menciona clima como causa — a causa apontada é a falta de investimento proporcional em infraestrutura.')">
+            <span class="opt-letter">B</span><span>Condições climáticas das regiões metropolitanas</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! O texto não fala em crescimento populacional excessivo, e sim em falta de investimento proporcional.')">
+            <span class="opt-letter">C</span><span>Crescimento populacional excessivo</span>
+          </div>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-question">❓ 3. O que o texto quer dizer com "segregação socioespacial"?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! O texto não trata de faixa etária.')">
+            <span class="opt-letter">A</span><span>A separação de bairros por faixa etária da população</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! O texto não fala de divisão política entre municípios.')">
+            <span class="opt-letter">B</span><span>A divisão política entre municípios vizinhos</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, true, '✅ <strong>Correto!</strong> É exatamente isso: a cidade reproduz no espaço as mesmas desigualdades da estrutura social do país.', '')">
+            <span class="opt-letter">C</span><span>A reprodução, no espaço da cidade, das desigualdades sociais do país</span>
+          </div>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#fee2e2,#fef2f2);border-left:4px solid #dc2626;border-radius:0 var(--r8) var(--r8) 0;padding:16px 20px;margin-top:8px">
+        <p style="font-size:14px;color:#7f1d1d;line-height:1.7">
+          <strong>🎯 O ponto do exercício:</strong> mesmo essa notificação simples já disputa parte da sua atenção enquanto você lia — e
+          isso acontece com qualquer estímulo concorrente, sonoro ou visual. Em condições reais de estudo, com várias abas abertas e o
+          celular ao lado, essa perda de precisão tende a ser bem maior.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO B: TEORIA -->
+  <div class="bloco bloco-b animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-b">B</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Teoria: O cérebro sobrecarregado</h3>
+        <div class="bloco-meta">25 minutos • Multitasking, carga cognitiva e sono</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+
+      <!-- MULTITASKING -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🔀</span> O mito do multitasking
+        </h4>
+        <p class="bloco-desc">
+          O cérebro não realiza duas tarefas cognitivas complexas ao mesmo tempo — ele <strong>alterna</strong> rapidamente entre elas,
+          e cada troca tem um custo. Rubinstein, Meyer e Evans (2001) mediram esse custo em laboratório: alternar entre tarefas pode
+          derrubar em até <strong style="color:#dc2626">40%</strong> a velocidade e a precisão, na comparação com fazer uma coisa de
+          cada vez. "Estudar assistindo série" não é fazer duas coisas ao mesmo tempo — é fazer as duas pela metade.
+        </p>
+      </div>
+
+      <!-- BRAIN DRAIN -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">📱</span> O celular do lado já cobra um preço
+        </h4>
+        <p class="bloco-desc">
+          Ward et al. (2017) testaram algo simples: pediram para as pessoas resolverem tarefas de raciocínio com o celular em cima da
+          mesa (desligado, virado para baixo), no bolso, ou em outra sala. O desempenho caiu progressivamente conforme o celular
+          ficava mais perto — <strong>mesmo sem tocar nele, sem notificação, sem olhar</strong>. Uma parte da atenção fica ocupada
+          resistindo à vontade de checá-lo.
+        </p>
+        <div class="accent-block-blue">
+          <div class="block-title">💡 Na prática</div>
+          <p style="font-size:14px;color:#1e3a5f">Não basta silenciar o celular — o efeito só cai de verdade quando ele sai da sua vista, de preferência em outro cômodo.</p>
+        </div>
+      </div>
+
+      <!-- CARGA COGNITIVA -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🧠</span> Carga cognitiva: sua memória de trabalho tem limite
+        </h4>
+        <p class="bloco-desc">
+          Sweller (1988) descreveu a <strong>Teoria da Carga Cognitiva</strong>: a memória de trabalho — onde você processa
+          informação nova — consegue segurar só um punhado de itens por vez. Quando o ambiente exige atenção extra (barulho,
+          interrupções, trocar de assunto o tempo todo), sobra menos espaço mental para realmente aprender o conteúdo.
+        </p>
+        <div class="accent-block-purple">
+          <div class="block-title">🧩 Analogia</div>
+          <p style="font-size:14px;color:#4527a0">Pense na memória de trabalho como a bancada de uma cozinha pequena: dá para cozinhar bem com poucos itens por vez. Encher a bancada de coisas (abas, grupos, avisos) não aumenta o espaço — só atrapalha o prato que está sendo feito.</p>
+        </div>
+      </div>
+
+      <!-- SONO -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">😴</span> Sono: a etapa final do aprendizado
+        </h4>
+        <p class="bloco-desc">
+          Walker (2017) mostra que aprender não termina quando você fecha o caderno: é <strong>durante o sono</strong> que o cérebro
+          consolida o que foi estudado, transferindo memórias para um armazenamento mais estável. Virar a noite estudando troca
+          justamente a etapa que fixa o conteúdo — o resultado costuma ser lembrar menos, não mais.
+        </p>
+        <div class="accent-block">
+          <div class="block-title">🌙 Micro-descanso</div>
+          <p style="font-size:14px;color:#1e4534">Se bateu o cansaço no meio do estudo, uma pausa curta (mesmo sem dormir) já ajuda o cérebro a "dar descarga" antes de continuar — é melhor do que insistir cansado e reter pouco.</p>
+        </div>
+      </div>
+
+      <!-- RESPIRAÇÃO 6-2-6 -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🌬️</span> Um jeito de "resetar" o foco: respiração 6-2-6
+        </h4>
+        <p class="bloco-desc">
+          Antes de forçar a concentração, vale acalmar o corpo — a respiração guiada é uma das estratégias mais usadas para reduzir
+          a agitação mental e trazer a atenção de volta para o presente. Um roteiro simples e com respaldo em programas de habilidades
+          socioemocionais (adaptado do <em>Guia do Aplicador</em>): inspire pelo nariz contando até 6, segure por 2 segundos, expire
+          contando até 6. Repita por 5 respirações antes de começar o bloco de estudo.
+        </p>
+
+        <div class="breath-widget">
+          <div class="breath-circle" id="breathCircle"><span id="breathLabel">Pronto?</span></div>
+          <div class="breath-status" id="breathStatus">5 respirações • cerca de 70 segundos</div>
+          <div class="breath-cycles" id="breathCycles">
+            <div class="breath-dot" data-cycle="1"></div>
+            <div class="breath-dot" data-cycle="2"></div>
+            <div class="breath-dot" data-cycle="3"></div>
+            <div class="breath-dot" data-cycle="4"></div>
+            <div class="breath-dot" data-cycle="5"></div>
+          </div>
+          <div class="breath-controls">
+            <button type="button" class="breath-btn" id="breathStart" onclick="startBreathing()">▶️ Iniciar respiração 6-2-6</button>
+            <button type="button" class="breath-btn secondary" onclick="resetBreathing()">🔄 Reiniciar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-question">❓ Por que só silenciar o celular não elimina o efeito descrito por Ward et al. (2017)?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="checkQuizFoco(this, true, '✅ <strong>Correto!</strong> O estudo mostrou queda de desempenho mesmo com o aparelho desligado e virado para baixo — a proximidade visual já ocupa parte da atenção.', '')">
+            <span class="opt-letter">A</span><span>Porque a simples proximidade visual do celular já consome parte da atenção, mesmo sem notificações</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! O estudo não avaliou a bateria — o fator testado foi a distância física do aparelho.')">
+            <span class="opt-letter">B</span><span>Porque o celular continua gastando bateria em segundo plano</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! Mesmo sem tocar no aparelho, o desempenho já cai — não é uma questão de força de vontade em não mexer nele.')">
+            <span class="opt-letter">C</span><span>Porque as pessoas sempre acabam mexendo nele de qualquer jeito</span>
+          </div>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO A2: PRÁTICA -->
+  <div class="bloco bloco-a2 animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-a2">A2</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Prática: Protocolo de 20 Minutos</h3>
+        <div class="bloco-meta">15 minutos • Construindo seu ritual pessoal de foco</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+      <p class="bloco-desc">
+        Um protocolo pessoal reduz a energia gasta decidindo "como" estudar, sobrando mais atenção para o conteúdo em si. Preencha
+        abaixo o seu — e use a respiração 6-2-6 do Bloco B como ritual de entrada antes de começar.
+      </p>
+
+      <div class="interactive-card">
+        <h4 style="font-size:15px;color:var(--slate);margin-bottom:12px">📋 Meu Protocolo de 20 Minutos</h4>
+        <div class="protocolo-grid">
+          <div class="protocolo-field">
+            <label>Onde vou estudar</label>
+            <input type="text" class="slot-input" placeholder="Ex: mesa da cozinha, depois que todos dormirem">
+          </div>
+          <div class="protocolo-field">
+            <label>O que vou estudar</label>
+            <input type="text" class="slot-input" placeholder="Ex: Funções (Matemática) — tema 🆘">
+          </div>
+        </div>
+
+        <div style="margin-top:16px">
+          <span class="tag-group-label">O que vou desligar ou avisar</span>
+          <div class="tag-row">
+            <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">📵 Notificações do celular</button>
+            <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">🗂️ Abas do navegador</button>
+            <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">📺 TV ou rádio</button>
+            <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">🗣️ Avisar quem mora comigo</button>
+          </div>
+        </div>
+
+        <div style="margin-top:16px">
+          <span class="tag-group-label">Qual técnica vou usar (Aula 3)</span>
+          <div class="tag-row">
+            <button type="button" class="pomo-preset-btn" onclick="selectTecnica(this)">🍅 Pomodoro</button>
+            <button type="button" class="pomo-preset-btn" onclick="selectTecnica(this)">🔄 Estudo Invertido</button>
+            <button type="button" class="pomo-preset-btn" onclick="selectTecnica(this)">🧩 Bloco Temático</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#fff8e6,#fef3c7);border:2px solid #f59e0b;border-radius:var(--r16);padding:24px;margin-top:24px">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px">📝 Tarefa de Casa</h4>
+        <ol style="font-size:14px;color:var(--slate2);line-height:1.8;padding-left:20px">
+          <li>Aplique o <strong>Protocolo de 20 Minutos</strong> pelo menos 3× nesta semana, sempre começando com a respiração 6-2-6
+            <div class="exemplo-box">Ex: segunda, quarta e sexta, antes do primeiro bloco de estudo do dia</div>
+          </li>
+          <li style="margin-top:10px">Registre, sem julgamento, o que funcionou e o que atrapalhou em cada tentativa
+            <div class="exemplo-box">Ex: "consegui desligar as notificações, mas a TV ligada na sala ainda distraiu"</div>
+          </li>
+          <li style="margin-top:10px">Observe como estava sua energia e seu sono nos dias em que aplicou o protocolo
+            <div class="exemplo-box">Ex: "dormi pouco na terça e o foco caiu bastante na quarta"</div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+    <div class="next-section">
+      <div class="next-info">
+        <h4>Próximo Encontro: 5 — Ansiedade e Motivação</h4>
         <p>Em breve</p>
       </div>
       <button class="btn-next" disabled>Em breve</button>
@@ -2871,7 +3228,7 @@ function showPage(p) {
 }
 
 function setActivePill(key) {
-  ['landing','programacao','aula1','aula2','aula3'].forEach(k => {
+  ['landing','programacao','aula1','aula2','aula3','aula4'].forEach(k => {
     const el = document.getElementById('pill-' + k);
     if (el) el.classList.remove('active');
   });
@@ -3099,6 +3456,7 @@ function rotearHash() {
   }
   else if(hash === '#aula2') { showPage('aula2'); }
   else if(hash === '#aula3') { showPage('aula3'); }
+  else if(hash === '#aula4') { showPage('aula4'); }
 }
 window.addEventListener('hashchange', rotearHash);
 rotearHash();
@@ -3587,6 +3945,116 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.getElementById('pomoTimer')) {
     setPomoPreset('classico');
   }
+});
+
+// ===================== AULA 4: QUIZ =====================
+function checkQuizFoco(option, isCorrect, msgCorrect, msgWrong) {
+  const container = option.parentElement;
+  const feedback = container.nextElementSibling;
+
+  container.querySelectorAll('.quiz-option').forEach(opt => {
+    opt.style.pointerEvents = 'none';
+    if (opt === option) {
+      opt.classList.add(isCorrect ? 'correct' : 'wrong');
+    } else if (!isCorrect && opt.onclick.toString().includes(', true,')) {
+      opt.classList.add('correct');
+    }
+  });
+
+  feedback.classList.add('show');
+  feedback.classList.add(isCorrect ? 'correct' : 'wrong');
+  feedback.innerHTML = isCorrect ? msgCorrect : msgWrong;
+  playSound(isCorrect ? 'correct' : 'wrong');
+}
+
+// ===================== AULA 4: RESPIRAÇÃO 6-2-6 =====================
+const BREATH_CYCLES_TOTAL = 5;
+let breathCycle = 0;
+let breathRunning = false;
+let breathTimer = null;
+
+function startBreathing() {
+  if (breathRunning) return;
+  breathRunning = true;
+  breathCycle = 0;
+  document.querySelectorAll('#breathCycles .breath-dot').forEach(d => d.classList.remove('active', 'completed'));
+  runBreathCycle();
+}
+
+function runBreathCycle() {
+  const circle = document.getElementById('breathCircle');
+  const label = document.getElementById('breathLabel');
+  const status = document.getElementById('breathStatus');
+
+  if (breathCycle >= BREATH_CYCLES_TOTAL) {
+    circle.className = 'breath-circle';
+    label.textContent = 'Pronto ✓';
+    status.textContent = 'Ótimo. Agora comece seu bloco de estudo.';
+    breathRunning = false;
+    playSound('complete');
+    return;
+  }
+
+  const dot = document.querySelector('#breathCycles .breath-dot[data-cycle="' + (breathCycle + 1) + '"]');
+  if (dot) dot.classList.add('active');
+
+  circle.className = 'breath-circle inhale';
+  label.textContent = 'Inspire... (6s)';
+  status.textContent = 'Respiração ' + (breathCycle + 1) + ' de ' + BREATH_CYCLES_TOTAL;
+  playSound('click');
+
+  breathTimer = setTimeout(() => {
+    circle.className = 'breath-circle hold';
+    label.textContent = 'Segure (2s)';
+    breathTimer = setTimeout(() => {
+      circle.className = 'breath-circle exhale';
+      label.textContent = 'Expire... (6s)';
+      breathTimer = setTimeout(() => {
+        if (dot) { dot.classList.remove('active'); dot.classList.add('completed'); }
+        breathCycle++;
+        runBreathCycle();
+      }, 6000);
+    }, 2000);
+  }, 6000);
+}
+
+function resetBreathing() {
+  clearTimeout(breathTimer);
+  breathRunning = false;
+  breathCycle = 0;
+  const circle = document.getElementById('breathCircle');
+  if (circle) circle.className = 'breath-circle';
+  const label = document.getElementById('breathLabel');
+  if (label) label.textContent = 'Pronto?';
+  const status = document.getElementById('breathStatus');
+  if (status) status.textContent = '5 respirações • cerca de 70 segundos';
+  document.querySelectorAll('#breathCycles .breath-dot').forEach(d => d.classList.remove('active', 'completed'));
+}
+
+// ===================== AULA 4: PROTOCOLO — SELEÇÃO DE TÉCNICA =====================
+function selectTecnica(btn) {
+  btn.parentElement.querySelectorAll('.pomo-preset-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  playSound('click');
+}
+
+// ===================== AULA 4: INIT =====================
+document.addEventListener('DOMContentLoaded', function() {
+  const animObserver4 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  });
+
+  document.querySelectorAll('#page-aula4 .animate-in').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    animObserver4.observe(el);
+  });
 });
 
 // Init
