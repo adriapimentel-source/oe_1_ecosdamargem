@@ -302,6 +302,21 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 #cmv-export-card .exp-total-label{font-size:13px;color:#3d5234;margin-top:2px}
 #cmv-export-card .exp-footer{font-size:12px;color:#aaa;text-align:center;margin-top:20px;padding-top:14px;border-top:1px solid #eee}
 
+#rc-export-card{position:fixed;left:-9999px;top:0;background:#fff;width:580px;padding:36px;font-family:'DM Sans',sans-serif;border-radius:12px;color:#1e2d18}
+#rc-export-card .rc-exp-header{border-bottom:3px solid #b45309;padding-bottom:16px;margin-bottom:20px}
+#rc-export-card .rc-exp-header h3{font-family:'Georgia',serif;color:#b45309;font-size:24px;margin-bottom:4px;font-weight:700}
+#rc-export-card .rc-exp-sub{font-size:14px;color:#a3803f}
+#rc-export-card .rc-exp-row{border:1px solid #f3d9a8;border-radius:10px;padding:12px 18px;margin-bottom:10px;border-left:4px solid #f59e0b;background:#fffaf0}
+#rc-export-card .rc-exp-label{font-size:12px;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+#rc-export-card .rc-exp-value{font-size:15px;color:#4a3a1f;line-height:1.5;white-space:pre-wrap}
+#rc-export-card .rc-exp-alt{background:#e7f5ea;border:2px solid #2d6e1a;border-radius:10px;padding:14px 18px;margin-top:14px}
+#rc-export-card .rc-exp-alt-label{font-size:12px;font-weight:700;color:#2d6e1a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+#rc-export-card .rc-exp-alt-value{font-size:15px;color:#1e2d18;line-height:1.5;white-space:pre-wrap}
+#rc-export-card .rc-exp-total{background:#fef3c7;border-radius:10px;padding:14px 18px;text-align:center;margin-top:16px}
+#rc-export-card .rc-exp-total-num{font-size:26px;font-family:'Georgia',serif;color:#b45309;font-weight:700}
+#rc-export-card .rc-exp-total-label{font-size:13px;color:#7a5a20;margin-top:2px}
+#rc-export-card .rc-exp-footer{font-size:12px;color:#aaa;text-align:center;margin-top:20px;padding-top:14px;border-top:1px solid #eee}
+
 
 /* =============================================
    RESPONSIVE — Mobile first, 4 breakpoints
@@ -543,6 +558,13 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 #page-aula4 .step-desc,
 #page-aula4 .exemplo-box,
 #page-aula4 li{text-align:justify;text-align-last:left}
+
+/* ===== AULA 5: Ansiedade, Motivação e Pertencimento ===== */
+#page-aula5 .bloco-desc,
+#page-aula5 p,
+#page-aula5 .step-desc,
+#page-aula5 .exemplo-box,
+#page-aula5 li{text-align:justify;text-align-last:left}
 
 /* INTERACTIVE ELEMENTS */
 .interactive-card{background:#f8fafc;border:1px solid var(--border);border-radius:var(--r12);padding:20px;margin-bottom:16px;transition:all .2s}
@@ -842,6 +864,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 <button id="pill-aula2" class="nav-pill" onclick="showPage('aula2')">Aula 2</button>
 <button id="pill-aula3" class="nav-pill" onclick="showPage('aula3')">Aula 3</button>
 <button id="pill-aula4" class="nav-pill" onclick="showPage('aula4')">Aula 4</button>
+<button id="pill-aula5" class="nav-pill" onclick="showPage('aula5')">Aula 5</button>
   </nav>
   <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -854,6 +877,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 <button class="mobile-nav-btn" id="mob-pill-aula2" onclick="showPage('aula2');closeMobileNav()">Aula 2</button>
 <button class="mobile-nav-btn" id="mob-pill-aula3" onclick="showPage('aula3');closeMobileNav()">Aula 3</button>
  <button class="mobile-nav-btn" id="mob-pill-aula4" onclick="showPage('aula4');closeMobileNav()">Aula 4</button>
+<button class="mobile-nav-btn" id="mob-pill-aula5" onclick="showPage('aula5');closeMobileNav()">Aula 5</button>
 </nav>
 
 <!-- ========== LANDING PAGE ========== -->
@@ -895,9 +919,9 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
           <div class="qn-num">Encontro 4</div>
           <span class="qn-label">Foco e Cansaço</span>
         </div>
-        <div class="quick-nav-item locked">
+        <div class="quick-nav-item" onclick="showPage('aula5')">
           <div class="qn-num">Encontro 5</div>
-          <span class="qn-label">Ansiedade e Motivação</span>
+          <span class="qn-label">Estresse e Enfrentamento</span>
         </div>
         <div class="quick-nav-item locked">
           <div class="qn-num">Encontro 6</div>
@@ -1203,44 +1227,44 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
         <div class="enc-header" onclick="toggleEnc(5)">
           <div class="enc-badge" style="background:#e3f2fd;color:#1565c0">5</div>
           <div class="enc-meta">
-            <div class="enc-num" style="color:#1565c0">Encontro 5 · Em breve</div>
-            <div class="enc-title">Ansiedade, Motivação e o Papel das Emoções na Aprendizagem</div>
-            <div class="enc-base">Neurobiologia da ansiedade · Mentalidade de Crescimento · Motivação Intrínseca</div>
+            <div class="enc-num" style="color:#1565c0">Encontro 5</div>
+            <div class="enc-title">Estresse e Estratégias de Enfrentamento</div>
+            <div class="enc-base">O que te estressa · Estratégias que já tem e novas possibilidades · Evidências de estudos randomizados</div>
           </div>
           <svg class="enc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="enc-body">
           <div class="enc-tags">
-            <span class="tag" style="background:#fce4ec;color:#c62828">💭 Teste da Crença</span>
-            <span class="tag" style="background:#f3e5f5;color:#7b1fa2">🌱 Mentalidade de Crescimento</span>
-            <span class="tag" style="background:#fff8e1;color:#e65100">✍️ Escrita Expressiva</span>
+            <span class="tag" style="background:#fce4ec;color:#c62828">🗺️ Mapa de Estresse e Enfrentamento</span>
+            <span class="tag" style="background:#e0f2f1;color:#00695c">🤝 Pertencimento Social (ECR)</span>
+            <span class="tag" style="background:#fff8e1;color:#e65100">✍️ Escrita Expressiva (ECR)</span>
           </div>
 
           <div class="enc-timeline">
             <div class="enc-bloco">
               <div class="enc-bloco-icon" style="background:#fee2e2;color:#dc2626">A</div>
               <div class="enc-bloco-content">
-                <div class="enc-bloco-label" style="color:#dc2626">Bloco A — Desafio · 10 min</div>
-                <div class="enc-bloco-title">O Teste da Crença</div>
-                <div class="enc-bloco-desc">Respostas anônimas: "De 1 a 10, o quanto você acredita que vai passar?" e "Complete: Pessoa inteligente é aquela que…". O objetivo é revelar as crenças limitantes que a neurociência sabe como abordar.</div>
-                <div class="enc-bloco-time">19h40–19h50</div>
+                <div class="enc-bloco-label" style="color:#dc2626">Bloco A — Desafio · 15 min</div>
+                <div class="enc-bloco-title">O Caso da Joana + Meu Mapa de Estresse e Enfrentamento</div>
+                <div class="enc-bloco-desc">Discussão a partir do caso da Joana, que evita situações de exposição por ansiedade, seguida de um autodiagnóstico individual: cada estudante marca o que te estressa (provas, trabalho, família, financeiro...) e como já lida com isso hoje (estratégias adaptativas e de evitação), identificando o que sente que falta no próprio repertório.</div>
+                <div class="enc-bloco-time">19h40–19h55</div>
               </div>
             </div>
             <div class="enc-bloco">
               <div class="enc-bloco-icon" style="background:#dbeafe;color:#2563eb">B</div>
               <div class="enc-bloco-content">
-                <div class="enc-bloco-label" style="color:#2563eb">Bloco B — Teoria · 25 min</div>
-                <div class="enc-bloco-title">O que acontece no cérebro durante a ansiedade de prova</div>
-                <div class="enc-bloco-desc">A amígdala em estado de ameaça "sequestra" o córtex pré-frontal — por isso o branco na prova não é falta de estudo, é neurobiologia. Técnicas validadas: reapreciação cognitiva, escrita expressiva pré-prova (Ramirez & Beilock, 2011). Mentalidade fixa vs. crescimento (Dweck, 2006). Motivação intrínseca: autonomia, competência e pertencimento (Deci & Ryan). O papel da identidade (Clear, 2018).</div>
-                <div class="enc-bloco-time">19h50–20h15</div>
+                <div class="enc-bloco-label" style="color:#2563eb">Bloco B — Teoria · 20 min</div>
+                <div class="enc-bloco-title">Tipos de enfrentamento e o que a ciência (com estudos randomizados) mostra</div>
+                <div class="enc-bloco-desc">Lazarus & Folkman (1984) distinguem estratégias focadas no problema, focadas na emoção e evitação — esta última alivia na hora, mas mantém o estresse. A amígdala em estado de ameaça prejudica o córtex pré-frontal (Arnsten, 2009), por isso o branco na prova é neurobiologia, não falta de esforço. Ensaio randomizado de escrita expressiva pré-prova reduziu o efeito da ansiedade sobre a nota (Ramirez & Beilock, 2011, <em>Science</em>). Meta-análises da Teoria da Autodeterminação mostram que autonomia, competência e vínculo sustentam a motivação em qualquer área da vida, muito mais do que pressão externa (Howard et al., 2021). Um experimento randomizado de pertencimento social melhorou notas e saúde de estudantes de grupos minoritarizados (Walton & Cohen, 2011, <em>Science</em>). E um recorte crítico: as maiores meta-análises sobre "mentalidade de crescimento" (Dweck) encontraram efeito próximo de zero sobre desempenho real (Macnamara & Burgoyne, 2023, N≈98.000) — o discurso popular de autoajuda superestima o poder da crença individual e apaga barreiras estruturais como renda, jornada de trabalho e qualidade da escola.</div>
+                <div class="enc-bloco-time">19h55–20h15</div>
               </div>
             </div>
             <div class="enc-bloco">
               <div class="enc-bloco-icon" style="background:#d1fae5;color:#059669">A</div>
               <div class="enc-bloco-content">
                 <div class="enc-bloco-label" style="color:#059669">Bloco A — Prática · 15 min</div>
-                <div class="enc-bloco-title">Carta para si mesmo</div>
-                <div class="enc-bloco-desc">Em 5 minutos, cada participante escreve: "Por que eu mereço estar na universidade? O que muda na minha vida e na da minha família se eu passar?" Guardar a carta ou foto dela para os dias em que a motivação for zero.</div>
+                <div class="enc-bloco-title">Construindo o repertório ampliado</div>
+                <div class="enc-bloco-desc">A partir do mapa de estresse do início do encontro, a turma pratica novas ferramentas para o repertório: afirmações pessoais, reinterpretação do corpo em alerta e reestruturação cognitiva rápida com o protocolo testado por Ramirez & Beilock (2011) — aplicáveis não só às provas, mas a qualquer situação estressante, no trabalho, na família ou nos relacionamentos.</div>
                 <div class="enc-bloco-time">20h15–20h30</div>
               </div>
             </div>
@@ -1248,15 +1272,15 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 
           <div class="enc-tarefa">
             <div class="enc-tarefa-label">📌 Tarefa para casa</div>
-            <p>Antes da próxima prova ou sessão de estudo difícil, escrever por 10 minutos sobre o que você sente. Guardar a carta.</p>
+            <p>Antes da próxima prova ou sessão de estudo difícil, escrever por 10 minutos sobre o que você sente e guardar o texto. Registrar um momento da semana em que compartilhou uma dúvida ou dificuldade com um colega. E aplicar, em uma situação fora dos estudos (trabalho, família ou relacionamento), uma estratégia nova identificada no mapa de enfrentamento do encontro.</p>
           </div>
 
           <div class="enc-ref">
             <div class="enc-ref-label">Referências do encontro</div>
-            <div class="enc-ref-item">DWECK, C. <em>Mindset: A Nova Psicologia do Sucesso</em>. Objetiva, 2017 · Ramirez & Beilock (2011) — <em>Science</em> · CLEAR, J. <em>Hábitos Atômicos</em>. Alta Books, 2019 · LeDoux (1996) — Neurobiologia da Amígdala</div>
+            <div class="enc-ref-item">LAZARUS & FOLKMAN (1984) — <em>Stress, appraisal, and coping</em> · <a href="https://doi.org/10.1038/nrn2648" target="_blank" rel="noopener">ARNSTEN, A.F.T. (2009)</a> — <em>Nature Reviews Neuroscience</em> · <a href="https://doi.org/10.1126/science.1199427" target="_blank" rel="noopener">RAMIREZ & BEILOCK (2011)</a> — <em>Science</em>, ECR · <a href="https://doi.org/10.1126/science.1198364" target="_blank" rel="noopener">WALTON & COHEN (2011)</a> — <em>Science</em>, ECR · <a href="https://doi.org/10.1177/1745691620966789" target="_blank" rel="noopener">HOWARD et al. (2021)</a> — meta-análise, <em>Perspectives on Psychological Science</em> · <a href="https://doi.org/10.1037/bul0000352" target="_blank" rel="noopener">MACNAMARA & BURGOYNE (2023)</a> e <a href="https://doi.org/10.1037/bul0000368" target="_blank" rel="noopener">BURNETTE et al. (2023)</a> — meta-análises sobre mentalidade de crescimento, <em>Psychological Bulletin</em></div>
           </div>
 
-          <button class="enc-cta enc-cta-locked" disabled>Em breve</button>
+          <button class="enc-cta" onclick="showPage('aula5')">Acessar o Encontro 5</button>
         </div>
       </div>
 
@@ -2697,7 +2721,473 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 
     <div class="next-section">
       <div class="next-info">
-        <h4>Próximo Encontro: 5 — Ansiedade e Motivação</h4>
+        <h4>Próximo Encontro: 5 — Estresse e Enfrentamento</h4>
+        <p>O que estudos randomizados mostram sobre ansiedade, motivação e pertencimento</p>
+      </div>
+      <button class="btn-next" onclick="showPage('aula5')">Ir para o Encontro 5 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- AULA 5 PAGE -->
+<div id="page-aula5" class="page">
+<!-- AULA HEADER -->
+<div class="aula-header">
+  <div class="aula-header-inner">
+    <button class="back-btn" onclick="showPage('landing')">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Voltar ao Menu
+    </button>
+    <div class="aula-num-badge">AULA 5 DE 6</div>
+    <h1 class="aula-main-title">Estresse e Estratégias de Enfrentamento</h1>
+    <p class="aula-main-sub">O que te estressa, o que você já faz para lidar com isso e como ampliar seu repertório de estratégias, com base em estudos randomizados e meta-análises, para usar não só nos estudos, mas em qualquer área da vida</p>
+    <div class="time-pills">
+      <span class="time-pill">⏱️ 50 min totais</span>
+      <span class="time-pill">🗺️ O Que Te Estressa</span>
+      <span class="time-pill">🧰 Estratégias de Enfrentamento</span>
+      <span class="time-pill">🧠 Neurociência do Estresse</span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="aula-content">
+
+  <!-- BLOCO A1: DESAFIO -->
+  <div class="bloco bloco-a1 animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-a1">A1</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Desafio: O Caso da Joana + Meu Mapa de Estresse e Enfrentamento</h3>
+        <div class="bloco-meta">15 minutos • Discussão em roda + autodiagnóstico individual</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+      <p class="bloco-desc">
+        Leia o caso abaixo com atenção, pois ele se parece com o que muita gente vive na hora de estudar e de se expor.
+      </p>
+
+      <div class="interactive-card">
+        <h4 style="font-size:15px;color:var(--slate);margin-bottom:10px">📖 O caso da Joana</h4>
+        <p class="bloco-desc">
+          Joana fica muito ansiosa toda vez que precisa falar na frente de um grupo grande. Fazer uma apresentação em sala é,
+          para ela, uma tortura, e até levantar a mão para perguntar algo já dá um arrepio na espinha. Nas discussões em grupo,
+          ela fica calada, só ouvindo os outros, mas nunca compartilha o que pensa. Outro dia, na biblioteca, até pedir ajuda
+          para achar um livro foi estressante para ela.
+        </p>
+      </div>
+
+      <div class="accent-block">
+        <div class="block-title">💬 Perguntas para discutir</div>
+        <ol style="font-size:14px;color:var(--slate2);line-height:1.8;padding-left:20px;margin:0">
+          <li>Que situações a Joana está evitando?</li>
+          <li>Qual é o benefício, mesmo que só na hora, de evitar essas situações?</li>
+          <li>Quais são as possíveis consequências se ela continuar evitando por muito tempo?</li>
+          <li>O que ela poderia fazer diferente, dando pequenos passos?</li>
+        </ol>
+      </div>
+
+      <div class="interactive-card" style="border-color:var(--verde2)">
+        <h4 style="font-size:15px;color:var(--slate);margin-bottom:10px">🙋 Agora é sua vez: seu mapa pessoal</h4>
+        <p class="bloco-desc" style="margin-bottom:12px">
+          A Joana é um exemplo, mas cada um de nós tem sua própria lista de estressores e seu próprio jeito de lidar com eles.
+          Marque abaixo o que fizer sentido pra você, pois não existe resposta certa ou errada.
+        </p>
+
+        <span class="tag-group-label">O que te estressa? (marque quantos quiser)</span>
+        <div class="tag-row">
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">📚 Provas e notas</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">⏰ Conciliar trabalho e estudo</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">💰 Questões financeiras</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">👨‍👩‍👧 Família</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">❤️ Relacionamentos</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">😴 Sono e cansaço</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">🔮 Medo do futuro / incerteza</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">🗣️ Falar em público / se expor</button>
+        </div>
+
+        <span class="tag-group-label" style="margin-top:16px;display:block">Como você já lida com isso hoje? (marque o que já faz)</span>
+        <div class="tag-row">
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">🗣️ Converso com alguém de confiança</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">🏃 Faço atividade física</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">📝 Organizo o tempo / faço um plano</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">🌬️ Respiro fundo / me acalmo</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">🙈 Evito pensar nisso / deixo pra depois</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">📱 Fico no celular pra não pensar</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">🍔 Como demais ou belisco o dia todo</button>
+          <button type="button" class="toggle-chip" onclick="this.classList.toggle('active')">😶 Fico quieto(a), não conto pra ninguém</button>
+        </div>
+
+        <p class="bloco-desc" style="margin-top:16px;margin-bottom:8px"><strong>O que você sente que falta no seu jeito de lidar com o estresse hoje?</strong></p>
+        <textarea class="input-field" rows="3" style="resize:vertical" placeholder="Ex: eu queria conseguir pedir ajuda sem me sentir mal, ou parar de evitar as coisas que me dão medo..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO B: TEORIA -->
+  <div class="bloco bloco-b animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-b">B</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Teoria: Tipos de Enfrentamento e o que a Ciência Mostra</h3>
+        <div class="bloco-meta">20 minutos • Tipos de estratégias, neurobiologia do estresse e evidências para ampliar o repertório</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+
+      <!-- CONCEITO: ESTRATÉGIAS DE ENFRENTAMENTO -->
+      <div class="accent-block-blue">
+        <div class="block-title">🧭 O que são estratégias de enfrentamento</div>
+        <p style="font-size:14px;color:#1e3a5f">
+          Estratégias de enfrentamento são os esforços cognitivos e comportamentais que usamos para lidar com situações que
+          avaliamos como estressantes ou que ultrapassam nossos recursos. Elas podem ser escolhidas de propósito, como quando
+          decidimos respirar fundo antes de encarar algo difícil, ou podem se tornar quase automáticas, sem que a gente perceba,
+          como comer demais quando está ansioso. Não existe uma estratégia perfeita que sirva para toda situação, já que cada
+          uma tem vantagens e custos, e o que funciona bem numa situação pode não funcionar em outra.
+        </p>
+        <p style="font-size:12px;color:#1e3a5f;margin-top:10px">
+          <strong>Referência:</strong> Lazarus, R. S., &amp; Folkman, S. (1984). <em>Stress, appraisal, and coping</em>. Springer Publishing Company.
+        </p>
+      </div>
+
+      <!-- TIPOS DE ENFRENTAMENTO -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🗂️</span> Nem toda estratégia de enfrentamento ajuda do mesmo jeito
+        </h4>
+        <p class="bloco-desc">
+          Lazarus e Folkman (1984) descrevem dois grandes grupos de estratégias. As <strong>focadas no problema</strong> tentam
+          mudar a situação diretamente, como organizar o tempo ou pedir ajuda para resolver algo. As
+          <strong>focadas na emoção</strong> tentam mudar como a gente se sente em relação à situação, como respirar fundo ou
+          conversar sobre o que sente. Nenhuma das duas é "errada": o problema aparece quando a estratégia vira
+          <strong>evitação</strong>, ou seja, quando ao invés de lidar com a situação, ou com a emoção que ela gera, a gente
+          foge dela por completo, como a Joana evitando falar em público. A evitação até alivia na hora, mas tende a manter
+          ou aumentar o estresse a longo prazo, porque a situação continua sem solução e o medo não perde força.
+        </p>
+        <div class="accent-block-blue" style="margin-top:12px">
+          <div class="block-title">🧭 Olhando de novo para o seu mapa</div>
+          <p style="font-size:14px;color:#1e3a5f">
+            Dá uma olhada nas estratégias que você marcou acima: quais são focadas no problema, quais são focadas na
+            emoção, e quais talvez sejam evitação? Não tem problema ter estratégias de evitação, todo mundo tem, o
+            importante é perceber quando elas estão sendo a <em>única</em> ferramenta disponível. É exatamente aí que
+            entram as próximas estratégias, para ampliar esse repertório.
+          </p>
+        </div>
+      </div>
+
+      <!-- AMÍGDALA -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🧠</span> A amígdala sob ameaça "sequestra" o córtex pré-frontal
+        </h4>
+        <p class="bloco-desc">
+          Arnsten (2009) mostra que, quando estamos sob estresse agudo, o alarme do cérebro, a amígdala, fica mais forte,
+          enquanto a área do raciocínio e da memória, o córtex pré-frontal, perde eficiência. Por isso travar diante de uma
+          prova, de uma apresentação ou de qualquer situação de pressão é biologia, e não falta de esforço.
+        </p>
+        <div class="accent-block">
+          <div class="block-title">🧰 Caixa de ferramentas: acalmar o alarme</div>
+          <div class="list-item"><div class="dot-verde"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span><strong>Nomear:</strong> dizer para si mesmo "meu cérebro está em alerta, isso é temporário" já reduz parte do sequestro.</span></div>
+          <div class="list-item"><div class="dot-verde"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span><strong>Respirar 6-2-6:</strong> a técnica do Encontro 4, inspirando, segurando e expirando.</span></div>
+          <div class="list-item"><div class="dot-verde"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span><strong>Ancorar no corpo:</strong> sentir os pés no chão e apertar as mãos por 5 segundos.</span></div>
+        </div>
+      </div>
+
+      <!-- ESCRITA EXPRESSIVA -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">✍️</span> Escrita expressiva antes de um momento difícil: um experimento randomizado
+        </h4>
+        <p class="bloco-desc">
+          Ramirez e Beilock (2011, <em>Science</em>) pediram a estudantes ansiosos que escrevessem por 10 minutos sobre o que
+          sentiam antes de uma prova real, e o efeito negativo da ansiedade sobre o desempenho praticamente desapareceu, se
+          comparado a quem apenas ficou sentado em silêncio, porque colocar a preocupação no papel esvazia parte da memória de
+          trabalho que a ansiedade ocupa. O mesmo princípio pode valer para outras situações de pressão, como uma apresentação,
+          uma entrevista ou uma conversa difícil.
+        </p>
+        <div class="accent-block-blue">
+          <div class="block-title">🧰 Caixa de ferramentas: esvaziar a mente antes de um momento difícil</div>
+          <div class="list-item"><div class="dot-verde dot-blue"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span><strong>Escrita livre 10 min:</strong> o protocolo do estudo, sem se preocupar com ortografia, só para descarregar.</span></div>
+          <div class="list-item"><div class="dot-verde dot-blue"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span><strong>Reestruturação cognitiva rápida:</strong> identificar o pensamento automático e reformulá-lo com base em evidências, antes de encarar a situação.</span></div>
+          <div class="list-item"><div class="dot-verde dot-blue"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span><strong>Carta de autocompaixão:</strong> escrever uma frase de apoio para si mesmo(a), como diria a um(a) amigo(a).</span></div>
+        </div>
+      </div>
+
+      <!-- AUTODETERMINAÇÃO -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🎯</span> O que sustenta motivação de verdade: autonomia, competência e vínculo
+        </h4>
+        <p class="bloco-desc">
+          A Teoria da Autodeterminação (Deci & Ryan) diz que a motivação que dura vem de três necessidades: ter escolha
+          (autonomia), sentir progresso (competência) e sentir vínculo. Uma meta-análise com 220 mil estudantes (Howard et al.,
+          2021) confirma que a motivação por interesse e valor pessoal prevê sucesso e bem-estar, enquanto motivar-se só por
+          medo ou por recompensa externa não prevê melhor desempenho e ainda aumenta o sofrimento. Pertencer também conta:
+          Walton e Cohen (2011, <em>Science</em>) mostraram que uma intervenção breve, dizendo a estudantes que estranhar um
+          espaço novo no início é comum e passageiro, melhorou notas e saúde nos anos seguintes, o que foi confirmado por uma
+          revisão sistemática recente (van Kessel et al., 2025).
+        </p>
+        <div class="accent-block-purple">
+          <div class="block-title">🧰 Caixa de ferramentas: motivação e pertencimento</div>
+          <div class="list-item"><div class="dot-verde dot-purple"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span><strong>Autonomia:</strong> escolher a ordem ou o método de estudo do dia, pois mesmo pequenas escolhas ajudam.</span></div>
+          <div class="list-item"><div class="dot-verde dot-purple"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span><strong>Competência:</strong> registrar 1 pequena vitória por semana de estudo, por menor que seja.</span></div>
+          <div class="list-item"><div class="dot-verde dot-purple"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><span><strong>Vínculo e pertencimento:</strong> falar abertamente sobre a dificuldade com um colega, como fazemos aqui no Ecos da Margem.</span></div>
+        </div>
+        <p style="font-size:13px;color:var(--slate2);margin-top:12px;font-style:italic">
+          Essas três necessidades não valem só para estudar: elas também explicam por que um trabalho, uma relação ou uma
+          rotina em casa cansam mais quando faltam escolha, sensação de progresso ou vínculo, e por que fortalecê-las em
+          qualquer área da vida ajuda a sustentar a motivação e reduzir o esgotamento.
+        </p>
+      </div>
+
+      <!-- SENSO CRÍTICO SOBRE MINDSET -->
+      <div class="accent-block" style="border-left-color:#f59e0b;background:#fff8e6">
+        <div class="block-title">🔍 Senso crítico: e o "mindset de crescimento"?</div>
+        <p style="font-size:14px;color:#5a4416">
+          É comum ouvir que basta "acreditar que é capaz" para o desempenho decolar, mas as maiores meta-análises (Macnamara e
+          Burgoyne, 2023, com 63 estudos e quase 98 mil estudantes; Burnette et al., 2023) encontraram efeito
+          <strong>próximo de zero</strong> nessas intervenções isoladas. A crença importa, mas não resolve sozinha o que é
+          estrutural, como trabalhar e estudar ao mesmo tempo, estudar numa escola sem estrutura ou lidar com a falta de tempo.
+          O que sustenta desempenho de verdade é concreto: reduzir a ansiedade, fortalecer autonomia, competência e vínculo, e
+          construir pertencimento coletivo, que são as ferramentas que já vimos acima.
+        </p>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-question">❓ 1. Segundo as meta-análises apresentadas, qual foi o efeito médio das intervenções de "mindset de crescimento" sobre o desempenho escolar, quando avaliado com rigor científico?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! É o oposto: quando o rigor metodológico aumenta, o efeito encontrado cai para próximo de zero.')">
+            <span class="opt-letter">A</span><span>Um efeito muito grande e consistente em todos os estudos</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, true, '✅ <strong>Correto!</strong> Macnamara & Burgoyne (2023) encontraram efeito próximo de zero e não significativo após corrigir o viés de publicação.', '')">
+            <span class="opt-letter">B</span><span>Um efeito próximo de zero, que deixou de ser significativo em análises mais rigorosas</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! As meta-análises não indicam efeito negativo, e sim um efeito muito pequeno, próximo de zero.')">
+            <span class="opt-letter">C</span><span>Um efeito negativo, prejudicando o desempenho</span>
+          </div>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-question">❓ 2. De acordo com os estudos deste bloco, o que realmente sustenta a motivação para estudar a longo prazo?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! A crença isolada, sem apoio concreto, tem efeito muito pequeno segundo as meta-análises.')">
+            <span class="opt-letter">A</span><span>Força de vontade e crença individual isoladas</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, true, '✅ <strong>Correto!</strong> Autonomia, competência e vínculo (Deci & Ryan; Howard et al., 2021) e pertencimento social (Walton & Cohen, 2011) são os fatores com respaldo mais consistente.', '')">
+            <span class="opt-letter">B</span><span>Autonomia, competência e vínculo, junto com pertencimento social</span>
+          </div>
+          <div class="quiz-option" onclick="checkQuizFoco(this, false, '', '❌ Quase! Motivação baseada só em recompensa ou punição externa está associada a mais sofrimento, não a melhor desempenho.')">
+            <span class="opt-letter">C</span><span>Recompensas e punições externas</span>
+          </div>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO A2: PRÁTICA -->
+  <div class="bloco bloco-a2 animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-a2">A2</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Prática: Construindo Seu Repertório Ampliado</h3>
+        <div class="bloco-meta">15 minutos • Novas ferramentas para usar nos estudos e em outras áreas da vida</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+      <p class="bloco-desc">
+        Você já mapeou o que te estressa e o que já faz para lidar com isso. Agora vamos treinar ferramentas novas, que
+        podem entrar no seu repertório não só para os estudos, mas para qualquer situação estressante da vida.
+      </p>
+      <div class="tag-row" style="margin-bottom:8px">
+        <span class="tag-chip tag-verde">📖 Estudos</span>
+        <span class="tag-chip tag-laranja">💼 Trabalho</span>
+        <span class="tag-chip tag-terra">👨‍👩‍👧 Família</span>
+        <span class="tag-chip tag-laranja">❤️ Relacionamentos</span>
+        <span class="tag-chip tag-verde">🧘 Saúde e bem-estar</span>
+      </div>
+      <p class="bloco-desc">
+        Afirmações são frases curtas e positivas sobre você mesmo(a) que ajudam a reduzir a ansiedade e melhorar o humor.
+        Não existe "jeito certo" de completar, pois vale qualquer coisa que for verdade pra você.
+      </p>
+
+      <div class="interactive-card">
+        <h4 style="font-size:15px;color:var(--slate);margin-bottom:12px">✍️ Minhas afirmações</h4>
+        <p class="bloco-desc" style="margin-bottom:12px">Complete cada frase abaixo com o que fizer sentido pra você:</p>
+        <div class="protocolo-grid">
+          <div class="protocolo-field">
+            <label>Coisas das quais me orgulho</label>
+            <input class="input-field" type="text" placeholder="Eu me sinto orgulhoso(a) de..." style="margin-bottom:8px">
+            <input class="input-field" type="text" placeholder="Eu me sinto orgulhoso(a) de..." style="margin-bottom:8px">
+            <input class="input-field" type="text" placeholder="Eu me sinto orgulhoso(a) de...">
+          </div>
+          <div class="protocolo-field">
+            <label>Coisas pelas quais sou grato(a)</label>
+            <input class="input-field" type="text" placeholder="Eu sou grato(a) por..." style="margin-bottom:8px">
+            <input class="input-field" type="text" placeholder="Eu sou grato(a) por..." style="margin-bottom:8px">
+            <input class="input-field" type="text" placeholder="Eu sou grato(a) por...">
+          </div>
+          <div class="protocolo-field">
+            <label>Memórias que me fazem sorrir</label>
+            <input class="input-field" type="text" placeholder="Eu me sinto bem quando lembro..." style="margin-bottom:8px">
+            <input class="input-field" type="text" placeholder="Eu me sinto bem quando lembro..." style="margin-bottom:8px">
+            <input class="input-field" type="text" placeholder="Eu me sinto bem quando lembro...">
+          </div>
+          <div class="protocolo-field">
+            <label>Coisas que eu gosto em mim mesmo(a)</label>
+            <input class="input-field" type="text" placeholder="Eu gosto do fato de que eu..." style="margin-bottom:8px">
+            <input class="input-field" type="text" placeholder="Eu gosto do fato de que eu..." style="margin-bottom:8px">
+            <input class="input-field" type="text" placeholder="Eu gosto do fato de que eu...">
+          </div>
+        </div>
+        <div class="accent-block-purple" style="margin-top:16px">
+          <p style="font-size:14px;color:#4527a0">Guarde essas frases em algum lugar que você veja com frequência. Quando bater a ansiedade, escolha 2 ou 3 delas e repita
+          pra si mesmo(a).</p>
+        </div>
+      </div>
+
+      <div class="interactive-card">
+        <h4 style="font-size:15px;color:var(--slate);margin-bottom:12px">🔄 Reinterpretando o corpo em alerta</h4>
+        <p class="bloco-desc" style="margin-bottom:12px">O mesmo sinal do corpo pode ser lido de duas formas. Leia os pares abaixo em voz alta antes da próxima prova:</p>
+        <div class="accent-block" style="margin-bottom:8px"><p style="font-size:14px;color:#1e4534"><strong>Em vez de:</strong> "Meu coração está acelerado, vou fracassar" → <strong>Diga:</strong> "Meu corpo está se preparando para agir com energia."</p></div>
+        <div class="accent-block-blue" style="margin-bottom:8px"><p style="font-size:14px;color:#1e3a5f"><strong>Em vez de:</strong> "Minha mente ficou em branco, sou incapaz" → <strong>Diga:</strong> "É a amígdala em alerta, e isso passa, pois eu sei como ela funciona."</p></div>
+        <div class="accent-block-purple"><p style="font-size:14px;color:#4527a0"><strong>Em vez de:</strong> "Não pertenço a este lugar" → <strong>Diga:</strong> "Estranhar um espaço novo é comum no início, e pertencimento se constrói."</p></div>
+
+        <div style="margin-top:16px;padding-top:16px;border-top:1px dashed var(--border)">
+          <label class="input-label">Agora é sua vez: escolha um sinal do seu próprio corpo e escreva sua reinterpretação</label>
+          <input class="input-field" type="text" style="margin-bottom:8px" placeholder="Sinal do corpo. Ex: minhas mãos ficam frias e minha voz treme">
+          <textarea class="input-field" rows="2" style="resize:vertical" placeholder="Nova leitura para esse sinal. Ex: meu corpo está em estado de atenção total, e isso me ajuda a focar no que preciso fazer"></textarea>
+        </div>
+      </div>
+
+      <div class="interactive-card" style="border-color:#f59e0b;margin-top:24px" id="rc-card">
+        <h4 style="font-size:15px;color:var(--slate);margin-bottom:6px">🎁 Atividade Bônus: Reestruturação Cognitiva Rápida</h4>
+        <p class="bloco-desc" style="margin-bottom:12px">
+          Este é o mesmo princípio da amígdala "sequestrando" o córtex pré-frontal que vimos na teoria: um pensamento automático
+          negativo dispara a emoção difícil antes mesmo de você examinar se ele é verdadeiro. Preencha os campos abaixo com uma
+          situação real da sua semana, que pode ser dos estudos ou de qualquer outra área da vida (trabalho, família,
+          relacionamento, saúde...), e pratique reformular esse pensamento com base em evidências. No final, você pode salvar
+          seu registro como imagem ou PDF.
+        </p>
+
+        <div id="rc-form">
+          <div class="input-group">
+            <label class="input-label">1. Situação que gerou a emoção difícil (de qualquer área da vida)</label>
+            <input class="input-field" type="text" id="rc-situacao" placeholder="Ex: recebi a nota da redação e foi mais baixa do que esperava, ou tive um desentendimento em casa">
+          </div>
+          <div class="input-group">
+            <label class="input-label">2. Pensamento automático (o que passou pela sua cabeça na hora)</label>
+            <input class="input-field" type="text" id="rc-pensamento" placeholder="Ex: eu nunca vou conseguir passar no ENEM">
+          </div>
+          <div class="inline2">
+            <div class="input-group" style="margin:0">
+              <label class="input-label">3. Emoção sentida</label>
+              <select class="select-field" id="rc-emocao">
+                <option>Ansiedade</option><option>Frustração</option><option>Tristeza</option>
+                <option>Vergonha</option><option>Raiva</option><option>Medo</option><option>Outra</option>
+              </select>
+            </div>
+            <div class="input-group" style="margin:0">
+              <label class="input-label">Intensidade antes (0 a 10)</label>
+              <input type="number" class="input-field" id="rc-intensidade1" value="7" min="0" max="10">
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label">4. Evidências que sustentam esse pensamento</label>
+            <textarea class="input-field" id="rc-evid-favor" rows="2" placeholder="Ex: já errei bastante em redação antes"></textarea>
+          </div>
+          <div class="input-group">
+            <label class="input-label">5. Evidências que contradizem esse pensamento</label>
+            <textarea class="input-field" id="rc-evid-contra" rows="2" placeholder="Ex: minha nota em outras matérias vem subindo; essa foi só uma redação"></textarea>
+          </div>
+          <div class="input-group">
+            <label class="input-label">6. Pensamento alternativo mais equilibrado</label>
+            <textarea class="input-field" id="rc-alternativo" rows="2" placeholder="Ex: essa redação foi fraca, mas isso não define meu resultado no ENEM, pois dá pra treinar esse ponto"></textarea>
+          </div>
+          <div class="input-group">
+            <label class="input-label">7. Intensidade da emoção depois de reformular (0 a 10)</label>
+            <input type="number" class="input-field" id="rc-intensidade2" value="4" min="0" max="10" style="max-width:120px">
+          </div>
+          <button class="btn-primary" onclick="gerarRC()" style="margin-top:8px">✓ Gerar Meu Registro</button>
+        </div>
+
+        <div id="rc-result" style="display:none">
+          <div class="completion-banner" style="margin-top:20px">
+            <h3>🎉 Registro pronto!</h3>
+            <p id="rc-summary">—</p>
+            <p style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;margin-bottom:20px">Guarde esse registro e repita o exercício sempre que um pensamento automático vier forte. Com a prática, esse passo fica mais rápido.</p>
+            <div class="cmv-download-btns">
+              <button class="btn-dl btn-dl-img" onclick="baixarRC('img')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                Baixar Imagem
+              </button>
+              <button class="btn-dl btn-dl-pdf" onclick="baixarRC('pdf')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                Baixar PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card oculto para exportação da Reestruturação Cognitiva -->
+      <div id="rc-export-card">
+        <div class="rc-exp-header">
+          <h3>🔄 Reestruturação Cognitiva Rápida</h3>
+          <div class="rc-exp-sub">Ecos da Margem — Encontro 5: Estresse e Estratégias de Enfrentamento</div>
+        </div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Situação</div><div class="rc-exp-value" id="rce-situacao">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Pensamento automático</div><div class="rc-exp-value" id="rce-pensamento">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Emoção / Intensidade antes</div><div class="rc-exp-value" id="rce-emocao">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Evidências a favor</div><div class="rc-exp-value" id="rce-favor">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Evidências contra</div><div class="rc-exp-value" id="rce-contra">—</div></div>
+        <div class="rc-exp-alt"><div class="rc-exp-alt-label">✅ Pensamento alternativo</div><div class="rc-exp-alt-value" id="rce-alternativo">—</div></div>
+        <div class="rc-exp-total"><div class="rc-exp-total-num" id="rce-intensidades">— → —</div><div class="rc-exp-total-label">intensidade da emoção: antes → depois</div></div>
+        <div class="rc-exp-footer">Gerado em Ecos da Margem · "Travar diante da pressão é biologia, não falta de esforço."</div>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#fff8e6,#fef3c7);border:2px solid #f59e0b;border-radius:var(--r16);padding:24px;margin-top:24px">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px">📝 Tarefa de Casa</h4>
+        <ol style="font-size:14px;color:var(--slate2);line-height:1.8;padding-left:20px">
+          <li>Anote em algum lugar visível pelo menos 3 frases que você completou hoje nas afirmações, pra lembrar nos momentos difíceis
+            <div class="exemplo-box">Ex: colar na parte de dentro do armário ou salvar como papel de parede do celular</div>
+          </li>
+          <li style="margin-top:10px">Antes da próxima prova ou sessão de estudo difícil, escreva por 10 minutos sobre o que você sente e guarde o texto
+            <div class="exemplo-box">Ex: repetir esse protocolo na noite anterior à próxima simulação de ENEM</div>
+          </li>
+          <li style="margin-top:10px">Registre um momento da semana em que você compartilhou uma dúvida ou dificuldade com um colega
+            <div class="exemplo-box">Ex: "contei pro grupo que travei numa questão de redação e descobri que não era só eu"</div>
+          </li>
+          <li style="margin-top:10px">Observe, sem julgamento, se nomear a ansiedade ("isso é só a amígdala") mudou algo na hora da prova
+            <div class="exemplo-box">Ex: "ainda fiquei nervoso, mas consegui voltar a raciocinar mais rápido"</div>
+          </li>
+          <li style="margin-top:10px">Escolha uma estratégia nova, que você não usava antes, entre as que marcou no mapa de hoje, e aplique essa semana em uma situação que <strong>não</strong> seja de estudo, como trabalho, família ou relacionamento. Registre o que percebeu
+            <div class="exemplo-box">Ex: "em vez de evitar a conversa com meu chefe, respirei fundo e falei o que precisava"</div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="enc-ref" style="margin-top:24px">
+        <div class="enc-ref-label">Referências do encontro</div>
+        <div class="enc-ref-item">
+          LAZARUS, R.S. &amp; FOLKMAN, S. (1984). <em>Stress, appraisal, and coping</em>. Springer Publishing Company ·
+          <a href="https://doi.org/10.1038/nrn2648" target="_blank" rel="noopener">ARNSTEN, A.F.T. (2009)</a>. Stress signalling pathways that impair prefrontal cortex structure and function. <em>Nature Reviews Neuroscience</em>, 10(6), 410–422 ·
+          <a href="https://doi.org/10.1126/science.1199427" target="_blank" rel="noopener">RAMIREZ, G. & BEILOCK, S.L. (2011)</a>. Writing about testing worries boosts exam performance in the classroom. <em>Science</em>, 331(6014), 211–213 ·
+          <a href="https://doi.org/10.1126/science.1198364" target="_blank" rel="noopener">WALTON, G.M. & COHEN, G.L. (2011)</a>. A brief social-belonging intervention improves academic and health outcomes of minority students. <em>Science</em>, 331(6023), 1447–1451 ·
+          <a href="https://doi.org/10.1177/1745691620966789" target="_blank" rel="noopener">HOWARD, J.L. et al. (2021)</a>. Student motivation and associated outcomes: A meta-analysis from self-determination theory. <em>Perspectives on Psychological Science</em>, 16(6), 1300–1323 ·
+          <a href="https://doi.org/10.1007/s13384-025-00822-8" target="_blank" rel="noopener">VAN KESSEL, G. et al. (2025)</a>. Relationship between university belonging and student outcomes: a systematic review and meta-analysis ·
+          <a href="https://doi.org/10.1037/bul0000352" target="_blank" rel="noopener">MACNAMARA, B.N. & BURGOYNE, A.P. (2023)</a>. Do growth mindset interventions impact students' academic achievement? A systematic review and meta-analysis. <em>Psychological Bulletin</em>, 149(3–4), 133–173 ·
+          <a href="https://doi.org/10.1037/bul0000368" target="_blank" rel="noopener">BURNETTE, J.L. et al. (2023)</a>. A systematic review and meta-analysis of growth mindset interventions: for whom, how, and why might such interventions work? <em>Psychological Bulletin</em>, 149(3–4), 174–205
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="next-section">
+      <div class="next-info">
+        <h4>Próximo Encontro: 6 — Seu Plano de Estudos Sustentável</h4>
         <p>Em breve</p>
       </div>
       <button class="btn-next" disabled>Em breve</button>
@@ -3228,7 +3718,7 @@ function showPage(p) {
 }
 
 function setActivePill(key) {
-  ['landing','programacao','aula1','aula2','aula3','aula4'].forEach(k => {
+  ['landing','programacao','aula1','aula2','aula3','aula4','aula5'].forEach(k => {
     const el = document.getElementById('pill-' + k);
     if (el) el.classList.remove('active');
   });
@@ -3447,6 +3937,64 @@ async function baixarCMV(formato) {
   card.style.top = '0';
 }
 
+// ---- ATIVIDADE BÔNUS: REESTRUTURAÇÃO COGNITIVA RÁPIDA (Encontro 2) ----
+function gerarRC() {
+  const situacao = document.getElementById('rc-situacao').value.trim() || 'Não preenchido';
+  const pensamento = document.getElementById('rc-pensamento').value.trim() || 'Não preenchido';
+  const emocao = document.getElementById('rc-emocao').value;
+  const int1 = document.getElementById('rc-intensidade1').value || '—';
+  const favor = document.getElementById('rc-evid-favor').value.trim() || 'Não preenchido';
+  const contra = document.getElementById('rc-evid-contra').value.trim() || 'Não preenchido';
+  const alternativo = document.getElementById('rc-alternativo').value.trim() || 'Não preenchido';
+  const int2 = document.getElementById('rc-intensidade2').value || '—';
+
+  const txt = `Pensamento automático reformulado: de "${pensamento}" para "${alternativo}" · Intensidade da emoção: ${int1} → ${int2}`;
+  document.getElementById('rc-summary').textContent = txt;
+
+  // Preencher card oculto de exportação
+  document.getElementById('rce-situacao').textContent = situacao;
+  document.getElementById('rce-pensamento').textContent = pensamento;
+  document.getElementById('rce-emocao').textContent = `${emocao} — intensidade ${int1}/10`;
+  document.getElementById('rce-favor').textContent = favor;
+  document.getElementById('rce-contra').textContent = contra;
+  document.getElementById('rce-alternativo').textContent = alternativo;
+  document.getElementById('rce-intensidades').textContent = `${int1} → ${int2}`;
+
+  document.getElementById('rc-result').style.display = 'block';
+  try{document.getElementById('rc-result').scrollIntoView({behavior:'smooth',block:'start'})}catch(e){document.getElementById('rc-result').scrollIntoView(true)}
+}
+
+async function baixarRC(formato) {
+  const card = document.getElementById('rc-export-card');
+  card.style.left = '0px';
+  card.style.top = '-9999px';
+  await new Promise(r => setTimeout(r, 80));
+  try {
+    const canvas = await html2canvas(card, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+    if (formato === 'img') {
+      const link = document.createElement('a');
+      link.download = 'minha-reestruturacao-cognitiva.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } else {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+      const imgData = canvas.toDataURL('image/png');
+      const pageW = pdf.internal.pageSize.getWidth();
+      const margin = 10;
+      const imgW = pageW - margin * 2;
+      const imgH = (canvas.height / canvas.width) * imgW;
+      pdf.addImage(imgData, 'PNG', margin, margin, imgW, imgH);
+      pdf.save('minha-reestruturacao-cognitiva.pdf');
+    }
+  } catch(err) {
+    alert('Não foi possível gerar o arquivo. Tente novamente.');
+    console.error(err);
+  }
+  card.style.left = '-9999px';
+  card.style.top = '0';
+}
+
 // ---- ROTEAMENTO POR HASH (GitHub Pages) ----
 function rotearHash() {
   const hash = window.location.hash;
@@ -3457,6 +4005,7 @@ function rotearHash() {
   else if(hash === '#aula2') { showPage('aula2'); }
   else if(hash === '#aula3') { showPage('aula3'); }
   else if(hash === '#aula4') { showPage('aula4'); }
+  else if(hash === '#aula5') { showPage('aula5'); }
 }
 window.addEventListener('hashchange', rotearHash);
 rotearHash();
