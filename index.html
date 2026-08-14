@@ -139,6 +139,15 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 .enc-bloco-time{font-size:12px;color:var(--slate3);margin-top:4px}
 
 .enc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.evid-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)}
+.evid-row:last-child{border-bottom:none}
+.evid-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;width:104px}
+.evid-tag{font-size:10.5px;font-weight:700;padding:4px 8px;border-radius:12px;white-space:normal;line-height:1.25;text-align:center;flex-shrink:0;margin-top:1px}
+.evid-forte{background:#dcfce7;color:#166534}
+.evid-moderada{background:#fff8e1;color:#c8860a}
+.evid-limitada{background:#fee2e2;color:#b91c1c}
+.evid-body{font-size:14px;color:var(--slate2);line-height:1.6}
+.evid-fonte{display:block;font-size:12px;color:var(--slate3);margin-top:2px;font-style:italic}
 .enc-ref{background:#f8fafc;border:1px solid var(--border);border-radius:var(--r8);padding:12px 16px;margin-top:8px}
 .enc-ref-label{font-size:12px;font-weight:600;color:var(--slate3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
 .enc-ref-item{font-size:13px;color:var(--slate2);line-height:1.8}
@@ -189,6 +198,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 .bloco-meta{font-size:14px;color:var(--slate3)}
 .bloco-body{padding:0 24px 24px}
 .bloco-desc{font-size:15px;color:var(--slate2);margin-bottom:20px;line-height:1.7}
+#page-aula6 p{text-align:justify}
 .concept-block{background:#f8fafc;border:1px solid var(--border);border-radius:var(--r12);padding:20px;margin-bottom:16px}
 .concept-block h4{font-size:15px;font-weight:600;color:var(--slate);margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .concept-block p{font-size:15px;color:var(--slate2);line-height:1.7}
@@ -302,20 +312,20 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 #cmv-export-card .exp-total-label{font-size:13px;color:#3d5234;margin-top:2px}
 #cmv-export-card .exp-footer{font-size:12px;color:#aaa;text-align:center;margin-top:20px;padding-top:14px;border-top:1px solid #eee}
 
-#rc-export-card{position:fixed;left:-9999px;top:0;background:#fff;width:580px;padding:36px;font-family:'DM Sans',sans-serif;border-radius:12px;color:#1e2d18}
-#rc-export-card .rc-exp-header{border-bottom:3px solid #b45309;padding-bottom:16px;margin-bottom:20px}
-#rc-export-card .rc-exp-header h3{font-family:'Georgia',serif;color:#b45309;font-size:24px;margin-bottom:4px;font-weight:700}
-#rc-export-card .rc-exp-sub{font-size:14px;color:#a3803f}
-#rc-export-card .rc-exp-row{border:1px solid #f3d9a8;border-radius:10px;padding:12px 18px;margin-bottom:10px;border-left:4px solid #f59e0b;background:#fffaf0}
-#rc-export-card .rc-exp-label{font-size:12px;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
-#rc-export-card .rc-exp-value{font-size:15px;color:#4a3a1f;line-height:1.5;white-space:pre-wrap}
-#rc-export-card .rc-exp-alt{background:#e7f5ea;border:2px solid #2d6e1a;border-radius:10px;padding:14px 18px;margin-top:14px}
-#rc-export-card .rc-exp-alt-label{font-size:12px;font-weight:700;color:#2d6e1a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-#rc-export-card .rc-exp-alt-value{font-size:15px;color:#1e2d18;line-height:1.5;white-space:pre-wrap}
-#rc-export-card .rc-exp-total{background:#fef3c7;border-radius:10px;padding:14px 18px;text-align:center;margin-top:16px}
-#rc-export-card .rc-exp-total-num{font-size:26px;font-family:'Georgia',serif;color:#b45309;font-weight:700}
-#rc-export-card .rc-exp-total-label{font-size:13px;color:#7a5a20;margin-top:2px}
-#rc-export-card .rc-exp-footer{font-size:12px;color:#aaa;text-align:center;margin-top:20px;padding-top:14px;border-top:1px solid #eee}
+#rc-export-card, #plano-export-card{position:fixed;left:-9999px;top:0;background:#fff;width:580px;padding:36px;font-family:'DM Sans',sans-serif;border-radius:12px;color:#1e2d18}
+#rc-export-card, #plano-export-card .rc-exp-header{border-bottom:3px solid #b45309;padding-bottom:16px;margin-bottom:20px}
+#rc-export-card, #plano-export-card .rc-exp-header h3{font-family:'Georgia',serif;color:#b45309;font-size:24px;margin-bottom:4px;font-weight:700}
+#rc-export-card, #plano-export-card .rc-exp-sub{font-size:14px;color:#a3803f}
+#rc-export-card, #plano-export-card .rc-exp-row{border:1px solid #f3d9a8;border-radius:10px;padding:12px 18px;margin-bottom:10px;border-left:4px solid #f59e0b;background:#fffaf0}
+#rc-export-card, #plano-export-card .rc-exp-label{font-size:12px;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+#rc-export-card, #plano-export-card .rc-exp-value{font-size:15px;color:#4a3a1f;line-height:1.5;white-space:pre-wrap}
+#rc-export-card, #plano-export-card .rc-exp-alt{background:#e7f5ea;border:2px solid #2d6e1a;border-radius:10px;padding:14px 18px;margin-top:14px}
+#rc-export-card, #plano-export-card .rc-exp-alt-label{font-size:12px;font-weight:700;color:#2d6e1a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+#rc-export-card, #plano-export-card .rc-exp-alt-value{font-size:15px;color:#1e2d18;line-height:1.5;white-space:pre-wrap}
+#rc-export-card, #plano-export-card .rc-exp-total{background:#fef3c7;border-radius:10px;padding:14px 18px;text-align:center;margin-top:16px}
+#rc-export-card, #plano-export-card .rc-exp-total-num{font-size:26px;font-family:'Georgia',serif;color:#b45309;font-weight:700}
+#rc-export-card, #plano-export-card .rc-exp-total-label{font-size:13px;color:#7a5a20;margin-top:2px}
+#rc-export-card, #plano-export-card .rc-exp-footer{font-size:12px;color:#aaa;text-align:center;margin-top:20px;padding-top:14px;border-top:1px solid #eee}
 
 
 /* =============================================
@@ -865,6 +875,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 <button id="pill-aula3" class="nav-pill" onclick="showPage('aula3')">Aula 3</button>
 <button id="pill-aula4" class="nav-pill" onclick="showPage('aula4')">Aula 4</button>
 <button id="pill-aula5" class="nav-pill" onclick="showPage('aula5')">Aula 5</button>
+<button id="pill-aula6" class="nav-pill" onclick="showPage('aula6')">Aula 6</button>
   </nav>
   <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -878,6 +889,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 <button class="mobile-nav-btn" id="mob-pill-aula3" onclick="showPage('aula3');closeMobileNav()">Aula 3</button>
  <button class="mobile-nav-btn" id="mob-pill-aula4" onclick="showPage('aula4');closeMobileNav()">Aula 4</button>
 <button class="mobile-nav-btn" id="mob-pill-aula5" onclick="showPage('aula5');closeMobileNav()">Aula 5</button>
+<button class="mobile-nav-btn" id="mob-pill-aula6" onclick="showPage('aula6');closeMobileNav()">Aula 6</button>
 </nav>
 
 <!-- ========== LANDING PAGE ========== -->
@@ -923,7 +935,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
           <div class="qn-num">Encontro 5</div>
           <span class="qn-label">Estresse e Enfrentamento</span>
         </div>
-        <div class="quick-nav-item locked">
+        <div class="quick-nav-item" onclick="showPage('aula6')">
           <div class="qn-num">Encontro 6</div>
           <span class="qn-label">Plano Final</span>
         </div>
@@ -1289,60 +1301,60 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
         <div class="enc-header" onclick="toggleEnc(6)">
           <div class="enc-badge" style="background:#ede7f6;color:#4527a0">6</div>
           <div class="enc-meta">
-            <div class="enc-num" style="color:#4527a0">Encontro 6 · Em breve</div>
-            <div class="enc-title">Do Macro ao Micro — Seu Plano de Estudos Sustentável para o ENEM</div>
-            <div class="enc-base">Calendário Reverso · Prática Intercalada · Revisão Semanal · Plano Pessoal 1.0</div>
+            <div class="enc-num" style="color:#4527a0">Encontro 6</div>
+            <div class="enc-title">Seu Plano de Aprendizagem Sustentável</div>
+            <div class="enc-base">Ciclo de Autorregulação · Intenções Se-Então · Espaçamento e Recuperação · Plano de 7 Dias</div>
           </div>
           <svg class="enc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="enc-body">
           <div class="enc-tags">
-            <span class="tag" style="background:#ede7f6;color:#4527a0">👤 Estudante Fictício</span>
-            <span class="tag" style="background:#f0fdf4;color:#166534">📅 Calendário Reverso</span>
-            <span class="tag" style="background:#fff8e6;color:#c8860a">🗺️ Plano Pessoal 1.0</span>
+            <span class="tag" style="background:#ede7f6;color:#4527a0">🔁 Ciclo de Autorregulação</span>
+            <span class="tag" style="background:#f0fdf4;color:#166534">📅 Plano de 7 Dias</span>
+            <span class="tag" style="background:#fff8e6;color:#c8860a">🧯 Plano de Reparo</span>
           </div>
 
           <div class="enc-timeline">
             <div class="enc-bloco">
               <div class="enc-bloco-icon" style="background:#fee2e2;color:#dc2626">A</div>
               <div class="enc-bloco-content">
-                <div class="enc-bloco-label" style="color:#dc2626">Bloco A — Desafio · 10 min</div>
-                <div class="enc-bloco-title">O Estudante Fictício</div>
-                <div class="enc-bloco-desc">Em duplas, montar o plano de estudos dos próximos 30 dias para um perfil composto com elementos reais do grupo (trabalho das 8h às 17h, escola à noite, ENEM em 5 meses). Eles tentam, erram, idealizam — e isso é intencional.</div>
-                <div class="enc-bloco-time">19h40–19h50</div>
+                <div class="enc-bloco-label" style="color:#dc2626">Bloco A — Desafio · 8 min</div>
+                <div class="enc-bloco-title">O Caso da Ana</div>
+                <div class="enc-bloco-desc">Ana montou um cronograma de 3 horas por dia e só conseguiu cumprir 2 dias. Antes de qualquer teoria, a turma diagnostica sozinha o que pode ter dado errado e esboça uma primeira solução.</div>
+                <div class="enc-bloco-time">19h40–19h48</div>
               </div>
             </div>
             <div class="enc-bloco">
               <div class="enc-bloco-icon" style="background:#dbeafe;color:#2563eb">B</div>
               <div class="enc-bloco-content">
-                <div class="enc-bloco-label" style="color:#2563eb">Bloco B — Teoria · 25 min</div>
-                <div class="enc-bloco-title">A estrutura macro–meso–micro para o ENEM</div>
-                <div class="enc-bloco-desc"><strong>Macro:</strong> calendário reverso — quantas semanas restam, quais conteúdos têm mais peso × seu nível atual. <strong>Meso:</strong> plano mensal com alternância de áreas (prática intercalada — Rohrer & Taylor, 2007). <strong>Micro:</strong> sessão de estudo com sequência validada. A revisão semanal embutida (não como punição, mas como dado). Redação ENEM como habilidade treinável. A comunidade Ecos como tecnologia de aprendizagem.</div>
-                <div class="enc-bloco-time">19h50–20h15</div>
+                <div class="enc-bloco-label" style="color:#2563eb">Bloco B — Teoria · 17 min</div>
+                <div class="enc-bloco-title">O ciclo de autorregulação e o que sustenta um plano de verdade</div>
+                <div class="enc-bloco-desc">Zimmerman/Pintrich (ciclo planejar → agir → registrar → ajustar), Sweller (carga cognitiva), Bjork (dificuldades desejáveis), Gollwitzer (intenções se-então), Locke &amp; Latham (metas específicas com piso mínimo) e Deci &amp; Ryan (autonomia, competência e pertencimento). Diferenciando evidência forte, moderada e limitada, sem números inventados e sem neuromitos.</div>
+                <div class="enc-bloco-time">19h48–20h05</div>
               </div>
             </div>
             <div class="enc-bloco">
               <div class="enc-bloco-icon" style="background:#d1fae5;color:#059669">A</div>
               <div class="enc-bloco-content">
-                <div class="enc-bloco-label" style="color:#059669">Bloco A — Prática · 15 min</div>
-                <div class="enc-bloco-title">Plano Pessoal 1.0 — Síntese do programa</div>
-                <div class="enc-bloco-desc">Cada participante sai com: <strong>CMV das próximas 4 semanas</strong>, <strong>3 técnicas de estudo</strong> escolhidas ao longo do programa, <strong>protocolo de revisão semanal</strong> (dia, hora, 3 perguntas) e <strong>uma âncora motivacional</strong>. Encerramento coletivo: cada um compartilha uma coisa que leva do programa.</div>
-                <div class="enc-bloco-time">20h15–20h30</div>
+                <div class="enc-bloco-label" style="color:#059669">Bloco A — Aplicação · 20 min</div>
+                <div class="enc-bloco-title">Construindo o Plano de 7 Dias</div>
+                <div class="enc-bloco-desc">Cada participante monta: meta da semana, 3 blocos mínimos, tarefa ativa, revisões espaçadas, intenção se-então, indicador simples e plano de reparo para quando um bloco falhar.</div>
+                <div class="enc-bloco-time">20h05–20h25</div>
               </div>
             </div>
           </div>
 
           <div class="enc-tarefa">
-            <div class="enc-tarefa-label">📌 Encerramento</div>
-            <p>Não há tarefa — só execução. O plano está feito. O que muda é o que você faz com ele a partir de agora.</p>
+            <div class="enc-tarefa-label">📌 Fechamento</div>
+            <p>Cada pessoa responde: "o que farei quando falhar um bloco?" e "qual evidência me dirá que o plano precisa ser ajustado?". O plano vira prática ao longo da semana seguinte — o retorno ao plano é o objetivo, não a punição.</p>
           </div>
 
           <div class="enc-ref">
             <div class="enc-ref-label">Referências do encontro</div>
-            <div class="enc-ref-item">Locke & Latham (1990) — Goal-Setting Theory · Gollwitzer (1999) — Implementation Intentions · Rohrer & Taylor (2007) — Prática Intercalada · Johnson & Johnson (1999) — Aprendizagem Colaborativa</div>
+            <div class="enc-ref-item">ZIMMERMAN, B.J. &amp; PINTRICH, P.R. — teoria da aprendizagem autorregulada · SWELLER, AYRES &amp; KALYUGA (2011) — <em>Cognitive Load Theory</em> · BJORK, R.A. — dificuldades desejáveis · GOLLWITZER, P.M. (1999) — <em>Implementation intentions</em> · LOCKE &amp; LATHAM (2002) — definição de metas · DECI &amp; RYAN — teoria da autodeterminação · DUNLOSKY et al. (2013) · ROEDIGER &amp; KARPICKE (2006) · ADESOPE, TREVISAN &amp; SUNDARARAJAN (2017) · KANG et al. (2025) · SINHA &amp; KAPUR (2021) · THEOBALD (2021)</div>
           </div>
 
-          <button class="enc-cta enc-cta-locked" disabled>Em breve</button>
+          <button class="enc-cta" onclick="showPage('aula6')">Acessar o Encontro 6</button>
         </div>
       </div>
 
@@ -3195,13 +3207,543 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700}
 
     <div class="next-section">
       <div class="next-info">
-        <h4>Próximo Encontro: 6 — Seu Plano de Estudos Sustentável</h4>
-        <p>Em breve</p>
+        <h4>Próximo Encontro: 6 — Seu Plano de Aprendizagem Sustentável</h4>
+        <p>Transforme tudo o que vimos até aqui em um plano mínimo, específico e ajustável</p>
       </div>
-      <button class="btn-next" disabled>Em breve</button>
+      <button class="btn-next" onclick="showPage('aula6')">Ir para o Encontro 6 →</button>
     </div>
   </div>
 </div>
+
+<div id="page-aula6" class="page">
+<!-- AULA HEADER -->
+<div class="aula-header">
+  <div class="aula-header-inner">
+    <button class="back-btn" onclick="showPage('landing')">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Voltar ao Menu
+    </button>
+    <div class="aula-num-badge">AULA 6 DE 6</div>
+    <h1 class="aula-main-title">Seu Plano de Aprendizagem Sustentável</h1>
+    <p class="aula-main-sub">O encerramento do programa: transformar tudo o que vimos até aqui em um plano mínimo, específico, monitorável e ajustável, sem promessa de força de vontade, mas com desenho de ambiente, metas realistas e espaço para falhar e recomeçar.</p>
+    <div class="time-pills">
+      <span class="time-pill">⏱️ 50 min totais</span>
+      <span class="time-pill">🧩 O Caso da Ana</span>
+      <span class="time-pill">🔁 Ciclo de Autorregulação</span>
+      <span class="time-pill">📅 Meu Plano de 7 Dias</span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="aula-content">
+
+  <!-- BLOCO A1: DESAFIO -->
+  <div class="bloco bloco-a1 animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-a1">A1</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Desafio: O Caso da Ana</h3>
+        <div class="bloco-meta">8 minutos • Diagnóstico em grupo, sem receber a teoria antes</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+      <p class="bloco-desc">
+        Antes de qualquer explicação, leia o caso abaixo com o grupo e tente, junto, diagnosticar o que aconteceu.
+        Não existe resposta pronta ainda, pois a ideia é vocês chegarem perto sozinhos, porque isso ajuda a teoria a
+        fazer mais sentido depois.
+      </p>
+
+      <div class="interactive-card">
+        <h4 style="font-size:15px;color:var(--slate);margin-bottom:10px">📖 O caso da Ana</h4>
+        <p class="bloco-desc">
+          Ana criou um cronograma de 3 horas de estudo por dia. Ela estava animada, escreveu tudo bonito num
+          caderno novo e prometeu pra si mesma que dessa vez ia ser diferente. Resultado: ela cumpriu o
+          cronograma completo em apenas 2 dias da semana. Nos outros dias, o cansaço do trabalho, um imprevisto
+          em casa ou simplesmente a vontade de descansar falaram mais alto, e o cronograma foi ficando de lado.
+        </p>
+      </div>
+
+      <div class="accent-block">
+        <div class="block-title">💬 Perguntas para discutir em grupo</div>
+        <ol style="font-size:14px;color:var(--slate2);line-height:1.8;padding-left:20px;margin:0">
+          <li>O que pode ter dado errado no plano da Ana? Pense em pelo menos duas causas diferentes.</li>
+          <li>O problema foi "falta de força de vontade" ou o desenho do próprio plano? Qual a diferença prática entre essas duas explicações?</li>
+          <li>O que precisaria ser verdade para um plano de 3 horas por dia funcionar de verdade, todos os dias?</li>
+          <li>Se vocês fossem ajudar a Ana a montar um novo plano hoje, por onde começariam?</li>
+        </ol>
+      </div>
+
+      <div class="interactive-card" style="border-color:var(--verde2)">
+        <h4 style="font-size:15px;color:var(--slate);margin-bottom:10px">🙋 Agora é sua vez: seu próprio histórico</h4>
+        <p class="bloco-desc" style="margin-bottom:12px">
+          Pense num plano de estudos (ou de qualquer outra coisa) que você já tentou seguir e não conseguiu manter.
+          Sem se cobrar, escreva o que aconteceu, pois isso vai ser útil no fim do encontro.
+        </p>
+        <textarea class="input-field" rows="3" style="resize:vertical" placeholder="Ex: eu tentava estudar 2h toda noite, mas depois de um dia cansativo de trabalho eu simplesmente não conseguia, e aí eu desistia da semana inteira..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO B: TEORIA -->
+  <div class="bloco bloco-b animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-b">B</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Teoria: O que sustenta um plano de verdade</h3>
+        <div class="bloco-meta">17 minutos • Ciclo de autorregulação, carga cognitiva, espaçamento, metas e evidências</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+
+      <!-- CICLO DE AUTORREGULAÇÃO -->
+      <div class="accent-block">
+        <div class="block-title">🔁 O ciclo de autorregulação (Zimmerman &amp; Pintrich)</div>
+        <p style="font-size:14px;color:#1e4534">
+          A ideia da Ana não estava errada: o que faltou foi o <strong>ciclo completo</strong>.
+          <strong>Autorregulação não é força de vontade</strong>: é um processo de <strong>quatro passos que se
+          repetem</strong>, ensinando o processo em vez de culpar traços pessoais como preguiça.
+        </p>
+
+        <div class="graph-block">
+          <div class="graph-title">O ciclo se repete a cada rodada</div>
+          <svg class="graph-svg" viewBox="0 0 640 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama do ciclo de autorregulação com quatro etapas: planejar, agir, registrar e ajustar, que se repetem continuamente">
+            <defs>
+              <marker id="seta-ciclo" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+                <path d="M0,0 L9,4.5 L0,9 Z" fill="var(--slate3)"/>
+              </marker>
+            </defs>
+            <line x1="145" y1="58" x2="175" y2="58" stroke="var(--slate3)" stroke-width="2.5" marker-end="url(#seta-ciclo)"/>
+            <line x1="305" y1="58" x2="335" y2="58" stroke="var(--slate3)" stroke-width="2.5" marker-end="url(#seta-ciclo)"/>
+            <line x1="465" y1="58" x2="495" y2="58" stroke="var(--slate3)" stroke-width="2.5" marker-end="url(#seta-ciclo)"/>
+            <path d="M 560 100 C 560 178, 80 178, 80 100" fill="none" stroke="var(--slate3)" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#seta-ciclo)"/>
+            <text x="320" y="200" text-anchor="middle" font-size="12" fill="var(--slate3)" font-family="DM Sans, sans-serif">o ciclo recomeça a cada semana</text>
+
+            <rect x="15" y="16" width="130" height="84" rx="14" fill="var(--verde-light)" stroke="var(--verde)" stroke-width="1.5"/>
+            <text x="80" y="42" text-anchor="middle" font-size="20">📝</text>
+            <text x="80" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="var(--slate)" font-family="DM Sans, sans-serif">1. Planejar</text>
+            <text x="80" y="82" text-anchor="middle" font-size="10" fill="var(--slate3)" font-family="DM Sans, sans-serif">o quê, quando, quanto</text>
+
+            <rect x="175" y="16" width="130" height="84" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+            <text x="240" y="42" text-anchor="middle" font-size="20">▶️</text>
+            <text x="240" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="var(--slate)" font-family="DM Sans, sans-serif">2. Agir</text>
+            <text x="240" y="82" text-anchor="middle" font-size="10" fill="var(--slate3)" font-family="DM Sans, sans-serif">algo pequeno e observável</text>
+
+            <rect x="335" y="16" width="130" height="84" rx="14" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+            <text x="400" y="42" text-anchor="middle" font-size="20">🗒️</text>
+            <text x="400" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="var(--slate)" font-family="DM Sans, sans-serif">3. Registrar</text>
+            <text x="400" y="82" text-anchor="middle" font-size="10" fill="var(--slate3)" font-family="DM Sans, sans-serif">o que aconteceu, sem julgar</text>
+
+            <rect x="495" y="16" width="130" height="84" rx="14" fill="var(--laranja-light)" stroke="var(--laranja)" stroke-width="1.5"/>
+            <text x="560" y="42" text-anchor="middle" font-size="20">🔧</text>
+            <text x="560" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="var(--slate)" font-family="DM Sans, sans-serif">4. Ajustar</text>
+            <text x="560" y="82" text-anchor="middle" font-size="10" fill="var(--slate3)" font-family="DM Sans, sans-serif">mudar com base no registro</text>
+          </svg>
+          <div class="graph-caption">O ajuste parte do que foi <em>registrado</em>, e não do que "deveria" ter acontecido.</div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#fff8e6,#fef3c7);border:1.5px solid #f5c896;border-radius:var(--r12);padding:16px 18px;margin-top:14px;display:flex;gap:12px;align-items:flex-start">
+          <div style="font-size:22px;flex-shrink:0;line-height:1">💡</div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px">Exemplo aplicado · se Ana usasse o ciclo</div>
+            <p style="font-size:14px;color:#7a5a20;line-height:1.65;margin:0">No dia 3, ela registraria que 3h seguidas não estavam funcionando e ajustaria para 2 blocos de 45 min, em vez de abandonar o plano inteiro.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARGA COGNITIVA -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🧠</span> Sua memória de trabalho é limitada (Sweller)
+        </h4>
+        <p class="bloco-desc" style="margin-bottom:14px">
+          A memória de trabalho, aquela que usamos para pensar "ao vivo", tem espaço limitado. A solução não é
+          "se esforçar mais": é reduzir elementos de uma vez, começar com exemplos resolvidos e retirar o apoio aos
+          poucos. Não confunda <strong>dificuldade</strong> (produtiva) com <strong>sobrecarga</strong> (que trava).
+        </p>
+        <div class="inline2">
+          <div class="pillar-card pillar-verde">
+            <h5>🟢 Carga adequada</h5>
+            <p style="margin-bottom:8px">1 conteúdo novo por vez, com pausa antes do próximo.</p>
+            <div style="font-size:22px;letter-spacing:4px">🟢🟢🟢</div>
+          </div>
+          <div class="pillar-card pillar-laranja">
+            <h5>🔴 Sobrecarga</h5>
+            <p style="margin-bottom:8px">3 matérias novas seguidas, sem pausa, em 3 horas direto.</p>
+            <div style="font-size:22px;letter-spacing:4px">🔴🔴🔴🔴🔴🔴🔴</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIFICULDADES DESEJÁVEIS -->
+      <div class="interactive-card">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">⚖️</span> Dificuldades desejáveis (Bjork)
+        </h4>
+        <p class="bloco-desc" style="margin-bottom:14px">
+          Recuperação (se testar em vez de só reler), espaçamento e variação tornam o aprendizado mais durável,
+          mesmo que o desempenho pareça pior na hora. A dificuldade precisa ser calibrada: nem tão fácil que não
+          exija nada, nem tão difícil que vire sobrecarga.
+        </p>
+        <div class="inline2">
+          <div class="pillar-card pillar-laranja">
+            <h5>👀 Reler o resumo</h5>
+            <p>Dá sensação de familiaridade enganosa. Parece que "já sabe", mas é reconhecimento, não recuperação.</p>
+          </div>
+          <div class="pillar-card pillar-verde">
+            <h5>🧩 Recuperar da memória</h5>
+            <p>Fechar o material e tentar lembrar parece mais difícil na hora, mas costuma render mais aprendizado depois.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTENÇÕES DE IMPLEMENTAÇÃO -->
+      <div class="interactive-card" style="border-color:#8b5cf6">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🎯</span> Intenções de implementação (Gollwitzer)
+        </h4>
+        <p class="bloco-desc" style="margin-bottom:12px">
+          Em vez de uma intenção vaga ("vou estudar mais"), converta em uma regra <strong>se–então</strong>, ligando
+          um gatilho concreto a um comportamento específico, num ambiente definido:
+        </p>
+        <div class="accent-block-purple">
+          <p style="font-size:14px;color:#4527a0">
+            <strong>Se</strong> for 19h40 e eu chegar em casa, <strong>então</strong> farei 20 minutos de questões
+            na mesa, com o celular fora do alcance.
+          </p>
+        </div>
+      </div>
+
+      <!-- METAS ESPECÍFICAS -->
+      <div class="accent-block-blue">
+        <div class="block-title">📌 Metas específicas, com piso mínimo (Locke &amp; Latham)</div>
+        <p style="font-size:14px;color:#1e3a5f;margin-bottom:14px">
+          Metas específicas e desafiadoras, com feedback, orientam melhor do que metas vagas como "estudar mais".
+          Mas para quem trabalha, estuda e cuida de outras coisas, vale combinar o desafio com um
+          <strong>piso mínimo viável</strong>: o tanto que dá pra cumprir mesmo num dia ruim.
+        </p>
+        <div style="background:#fff;border:1px solid #bfdbfe;border-radius:var(--r12);padding:14px 16px">
+          <div style="position:relative;height:16px;background:#eff6ff;border-radius:20px;overflow:hidden;border:1px solid #bfdbfe">
+            <div style="position:absolute;left:0;top:0;height:100%;width:33%;background:#93c5fd"></div>
+            <div style="position:absolute;left:0;top:0;height:100%;width:100%;background:linear-gradient(90deg,transparent 33%, #3b82f6 33%, #3b82f6 100%)"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#1e3a5f;margin-top:8px">
+            <span>🧯 <strong>Piso mínimo:</strong> 10 questões</span>
+            <span>🎯 <strong>Meta da semana:</strong> 30 questões</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTODETERMINAÇÃO -->
+      <div class="accent-block-purple">
+        <div class="block-title">🌱 Autonomia, competência e pertencimento (Deci &amp; Ryan)</div>
+        <p style="font-size:14px;color:#4527a0;margin-bottom:14px">
+          Motivação que dura é sustentada por três coisas. Por isso o plano de hoje oferece escolhas em vez de
+          regras rígidas, valoriza progresso mesmo pequeno e usa linguagem que não culpabiliza quem falha um dia.
+        </p>
+        <div class="inline2" style="grid-template-columns:1fr 1fr 1fr">
+          <div style="background:#fff;border:1px solid #ddd6fe;border-radius:var(--r12);padding:12px;text-align:center">
+            <div style="font-size:22px;margin-bottom:4px">🕊️</div>
+            <div style="font-size:12.5px;font-weight:600;color:#4527a0">Autonomia</div>
+            <div style="font-size:11px;color:#6b6690">"eu escolhi isso"</div>
+          </div>
+          <div style="background:#fff;border:1px solid #ddd6fe;border-radius:var(--r12);padding:12px;text-align:center">
+            <div style="font-size:22px;margin-bottom:4px">📈</div>
+            <div style="font-size:12.5px;font-weight:600;color:#4527a0">Competência</div>
+            <div style="font-size:11px;color:#6b6690">"estou progredindo"</div>
+          </div>
+          <div style="background:#fff;border:1px solid #ddd6fe;border-radius:var(--r12);padding:12px;text-align:center">
+            <div style="font-size:22px;margin-bottom:4px">🤝</div>
+            <div style="font-size:12.5px;font-weight:600;color:#4527a0">Pertencimento</div>
+            <div style="font-size:11px;color:#6b6690">"eu pertenço a isso"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABELA DE EVIDÊNCIAS -->
+      <div class="interactive-card" style="margin-top:24px">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:6px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:24px">🔬</span> O que a ciência sustenta e com que força
+        </h4>
+        <p class="bloco-desc" style="margin-bottom:16px">
+          Nenhuma técnica é mágica. Aqui vai um resumo honesto: o que tem evidência mais forte, o que tem evidência
+          moderada e o que ainda é limitado ou depende do contexto.
+        </p>
+
+        <div style="background:#f8fafc;border:1px solid var(--border);border-radius:var(--r12);padding:14px 16px;margin-bottom:18px">
+          <div style="font-size:11px;font-weight:700;color:var(--slate3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">O que essas etiquetas querem dizer</div>
+          <div style="display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--slate2)">
+            <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:#166534;font-size:11px;letter-spacing:1px;margin-top:2px;flex-shrink:0">●●●</span><span><strong style="color:#166534">Forte:</strong> muitos estudos confirmam, com efeito grande e consistente.</span></div>
+            <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:#c8860a;font-size:11px;letter-spacing:1px;margin-top:2px;flex-shrink:0">●●○</span><span><strong style="color:#c8860a">Moderada:</strong> o efeito é real, mas nem sempre grande ou depende de como foi aplicado.</span></div>
+            <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:#b91c1c;font-size:11px;letter-spacing:1px;margin-top:2px;flex-shrink:0">●○○</span><span><strong style="color:#b91c1c">Limitada:</strong> promissora, mas com poucos estudos ou resultados que ainda variam bastante.</span></div>
+          </div>
+        </div>
+
+        <div class="evid-row">
+          <div class="evid-col">
+            <span class="evid-tag evid-forte">Moderada–forte</span>
+            <span style="font-size:10px;letter-spacing:2px;color:#166534">●●●</span>
+          </div>
+          <div class="evid-body"><strong>Prática de recuperação (testing effect):</strong> testar-se depois de estudar favorece a retenção mais do que só reler. <span class="evid-fonte">Adesope, Trevisan &amp; Sundararajan (2017)</span></div>
+        </div>
+        <div class="evid-row">
+          <div class="evid-col">
+            <span class="evid-tag evid-moderada">Moderada</span>
+            <span style="font-size:10px;letter-spacing:2px;color:#c8860a">●●○</span>
+          </div>
+          <div class="evid-body"><strong>Espaçamento:</strong> distribuir o estudo ao longo do tempo teve efeito moderado frente ao estudo concentrado. <span class="evid-fonte">Kang et al. (2025)</span></div>
+        </div>
+        <div class="evid-row">
+          <div class="evid-col">
+            <span class="evid-tag evid-limitada">Pequena–moderada</span>
+            <span style="font-size:10px;letter-spacing:2px;color:#b91c1c">●○○</span>
+          </div>
+          <div class="evid-body"><strong>Espaçamento e recuperação em matemática:</strong> efeito pequeno a moderado, com efeito menor de testes versus releitura. <span class="evid-fonte">Revisão sistemática, 2025</span></div>
+        </div>
+        <div class="evid-row">
+          <div class="evid-col">
+            <span class="evid-tag evid-moderada">Moderada</span>
+            <span style="font-size:10px;letter-spacing:2px;color:#c8860a">●●○</span>
+          </div>
+          <div class="evid-body"><strong>Autorregulação online/híbrida:</strong> intervenções apresentaram efeito moderado sobre o desempenho. <span class="evid-fonte">Broadbent &amp; Poon</span></div>
+        </div>
+        <div class="evid-row">
+          <div class="evid-col">
+            <span class="evid-tag evid-limitada">Pequena–moderada</span>
+            <span style="font-size:10px;letter-spacing:2px;color:#b91c1c">●○○</span>
+          </div>
+          <div class="evid-body"><strong>Ensino explícito de autorregulação:</strong> efeitos pequenos a moderados sobre desempenho e metacognição, em universitários. <span class="evid-fonte">Theobald (2021)</span></div>
+        </div>
+        <div class="evid-row">
+          <div class="evid-col">
+            <span class="evid-tag evid-limitada">Moderada / limitada</span>
+            <span style="font-size:10px;letter-spacing:2px;color:#b91c1c">●○○</span>
+          </div>
+          <div class="evid-body"><strong>Falha produtiva:</strong> explorar um problema antes da instrução pode beneficiar conhecimento conceitual, sem vantagem clara no procedural. <span class="evid-fonte">Sinha &amp; Kapur (2021)</span></div>
+        </div>
+        <div class="evid-row">
+          <div class="evid-col">
+            <span class="evid-tag evid-moderada">Moderada, condicional</span>
+            <span style="font-size:10px;letter-spacing:2px;color:#c8860a">●●○</span>
+          </div>
+          <div class="evid-body"><strong>Carga cognitiva e exemplos resolvidos:</strong> para iniciantes, exemplos resolvidos tendem a ser mais eficientes; o efeito depende do conhecimento prévio. <span class="evid-fonte">Sweller, Ayres &amp; Kalyuga</span></div>
+        </div>
+        <div class="evid-row">
+          <div class="evid-col">
+            <span class="evid-tag evid-limitada">Limitada / variável</span>
+            <span style="font-size:10px;letter-spacing:2px;color:#b91c1c">●○○</span>
+          </div>
+          <div class="evid-body"><strong>Metacognição e autoavaliação:</strong> efeitos positivos, mas que variam bastante conforme o desenho e a qualidade do feedback. <span class="evid-fonte">Meta-análise, 2026</span></div>
+        </div>
+      </div>
+
+      <!-- CUIDADOS CIENTÍFICOS -->
+      <div style="background:linear-gradient(135deg,#fff8e6,#fef3c7);border:2px solid #f59e0b;border-radius:var(--r16);padding:24px;margin-top:20px">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px">⚠️ Cuidados científicos e de linguagem</h4>
+        <ul style="font-size:14px;color:var(--slate2);line-height:1.8;padding-left:20px;margin:0;text-align:justify">
+          <li>Não é verdade universal que "você esquece 70% em 24 horas". A curva de Ebbinghaus foi uma demonstração histórica, não uma porcentagem fixa para todo conteúdo e toda pessoa.</li>
+          <li>O Pomodoro não tem evidência tão robusta quanto a de recuperação e espaçamento para aprendizagem. Ele pode ajudar como estrutura de tempo e pausas, mas não deve ser apresentado como técnica comprovada de aprendizagem.</li>
+          <li>Não é verdade que "estudo ativo é sempre 2 vezes melhor". O efeito depende do material, do tipo de teste, do intervalo e da qualidade da recuperação.</li>
+          <li>Desempenho imediato e aprendizagem duradoura são coisas diferentes: reler pode dar uma sensação de familiaridade; recuperar pode parecer mais difícil na hora, mas frequentemente melhora a retenção depois.</li>
+          <li>Os exemplos usados aqui respeitam a realidade de quem trabalha, estuda e cuida de outras pessoas, sem moralizar cansaço, cuidado familiar, transporte ou desigualdade de tempo.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO A2: APLICAÇÃO -->
+  <div class="bloco bloco-a2 animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon bloco-icon-a2">A2</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Aplicação: Meu Plano de 7 Dias</h3>
+        <div class="bloco-meta">20 minutos • Construção individual do plano final</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+      <p class="bloco-desc" style="margin-bottom:16px">
+        Agora é a sua vez de montar um plano pequeno, específico e realista: não o plano ideal, o plano possível.
+        Preencha os campos abaixo com calma. No final, você pode salvar seu plano como imagem ou PDF.
+      </p>
+
+      <div class="interactive-card" style="border-color:var(--verde2)" id="plano-card">
+        <div class="input-group">
+          <label class="input-label">1. Meta da semana (uma frase específica e realista)</label>
+          <input class="input-field" type="text" id="pl-meta" placeholder="Ex: revisar equações do 2º grau e fazer 15 questões até domingo">
+        </div>
+
+        <p style="font-size:14px;font-weight:600;color:var(--slate);margin:20px 0 10px">2. Blocos mínimos (dia, horário, duração e local)</p>
+        <div class="inline2">
+          <div class="input-group" style="margin:0">
+            <label class="input-label">Bloco 1: dia e horário</label>
+            <input class="input-field" type="text" id="pl-bloco1" placeholder="Ex: terça, 19h40, 20 min, na mesa da cozinha">
+          </div>
+          <div class="input-group" style="margin:0">
+            <label class="input-label">Bloco 2: dia e horário</label>
+            <input class="input-field" type="text" id="pl-bloco2" placeholder="Ex: quinta, 19h40, 20 min, na mesa da cozinha">
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Bloco 3: dia e horário</label>
+          <input class="input-field" type="text" id="pl-bloco3" placeholder="Ex: sábado, 9h, 30 min, na biblioteca do cursinho">
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">3. Tarefa ativa (o que você vai fazer, não só ler)</label>
+          <select class="select-field" id="pl-tarefa">
+            <option>5 questões sem consultar o gabarito</option>
+            <option>Flashcards de recuperação</option>
+            <option>Explicar o conteúdo em voz alta, sem consultar</option>
+            <option>Resolver um exemplo do zero</option>
+            <option>Outra</option>
+          </select>
+        </div>
+
+        <div class="inline2">
+          <div class="input-group" style="margin:0">
+            <label class="input-label">4. Revisão espaçada 1 (dia diferente)</label>
+            <input class="input-field" type="text" id="pl-rev1" placeholder="Ex: domingo à noite">
+          </div>
+          <div class="input-group" style="margin:0">
+            <label class="input-label">Revisão espaçada 2 (outro dia)</label>
+            <input class="input-field" type="text" id="pl-rev2" placeholder="Ex: quarta seguinte">
+          </div>
+        </div>
+
+        <p style="font-size:14px;font-weight:600;color:var(--slate);margin:20px 0 10px">5. Intenção se–então</p>
+        <div class="inline2">
+          <div class="input-group" style="margin:0">
+            <label class="input-label">Se (gatilho)</label>
+            <input class="input-field" type="text" id="pl-se" placeholder="Ex: for 19h40 e eu chegar em casa">
+          </div>
+          <div class="input-group" style="margin:0">
+            <label class="input-label">Então (comportamento + ambiente)</label>
+            <input class="input-field" type="text" id="pl-entao" placeholder="Ex: farei 20 min de questões, celular fora do alcance">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">6. Indicador simples</label>
+          <input class="input-field" type="text" id="pl-indicador" placeholder="Ex: blocos planejados: 3 / blocos realizados: __ / acertos na recuperação: __">
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">7. Plano de reparo (se eu perder um bloco...)</label>
+          <textarea class="input-field" rows="2" id="pl-reparo" placeholder="Ex: reduzo para 10 minutos e realoco para o próximo dia livre, sem tentar compensar tudo de uma vez">Reduzir e realocar o bloco perdido para o próximo dia livre; não tentar compensar com uma sessão inviável.</textarea>
+        </div>
+
+        <button class="btn-primary" onclick="gerarPlano7()" style="margin-top:8px">✓ Gerar Meu Plano de 7 Dias</button>
+      </div>
+
+      <div id="plano-result" style="display:none">
+        <div class="completion-banner" style="margin-top:20px">
+          <h3>🎉 Seu plano está pronto!</h3>
+          <p id="plano-summary">—</p>
+          <p style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;margin-bottom:20px">Guarde esse plano em algum lugar visível. O objetivo não é cumprir 100% sempre: é registrar, ajustar e voltar a ele quando falhar um bloco.</p>
+          <div class="cmv-download-btns">
+            <button class="btn-dl btn-dl-img" onclick="baixarPlano7('img')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Baixar Imagem
+            </button>
+            <button class="btn-dl btn-dl-pdf" onclick="baixarPlano7('pdf')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Baixar PDF
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card oculto para exportação do plano -->
+      <div id="plano-export-card">
+        <div class="rc-exp-header">
+          <h3>📅 Meu Plano de 7 Dias</h3>
+          <div class="rc-exp-sub">Ecos da Margem · Encontro 6: Seu Plano de Aprendizagem Sustentável</div>
+        </div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Meta da semana</div><div class="rc-exp-value" id="ple-meta">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Bloco 1</div><div class="rc-exp-value" id="ple-bloco1">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Bloco 2</div><div class="rc-exp-value" id="ple-bloco2">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Bloco 3</div><div class="rc-exp-value" id="ple-bloco3">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Tarefa ativa</div><div class="rc-exp-value" id="ple-tarefa">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Revisões espaçadas</div><div class="rc-exp-value" id="ple-revisoes">—</div></div>
+        <div class="rc-exp-alt"><div class="rc-exp-alt-label">🎯 Intenção se–então</div><div class="rc-exp-alt-value" id="ple-seentao">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Indicador</div><div class="rc-exp-value" id="ple-indicador">—</div></div>
+        <div class="rc-exp-row"><div class="rc-exp-label">Plano de reparo</div><div class="rc-exp-value" id="ple-reparo">—</div></div>
+        <div class="rc-exp-footer">Gerado em Ecos da Margem · "O plano não precisa ser perfeito, precisa ser possível de retomar."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FECHAMENTO -->
+  <div class="bloco animate-in">
+    <div class="bloco-header">
+      <div class="bloco-icon" style="background:#ede7f6;color:#4527a0">✓</div>
+      <div>
+        <h3 style="font-size:18px;color:var(--slate)">Fechamento</h3>
+        <div class="bloco-meta">5 minutos • Duas perguntas para levar com você</div>
+      </div>
+    </div>
+    <div class="bloco-body">
+      <div class="interactive-card">
+        <div class="input-group">
+          <label class="input-label">O que farei quando falhar um bloco?</label>
+          <textarea class="input-field" rows="2" placeholder="Escreva sua resposta com suas próprias palavras..."></textarea>
+        </div>
+        <div class="input-group" style="margin-bottom:0">
+          <label class="input-label">Qual evidência me dirá que o plano precisa ser ajustado?</label>
+          <textarea class="input-field" rows="2" placeholder="Ex: se eu perder o mesmo bloco 3 semanas seguidas, o horário provavelmente não funciona pra mim..."></textarea>
+        </div>
+      </div>
+      <div class="accent-block" style="margin-top:16px">
+        <p style="font-size:14px;color:#1e4534">
+          O plano existe para ser revisado, não para ser cumprido com perfeição. Reforce: o retorno ao plano é o
+          objetivo, e não a punição por ter falhado um bloco.
+        </p>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#fff8e6,#fef3c7);border:2px solid #f59e0b;border-radius:var(--r16);padding:24px;margin-top:24px">
+        <h4 style="font-size:16px;color:var(--slate);margin-bottom:12px">📝 Tarefa de Casa</h4>
+        <ol style="font-size:14px;color:var(--slate2);line-height:1.8;padding-left:20px">
+          <li>Execute o plano de 7 dias que você acabou de montar, exatamente como ele está.
+            <div class="exemplo-box">Não tente melhorar o plano no meio da semana: apenas execute e registre</div>
+          </li>
+          <li style="margin-top:10px">A cada bloco, anote em uma frase se conseguiu cumprir ou não, sem se julgar.
+            <div class="exemplo-box">Ex: "cumpri o bloco de terça, perdi o de quinta porque tive que trabalhar até mais tarde"</div>
+          </li>
+          <li style="margin-top:10px">No fim dos 7 dias, revise: o indicador confirmou o plano ou pediu ajuste? Ajuste e recomece o ciclo.
+            <div class="exemplo-box">Ex: "o bloco das 19h40 não funcionou nenhuma vez, vou tentar mudar para o sábado de manhã"</div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="enc-ref" style="margin-top:24px">
+        <div class="enc-ref-label">Referências do encontro</div>
+        <div class="enc-ref-item">
+          ZIMMERMAN, B.J. &amp; PINTRICH, P.R.: teoria da aprendizagem autorregulada ·
+          SWELLER, J., AYRES, P. &amp; KALYUGA, S. (2011). <em>Cognitive Load Theory</em>. Springer ·
+          BJORK, R.A.: dificuldades desejáveis ·
+          GOLLWITZER, P.M. (1999). Implementation intentions: strong effects of simple plans. <em>American Psychologist</em> ·
+          LOCKE, E.A. &amp; LATHAM, G.P. (2002). Building a practically useful theory of goal setting and task motivation. <em>American Psychologist</em> ·
+          DECI, E.L. &amp; RYAN, R.M.: teoria da autodeterminação ·
+          DUNLOSKY, J. et al. (2013). Improving students' learning with effective learning techniques. <em>Psychological Science in the Public Interest</em> ·
+          ROEDIGER, H.L. &amp; KARPICKE, J.D. (2006). Test-enhanced learning. <em>Psychological Science</em> ·
+          ADESOPE, O.O., TREVISAN, D.A. &amp; SUNDARARAJAN, N. (2017). Rethinking the use of tests: a meta-analysis of practice testing. <em>Review of Educational Research</em> ·
+          KANG, S.H.K. et al. (2025). Distributed practice in classroom learning ·
+          SINHA, T. &amp; KAPUR, M. (2021). When problem solving followed by instruction works: a meta-analysis. <em>Review of Educational Research</em> ·
+          THEOBALD, M. (2021). Self-regulated learning training programs: a meta-analysis. <em>Contemporary Educational Psychology</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="completion-banner" style="margin:8px 0 24px">
+      <h3>🌿 Programa concluído</h3>
+      <p>Você percorreu os 6 encontros de Ecos da Margem: tempo, memória, execução, foco, estresse e, agora, um
+      plano sustentável para seguir sozinho(a), mas nunca sozinho(a) de fato, porque a comunidade continua.</p>
+      <button class="btn-white" onclick="showPage('landing')" style="margin-top:8px">Voltar ao Início</button>
+    </div>
+  </div>
+</div>
+
 
 <!-- JOGO: TESTE DE 10 PALAVRAS -->
 <div id="page-jogo-memoria" class="page">
@@ -3726,7 +4268,7 @@ function showPage(p) {
 }
 
 function setActivePill(key) {
-  ['landing','programacao','aula1','aula2','aula3','aula4','aula5'].forEach(k => {
+  ['landing','programacao','aula1','aula2','aula3','aula4','aula5','aula6'].forEach(k => {
     const el = document.getElementById('pill-' + k);
     if (el) el.classList.remove('active');
   });
@@ -4003,6 +4545,67 @@ async function baixarRC(formato) {
   card.style.top = '0';
 }
 
+function gerarPlano7() {
+  const meta = document.getElementById('pl-meta').value.trim() || 'Não preenchido';
+  const b1 = document.getElementById('pl-bloco1').value.trim() || 'Não preenchido';
+  const b2 = document.getElementById('pl-bloco2').value.trim() || 'Não preenchido';
+  const b3 = document.getElementById('pl-bloco3').value.trim() || 'Não preenchido';
+  const tarefa = document.getElementById('pl-tarefa').value;
+  const rev1 = document.getElementById('pl-rev1').value.trim() || 'Não preenchido';
+  const rev2 = document.getElementById('pl-rev2').value.trim() || 'Não preenchido';
+  const se = document.getElementById('pl-se').value.trim() || 'Não preenchido';
+  const entao = document.getElementById('pl-entao').value.trim() || 'Não preenchido';
+  const indicador = document.getElementById('pl-indicador').value.trim() || 'Não preenchido';
+  const reparo = document.getElementById('pl-reparo').value.trim() || 'Não preenchido';
+
+  const txt = `Meta da semana: "${meta}" · 3 blocos mínimos definidos · Intenção se-então pronta`;
+  document.getElementById('plano-summary').textContent = txt;
+
+  document.getElementById('ple-meta').textContent = meta;
+  document.getElementById('ple-bloco1').textContent = b1;
+  document.getElementById('ple-bloco2').textContent = b2;
+  document.getElementById('ple-bloco3').textContent = b3;
+  document.getElementById('ple-tarefa').textContent = tarefa;
+  document.getElementById('ple-revisoes').textContent = `${rev1} · ${rev2}`;
+  document.getElementById('ple-seentao').textContent = `Se ${se}, então ${entao}`;
+  document.getElementById('ple-indicador').textContent = indicador;
+  document.getElementById('ple-reparo').textContent = reparo;
+
+  document.getElementById('plano-result').style.display = 'block';
+  try{document.getElementById('plano-result').scrollIntoView({behavior:'smooth',block:'start'})}catch(e){document.getElementById('plano-result').scrollIntoView(true)}
+}
+
+async function baixarPlano7(formato) {
+  const card = document.getElementById('plano-export-card');
+  card.style.left = '0px';
+  card.style.top = '-9999px';
+  await new Promise(r => setTimeout(r, 80));
+  try {
+    const canvas = await html2canvas(card, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+    if (formato === 'img') {
+      const link = document.createElement('a');
+      link.download = 'meu-plano-de-7-dias.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } else {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+      const imgData = canvas.toDataURL('image/png');
+      const pageW = pdf.internal.pageSize.getWidth();
+      const margin = 10;
+      const imgW = pageW - margin * 2;
+      const imgH = (canvas.height / canvas.width) * imgW;
+      pdf.addImage(imgData, 'PNG', margin, margin, imgW, imgH);
+      pdf.save('meu-plano-de-7-dias.pdf');
+    }
+  } catch(err) {
+    alert('Não foi possível gerar o arquivo. Tente novamente.');
+    console.error(err);
+  }
+  card.style.left = '-9999px';
+  card.style.top = '0';
+}
+
 // ---- ROTEAMENTO POR HASH (GitHub Pages) ----
 function rotearHash() {
   const hash = window.location.hash;
@@ -4014,6 +4617,7 @@ function rotearHash() {
   else if(hash === '#aula3') { showPage('aula3'); }
   else if(hash === '#aula4') { showPage('aula4'); }
   else if(hash === '#aula5') { showPage('aula5'); }
+  else if(hash === '#aula6') { showPage('aula6'); }
 }
 window.addEventListener('hashchange', rotearHash);
 rotearHash();
